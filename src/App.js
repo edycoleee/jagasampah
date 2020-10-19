@@ -14,6 +14,8 @@ function App() {
   return (
     <Router>
       <Switch>
+
+        {/* ----------------------- */}
         <Route exact path="/" component={Landing} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
