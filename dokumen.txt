@@ -1,0 +1,48 @@
+
+1. Regiter in Github
+https://github.com/edycoleee/jagasampah
+…or create a new repository on the command line
+echo "# jagasampah" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/edycoleee/jagasampah.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/edycoleee/jagasampah.git
+git branch -M main
+git push -u origin main
+
+2.Register in GCP
+gmail user : adipurademak@gmail.com
+password : Adipura1
+firebase login
+firebase init
+firebase deploy
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCLPii4cUXnFZjYXtag5bUGfHPECUrVxYo",
+  authDomain: "jagasampah.firebaseapp.com",
+  databaseURL: "https://jagasampah.firebaseio.com",
+  projectId: "jagasampah",
+  storageBucket: "jagasampah.appspot.com",
+  messagingSenderId: "782998295769",
+  appId: "1:782998295769:web:adc3f6e1586c2066865ac8"
+};
+
+3. Starting react
+create-react-app jagasampah
+------------------------------------------------------------
+1. install depedencies
+npm install firebase moment react-router-dom
+npm install @material-ui/core @material-ui/icons @material-ui/lab
+
+REACT_APP_FIREBASE_API_KEY=AIzaSyCLPii4cUXnFZjYXtag5bUGfHPECUrVxYo
+REACT_APP_FIREBASE_AUTH_DOMAIN=jagasampah.firebaseapp.com
+REACT_APP_FIREBASE_DATABASE_URL=https://jagasampah.firebaseio.com
+REACT_APP_FIREBASE_PROJECT_ID=jagasampah
+REACT_APP_FIREBASE_STORAGE_BUCKET=jagasampah.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER=782998295769
+REACT_APP_FIREBASE_APP_ID=1:782998295769:web:adc3f6e1586c2066865ac8
