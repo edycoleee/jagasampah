@@ -13,10 +13,7 @@ import ScrollButton from "../../components/ScrollButton";
 import { AuthContext } from "../../context/AuthContext";
 
 function Dashboard() {
-  const { users} = useContext(
-    AuthContext
-  );
-
+  const { users } = useContext(AuthContext);
   return (
     <div>
       <MenuAppbar />
@@ -57,37 +54,49 @@ function Dashboard() {
                 <Typography variant="subtitle1">User Name :</Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Typography variant="subtitle1">{users.c_username}</Typography>
+                <Typography variant="subtitle1">
+                  {users.c_username && users.c_username}
+                </Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1">Tipe User :</Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Typography variant="subtitle1">{users.c_tipeuser}</Typography>
+                <Typography variant="subtitle1">
+                  {users.c_tipeuser && users.c_tipeuser}
+                </Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1">Nama Bidang :</Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Typography variant="subtitle1">{users.c_bidang}</Typography>
+                <Typography variant="subtitle1">
+                  {users.c_bidang && users.c_bidang}
+                </Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1">Bagian :</Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Typography variant="subtitle1">{users.c_bagian}</Typography>
+                <Typography variant="subtitle1">
+                  {users.c_bagian && users.c_bagian}
+                </Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1">No Telp :</Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Typography variant="subtitle1">{users.c_nohp}</Typography>
+                <Typography variant="subtitle1">
+                  {users.c_nohp && users.c_nohp}
+                </Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1">Email Pengguna :</Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Typography variant="subtitle1">{users.c_email}</Typography>
+                <Typography variant="subtitle1">
+                  {users.c_email && users.c_email}
+                </Typography>
               </Grid>
             </Grid>
           </Box>

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ErrorPage from "./pages/errorpage";
@@ -8,6 +8,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./pages/auth/ForgotPassword";
+import IndexUser from "./pages/userProfile";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route path="/forgot-password" component={ForgotPassword} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <PrivateRoute exact path="/user" component={IndexUser} />
         <Route component={ErrorPage} />
       </Switch>
     </Router>
