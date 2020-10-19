@@ -31,11 +31,6 @@ import { AuthContext } from "../../context/AuthContext";
 import AlertSnackbar from "../../components/AlertSnackbar";
 import { CL_TPA, CL_TPST } from "../../util/dbschema";
 import { db } from "../../util/firebase";
-import {
-  getAllData,
-  getSingleData,
-  updateData,
-} from "../../context/FirebaseContext";
 
 function IndexUser() {
   const { users, currentUser, updatePassword, updateEmail } = useContext(
