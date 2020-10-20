@@ -17,13 +17,12 @@ function DataProvider({ children }) {
 
   const [dataAwal, setDataAwal] = useState([]);
   const [c_tanggal, setTanggal] = useState(today);
-  const [idBank, setIdBank] = useState("");
-  const [nmBank, setNmBank] = useState("");
+  const [c_tpa, setTPA] = useState("");
 
   const GetDataFTgl = useCallback(async (tgl) => {
     console.log("GetSingleData", tgl);
     await db
-      .collection("CL_SAMPAH3R")
+      .collection("CL_KELOLATPA")
       .where("c_tanggal", "==", tgl)
       .get()
       .then((snapshot) => {
@@ -40,7 +39,7 @@ function DataProvider({ children }) {
   const GetAllData = useCallback(async () => {
     console.log("GetAllData");
     await db
-      .collection("CL_SAMPAH3R")
+      .collection("CL_KELOLATPA")
       .get()
       .then((snapshot) => {
         const data = snapshot.docs.map((doc) => ({
@@ -61,7 +60,7 @@ function DataProvider({ children }) {
 
     console.log(newData);
     await db
-      .collection("CL_SAMPAH3R")
+      .collection("CL_KELOLATPA")
       .add({
         createdAt: tglserver,
         ...newData,
@@ -72,7 +71,7 @@ function DataProvider({ children }) {
   const DeleteData = async (id, tgl) => {
     console.log("delete item :", id);
     await db
-      .collection("CL_SAMPAH3R")
+      .collection("CL_KELOLATPA")
       .doc(id)
       .delete()
       .then(() => GetDataFTgl(c_tanggal));
@@ -97,7 +96,7 @@ function DataProvider({ children }) {
     let bulan = String(tgl.getMonth() + 1);
 
     await db
-      .collection("CL_SAMPAH3R")
+      .collection("CL_KELOLATPA")
       .doc(id)
       .update({
         c_tanggal,
@@ -114,22 +113,6 @@ function DataProvider({ children }) {
       .then(() => GetAllData());
   };
 
-  const getDataBank = async () => {
-    console.log("Getdata2");
-    let data = [];
-    await db
-      .collection("CL_BANKSAMPAH")
-      .get()
-      .then((snapshot) => {
-        data = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        console.log("Getdata3 :", data);
-      });
-    return data;
-  };
-
   const DataState = {
     SaveData,
     dataAwal,
@@ -139,11 +122,8 @@ function DataProvider({ children }) {
     GetDataFTgl,
     c_tanggal,
     setTanggal,
-    getDataBank,
-    idBank,
-    setIdBank,
-    nmBank,
-    setNmBank,
+    c_tpa,
+    setTPA,
   };
   return (
     <DataContext.Provider value={DataState}>{children}</DataContext.Provider>

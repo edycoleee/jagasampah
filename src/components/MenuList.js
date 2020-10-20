@@ -37,7 +37,7 @@ export const mainListItems = (
         <ListItemText primary="Residu TPA" />
       </ListItem>
     </Link>
-    <Link to="/harian">
+    <Link to="/sampahTPA">
       <ListItem button>
         <ListItemIcon>
           <AssessmentTwoToneIcon />

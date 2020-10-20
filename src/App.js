@@ -15,6 +15,7 @@ import Harian from "./pages/harian";
 import DataBank from "./pages/banksampah";
 import Sampah3r from "./pages/sampah3r";
 import LaporSampah from "./pages/lapor";
+import IndexSampahTPA from "./pages/sampahTPA";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <PrivateRoute exact path="/harian" component={Harian} />
         <PrivateRoute exact path="/bsampah" component={DataBank} />
         <PrivateRoute exact path="/sampah3r" component={Sampah3r} />
+        <PrivateRoute exact path="/sampahTPA" component={IndexSampahTPA} />
         <PrivateRoute exact path="/lapor" component={LaporSampah} />
         <Route component={ErrorPage} />
       </Switch>
