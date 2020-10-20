@@ -52,6 +52,7 @@ function AddSampah() {
   const handleClose = () => {
     setOpenPortal(false);
   };
+
   //Simpan Data------------------------------
   const onSimpan = async () => {
     const onValid = (code, message) => {

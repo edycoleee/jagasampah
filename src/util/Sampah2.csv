@@ -1,0 +1,651 @@
+c_tanggal,c_tahun,c_bulan,c_driver,c_nopol,c_kendaraan,c_jenis,c_asal,n_jmlrit,n_volm3,n_volton
+2020/08/01,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Belakang LP  TPS RSINU   TPS Terminal TPS Timbangan ,5,30,9.9
+2020/08/01,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Sayung (2)  Pasar Karanganyar,3,18,5.94
+2020/08/01,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok raden patah I&II,2,12,3.96
+2020/08/01,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS RSS (2)   TPS Garuda  TPS SMA 2,4,24,7.92
+2020/08/01,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai  TPS Kadilangu I  TPS Kadilangu II (2)  TPS Wiku I,5,30,9.9
+2020/08/01,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS Hutan kota(2)  TPS Karang melati(2)  TPS kenep ,5,30,9.9
+2020/08/01,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)  Wonopolo Dempet,5,30,9.9
+2020/08/01,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS sampangan    TPS Donorejo (2)  TPS Patiunus ,5,30,9.9
+2020/08/01,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Buyaran  Pasar gajah   Pasar Karangawen ,3,18,5.94
+2020/08/01,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS Hutan Kota ,1,7,2.31
+2020/08/01,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS LP ,1,7,2.31
+2020/08/01,2020,08,Supardi,H 9759 KE,Viar,JALAN,tong & jalan  Depan Pasar   Jl Nur Cahya   warga petengan ,3,3,0.99
+2020/08/01,2020,08,Susanto,H 9786 LE,Viar,JALAN,Sapuan jl trenggono  Tong jl trenggono ,1,1,0.33
+2020/08/01,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Sapuan Jl depan pasar   warga rejosari botorejo ,2,2,0.66
+2020/08/01,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/01,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan Pecinan - Kejaksaan  tong bogorame  perum patimura ,2,2,0.66
+2020/08/01,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Sapuan Jl Sultan Fatah   Tong Bogorame   Perum mustika ,3,3,0.99
+2020/08/01,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Hutan Kota   Taman Bogorame ,1,1,0.33
+2020/08/01,2020,08,Yoggi,H 9787 LE,Viar,JALAN,Sapuan & Tong Jl Depan Pasar ,1,1,0.33
+2020/08/01,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong pemuda   jl pemuda   wraga kauman ,2,2,0.66
+2020/08/01,2020,08,Suparno,H 9895 HE,Viar,JALAN,Tong terminal   sapuan jalan kodim   warga Petengan ,2,2,0.66
+2020/08/01,2020,08,Sunarto ,H 9760 KE,Viar,JALAN,Alun-alun,1,1,0.33
+2020/08/01,2020,08,Sukamto,H 9565 GE,Colt,JALAN,Alun -alun  taman Hutan kota ,1,1.5,0.495
+2020/08/01,2020,08,Fangkali,H 9584 FE,Colt,JALAN,Jl kyai singkil   jln Kyai Jebat,1,1.5,0.495
+2020/08/01,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Alun-alun ,1,1.5,0.495
+2020/08/01,2020,08,Agus,H 9598 AE,Truk Tangki,LIMBAH CAIR,Kabupaten (2),2,8,2.64
+2020/08/01,2020,08,Turmudzi,,Viar,TPS,pidodo ,2,3,0.99
+2020/08/01,2020,08,Arwan ,,Viar,TPS,warga Batu ,2,2,0.66
+2020/08/01,2020,08,Hakim ,,Viar,TPS,warga kalikondang (2),2,2,0.66
+2020/08/01,2020,08,Bani,,Dum Truk,JALAN,Tong Depan kodim -polres lama Tong pecinan -terminal Tong Bayangkara Lama -baru,1,1,0.33
+2020/08/01,2020,08,Yudi,,Colt,TPS,Gedunguter,1,4,1.32
+2020/08/01,2020,08,Ngatno ,,Colt,TPS,Karangsari,1,1,0.33
+2020/08/01,2020,08,Santoso ,,Colt,TPS,Klitih,1,1,0.33
+2020/08/01,2020,08,Tarkom,,Viar,TPS,Pulosari,2,3,0.99
+2020/08/01,2020,08,Mujib ,,Viar,TPS,Dempet(2),2,2,0.66
+2020/08/01,2020,08,Hakim ,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/01,2020,08,Rahmat,,Colt,TPS,Mranggen,2,3,0.99
+2020/08/01,2020,08,Jarwo,,Viar,TPS,Sumberejo ,2,2,0.66
+2020/08/01,2020,08,Fahmi,,Viar,TPS,Karangawen ,1,1,0.33
+2020/08/01,2020,08,Budi,,Viar,TPS,Tempuran,1,1,0.33
+2020/08/01,2020,08,Ali,,Viar,TPS,Wonosalam,1,1,0.33
+2020/08/01,2020,08,Wardi,,Viar,TPS,SMA N 3 Demak (2),2,2,0.66
+2020/08/01,2020,08,Surtin,,Truk,TPS,Karangsono,1,5,1.65
+2020/08/01,2020,08,Sugeng,,Viar,TPS,Temuroso,3,4.5,1.485
+2020/08/01,2020,08,Galih,,Viar,TPS,Dukun (2),2,2,0.66
+2020/08/01,2020,08,Wasono,,Viar,TPS,SMA N 2 Demak (2),2,2,0.66
+2020/08/02,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Terminal   TPS Timbangan   TPS belakang Lp (2),4,24,7.92
+2020/08/02,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Wedung   Pasar Sayung   TPS Sriwulan ,3,18,5.94
+2020/08/02,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok raden patah III & II,2,12,3.96
+2020/08/02,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Mranak  TPS Garuda  TPS RSS (2),4,24,7.92
+2020/08/02,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS Kadilangu I &II   TPS Jogoloyo,4,24,7.92
+2020/08/02,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS Karangmelati  TPS Kenap  TPS Hutan Kota (2) TPS RSUD,5,30,9.9
+2020/08/02,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)   Gebang Bonang ,5,30,9.9
+2020/08/02,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Sampangan   TPS Donorejo (2) TPS Masjid Kadilangu,5,30,9.9
+2020/08/02,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Karangawen  Pasar Guntur  Pasar Buyaran ,3,18,5.94
+2020/08/02,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS Timbangan ,1,7,2.31
+2020/08/02,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS Lp  TPS Garuda,1,7,2.31
+2020/08/02,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong & Jalan Depan Pasar   Warga Petengan   Warga jl Nurcahya ,3,3,0.99
+2020/08/02,2020,08,Susanto,H 9786 LE,Viar,JALAN,Tong & Sapuan Jl Sultan Trenggono ,1,1,0.33
+2020/08/02,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Sapuan Jl Depan Pasar   Warga  Rejosari ,2,2,0.66
+2020/08/02,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/02,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan kejaksaan-Pecinan   Tong bogorame ,2,2,0.66
+2020/08/02,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Sapuan Jl Sultan Fatah   Tong Bogorame ,2,2,0.66
+2020/08/02,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Hutan Kota   Taman Bogorame ,1,1,0.33
+2020/08/02,2020,08,Yoggi,H 9787 LE,Viar,JALAN,Sapuan Jl depan pasar   Din Perta ,2,2,0.66
+2020/08/02,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong & Sapuan Jl pemuda   Tong warga wonosalam asri,2,2,0.66
+2020/08/02,2020,08,Suparno,H 9895 HE,Viar,JALAN,Tong & Sapuan Alun-alun   Warga Petengan ,1,1,0.33
+2020/08/02,2020,08,Sunarto,H 9760 KE,Viar,JALAN,Alun-alun ,1,1,0.33
+2020/08/02,2020,08,Sukamto,H 9565 GE,Colt,JALAN,DPU - jl depan pasar   Mijen ,2,3,0.99
+2020/08/02,2020,08,Fangkali,H 9584 FE,Colt,JALAN,Jl kyai singkil   Jl Kyai Jebat  jl Azahra,1,1.5,0.495
+2020/08/02,2020,08,Kuswanto,H 9581 FE,Colt,JALAN,Alun-alun,1,1.5,0.495
+2020/08/02,2020,08,Wasono,,Viar,TPS,SMA N 2 Demak (2),2,8,2.64
+2020/08/02,2020,08,Edi,,Viar,TPS,SMA N 3 Demak (2),2,2,0.66
+2020/08/02,2020,08,Haris,,Viar,TPS,Dinas Pariwisata,1,1,0.33
+2020/08/02,2020,08,Hakim ,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/02,2020,08,Bani,H 9545 EE,Dum Truk,JALAN,Depan Pasar  Depan Termianal-Pecinan  bayangkara lama-baru Polres lama-Baru,1,1,0.33
+2020/08/02,2020,08,Sumono,,Colt,TPS,Warga Bango ,1,1.5,0.495
+2020/08/02,2020,08,Giarto,,Viar,TPS,kalikondang ,1,1.5,0.495
+2020/08/02,2020,08,Kamdan,,Viar,TPS,Jatimulyo,3,2,0.66
+2020/08/02,2020,08,Misbah,,Colt,TPS,Sayung,1,1.5,0.495
+2020/08/02,2020,08,Edi ,,Viar,TPS,Wonosalam ,1,1,0.33
+2020/08/02,2020,08,Jamil,,Colt,JALAN,Proyek Jalan Tol ,2,1,0.33
+2020/08/02,2020,08,A zen ,,Viar,TPS,Karangtowo,1,1,0.33
+2020/08/02,2020,08,Prapto,,Viar,TPS,Manyar,1,1,0.33
+2020/08/02,2020,08,Adi,,Viar,TPS,Tempuran ,1,1,0.33
+2020/08/02,2020,08,Santoso ,,Colt,TPS,Klitih,2,2,0.66
+2020/08/02,2020,08,Tarkom,,Viar,TPS,Warga Pulosari,2,3,0.99
+2020/08/02,2020,08,suratman ,,Viar,TPS,Dempet,2,2,0.66
+2020/08/02,2020,08,Galih,,Viar,TPS,Dukun (2),3,3,0.99
+2020/08/02,2020,08,Ngatno ,,Colt,TPS,Karangsari,1,1.5,0.495
+2020/08/02,2020,08,Jarwo,,Viar,TPS,Sumberejo ,1,1,0.33
+2020/08/02,2020,08,Pardi ,,Viar,TPS,Nduduk,1,1,0.33
+2020/08/02,2020,08,Turmudzi,,Viar,TPS,Pidodo,3,3,0.99
+2020/08/02,2020,08,Andre ,,Kontainer,TPS,Pucang gading ,2,12,3.96
+2020/08/02,2020,08,Badi,,Viar,TPS,Karangrejo ,1,1,0.33
+2020/08/02,2020,08,Fahmi,,Viar,TPS,Temuroso,2,2,0.66
+2020/08/02,2020,08,Arwan ,,Viar,TPS,Batu,2,2,0.66
+2020/08/03,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS LP(2)  TPS Timbangan  TPS RSINU ,4,24,7.92
+2020/08/03,2020,08,Arif,H 9577 AE,Kontainer,PASAR,TPS Sayung(2) TPS Sriwulan ,3,18,5.94
+2020/08/03,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah I & 2,2,12,3.96
+2020/08/03,2020,08,Kusnin,H 9632 EE,Kontainer,TPS, TPS Garuda  TPS RSS (2)  TPS SMA 2,4,24,7.92
+2020/08/03,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS Kadilangu   TPS Kadilangu II (2),4,24,7.92
+2020/08/03,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS Karang Melati  TPS Hutan Kota(2)   TPS Kenep   TPS Bango,5,30,9.9
+2020/08/03,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)  Pasar Wonopolo,5,30,9.9
+2020/08/03,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan  TPS Sampangan  TPS Donorejo (2)  TPS Depan masjid,5,30,9.9
+2020/08/03,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Buyaran  Pasar Gajah  Pasar karangawen ,3,18,5.94
+2020/08/03,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS Donorejo  TPS  Hutan kota ,1,7,2.31
+2020/08/03,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS Lp  TPS Sampangan   TPS Garuda ,1,7,2.31
+2020/08/03,2020,08,Supardi,H 9759 KE,Viar,JALAN,tong Depan Pasar   Jl Nur Cahya   Sapuan jalan Pasar   warga bogorame ,3,3,0.99
+2020/08/03,2020,08,Susanto,H 9786 LE,Viar,JALAN,sapuan & Tong Jl sepanjang jl Trenggono ,1,1,0.33
+2020/08/03,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN, Sapuan Jl Depan Pasar  Warga Botorejo ,2,2,0.66
+2020/08/03,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/03,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan depan pecinana - kejaksaan  tong bogorame,3,3,0.99
+2020/08/03,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Sapuan Jl Sultan Fatah   Tong Bogorame  Pukesmas -Dkk,2,2,0.66
+2020/08/03,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Hutan Kota   Taman Bogorame ,1,1,0.33
+2020/08/03,2020,08,Yoggi,H 9787 LE,Viar,JALAN,Sapuan jalan depan pasar,1,1,0.33
+2020/08/03,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong - jl pemuda   Warga Kauman  ,2,2,0.66
+2020/08/03,2020,08,Suparno,H 9895 HE,Viar,JALAN,sapuan jl & tong alun-alun   Tong muka kabupaten  warga Petengan ,2,2,0.66
+2020/08/03,2020,08,Sunarto,H 9760 KE,Viar,JALAN,alun-alun ,1,1,0.33
+2020/08/03,2020,08,Sukamto,H 9565 GE,Colt,JALAN,Dpu - jl sunan kalijaga ,1,1.5,0.495
+2020/08/03,2020,08,Fangkali,H 9584 FE,Colt,JALAN,Jl kyai singkil   jln Kyai Jebat,1,1.5,0.495
+2020/08/03,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Alun-alin   Taman kijang ,1,1.5,0.495
+2020/08/03,2020,08,Ngatno ,,Viar,TPS,Jatimulyo,3,3,0.99
+2020/08/03,2020,08,suratman ,,Viar,TPS,Dempet,2,8,2.64
+2020/08/03,2020,08,Arman ,,Viar,TPS,Batu,2,2,0.66
+2020/08/03,2020,08,Adi ,,Colt,TPS,Kedunguter ,2,1.5,0.495
+2020/08/03,2020,08,Edi,,Viar,TPS,SMA N 3 Demak ,3,3,0.99
+2020/08/03,2020,08,Suprapto,,Viar,TPS,Manyar,1,1,0.33
+2020/08/03,2020,08,Mohib,,Viar,TPS,Dempet ,1,1,0.33
+2020/08/03,2020,08,Andre ,,Kontainer,TPS,Pujang Gading,2,12,3.96
+2020/08/03,2020,08,Badri,,Colt,TPS,Trengguli,1,1.5,0.495
+2020/08/03,2020,08,Fahmi,,Truk,TPS,Bonang ,1,6,1.98
+2020/08/03,2020,08,Jarwo,,Viar,TPS,Sumberejo ,1,1,0.33
+2020/08/03,2020,08,Galih,,Viar,TPS,Dukun (2),2,2,0.66
+2020/08/03,2020,08,Badawi,,Viar,TPS,Nduduk,1,1,0.33
+2020/08/03,2020,08,Abbas,,Viar,TPS,Domenggalan   Swalayan Anekajaya ,1,1,0.33
+2020/08/03,2020,08,Tarkom,,Colt,TPS,Pulosari,2,3,0.99
+2020/08/03,2020,08,Selamet,,Viar,TPS,Dempet,1,1,0.33
+2020/08/03,2020,08,Turmudzi,,Viar,TPS,Pidodo,2,2,0.66
+2020/08/03,2020,08,Ali Impron,,Viar,TPS,Wonokerto,1,1,0.33
+2020/08/04,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Belakang Lp (2)  TPS Terminal TPS Timbangan  TPS RSINU  ,5,30,9.9
+2020/08/04,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar sriwulan  pasar sayung(2),3,18,5.94
+2020/08/04,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah I & III,2,12,3.96
+2020/08/04,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Tower  TPS garuda TPS Mranak TPS RSS ,4,24,7.92
+2020/08/04,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS kadilangu I& II   TPS Temuroso,4,24,7.92
+2020/08/04,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS kenep  Hutan Kota (2),3,18,5.94
+2020/08/04,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)   Pasar Gebang Bonang ,5,30,9.9
+2020/08/04,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Donorejo (2)  TPS Sampangan TPS Betengan   TPS Patiunus ,5,30,9.9
+2020/08/04,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Buyaran  Pasar Gajah  TPS Karangawen ,3,18,5.94
+2020/08/04,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,Hutan Kota   timbangan ,1,7,2.31
+2020/08/04,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,Garuda   Lp ,1,7,2.31
+2020/08/04,2020,08,Supardi,H 9759 KE,Viar,TPS,Tong  & Sapuan Depan pasar   jl nurcahya  Warga Merbotan ,4,4,1.32
+2020/08/04,2020,08,Susanto,H 9786 LE,Viar,TPS,sapuan -Tong Jl trenngono - jl hadi wijoyo ,1,1,0.33
+2020/08/04,2020,08,Kusriyanto,H 9764 KE,Viar,TPS,Sapaun Depan Pasar  Warga Botorejo,2,2,0.66
+2020/08/04,2020,08,Bejo Susilo,H 9763 KE,Viar,TPS,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/04,2020,08,Sunardi,H 9789 HE,Viar,TPS,Sapuan Pecinan-Kejaksaan   perum patimura  Tong bogorame ,2,2,0.66
+2020/08/04,2020,08,Budiyanto,H 9761 KE,Viar,TPS,Tong sepanjang jl sulfa pecinan -terminal   Tong Koni ,2,2,0.66
+2020/08/04,2020,08,Sabiyono,H 9762 KE ,Viar,TPS, Tong Taman Bogorame  Sapuan Hutan kota   SD 5,2,2,0.66
+2020/08/04,2020,08,Yoggi,H 9787 LE,Viar,TPS,Sapuan sepanjang jl depan pasar ,1,1,0.33
+2020/08/04,2020,08,Purwadi,H 9788 LE,Viar,TPS,Tong & Sapuan jl  pemuda    Warga kauman ,2,2,0.66
+2020/08/04,2020,08,Suparno,H 9895 HE,Viar,TPS,Tong & sapaun Alun-alun  Tong muka kabupaten    warga Petengan ,1,1,0.33
+2020/08/04,2020,08,Sunarto,H 9760 KE,Viar,JALAN,alun-alun ,2,2,0.66
+2020/08/04,2020,08,Sukamto,H 9565 GE,Colt,JALAN,jl kudus- mijen   pukesmas bonang ,1,1.5,0.495
+2020/08/04,2020,08,Fangkali,H 9584 FE,Colt,JALAN,Sepanjang jl kyai singkil ,1,1.5,0.495
+2020/08/04,2020,08,Kuswanto,H 9581 FE,Colt,TAMAN ,Alun-alun ,1,1.5,0.495
+2020/08/04,2020,08,Ngatno ,,Viar,TPS,Karangsari ,2,2,0.66
+2020/08/04,2020,08,Giarto,,Viar,TPS,Kalikondang ,1,1,0.33
+2020/08/04,2020,08,Suparwo,,Colt,TPS,Warga Klitih,2,3,0.99
+2020/08/04,2020,08,Hakim ,,Viar,TPS,Kalikondang ,2,2,0.66
+2020/08/04,2020,08,Edi,,Viar,TPS,SMA N 3 Demak (2),2,2,0.66
+2020/08/04,2020,08,suratman ,,Viar,TPS,Dempet,3,3,0.99
+2020/08/04,2020,08,Arwan ,,Viar,TPS,Batu,2,2,0.66
+2020/08/04,2020,08,Bani,H 9545 EE,Dum Truk,JALAN,Depan Pasar  Depan Termianal-Pecinan  bayangkara lama-baru Polres lama-Baru,1,1,0.33
+2020/08/04,2020,08,Selamet,,Viar,TPS,Nduduk,1,1,0.33
+2020/08/04,2020,08,Widodo,,Viar,TPS,Wonosalam ,1,1,0.33
+2020/08/04,2020,08,Farhan,,Truk,TPS,Batu,1,6,1.98
+2020/08/04,2020,08,Totok,,Dam Truk ,TPS,Dukun (2),2,7,2.31
+2020/08/04,2020,08,Aji,,Colt,TPS,Kalikondang ,2,3,0.99
+2020/08/04,2020,08,Dardi ,,Truk,TPS,Trengguli,1,1,0.33
+2020/08/04,2020,08,Abbas,,Viar,TPS,Domenggalan   Swalayan Anekajaya ,1,1,0.33
+2020/08/04,2020,08,Andre ,,Kontainer,TPS,Pucanggading,2,12,3.96
+2020/08/04,2020,08,Tarkom,,Colt,TPS,Pulosari,2,30,9.9
+2020/08/04,2020,08,Fami ,,Colt,TPS,Kedunguter ,2,1.5,0.495
+2020/08/04,2020,08,A zen ,,Viar,TPS,Karang Towo ,1,1,0.33
+2020/08/04,2020,08,Subadi,,Viar,TPS,Mranggen (3),3,3,0.99
+2020/08/04,2020,08,Ali Impron,,Colt,TPS,Wonokerto,1,1,0.33
+2020/08/04,2020,08,Ganto,,Colt,TPS,Karangawen ,1,1.5,0.495
+2020/08/05,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS LP (2)   TPS Terminal  TPS Timbangan   TPS RSINU ,5,30,9.9
+2020/08/05,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Sayung (2)  TPS Sriwulan (2),4,24,7.92
+2020/08/05,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah I & 2,2,12,3.96
+2020/08/05,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS RSS(2)   TPS Garuda  TPS Mranak,4,24,7.92
+2020/08/05,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Tembiring  TPS Saintai   TPS Kadilangu I,3,18,5.94
+2020/08/05,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS :Kenep  TPS Polres   TPS Karangmlati (2)  TPS Hutan Kota (2),6,36,11.88
+2020/08/05,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)   Pasar Gebang Bonang ,5,30,9.9
+2020/08/05,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Sampangan   TPS Donorejo (2) TPS Masjid Kadilangu,5,30,9.9
+2020/08/05,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Gajah  Pasar Karangawen   Pasar Buyaran ,3,18,5.94
+2020/08/05,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,Donorejo,1,7,2.31
+2020/08/05,2020,08,Sapardi,H 9532 E,Dum Truk,JALAN,LP,1,7,2.31
+2020/08/05,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong pasar  & Sapuan jl pasar   jl Bogorame   Warga Merbotan ,3,3,0.99
+2020/08/05,2020,08,Susanto,H 9786 LE,Viar,JALAN,Tong & Sapuan Jl Sultan Trenggono ,1,1,0.33
+2020/08/05,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Warga Botorejo  Sapuan jl Depan pasar ,2,2,0.66
+2020/08/05,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/05,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan Kejaksaan-Pecinan  dapur kabupaten   Tong Bpogorame ,2,2,0.66
+2020/08/05,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Tong sepanjang jl sulfa   pukesmas demak 3   dkk,2,2,0.66
+2020/08/05,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Hutan Kota   Taman Bogorame ,1,1,0.33
+2020/08/05,2020,08,Yoggi,H 9787 LE,Viar,JALAN,Sapuan Jl depan pasar   Din Perta ,2,2,0.66
+2020/08/05,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong & Sapuan Jl pemuda   Tong warga wonosalam asri,2,2,0.66
+2020/08/05,2020,08,Suparno,H 9895 HE,Viar,JALAN,Sapuan & Tong alun-alun   sapuan jalan kodim   warga petengan ,1,1,0.33
+2020/08/05,2020,08,Sunarto,H 9760 KE,Viar,JALAN,alun-alun ,1,1,0.33
+2020/08/05,2020,08,Sukamto,H 9565 GE,Colt,JALAN,Taman kijang  taman ayo ngaji ,1,1.5,0.495
+2020/08/05,2020,08,Fangkali,H 9584 FE,Colt,JALAN,Jl kyai Mukni   jl bayangkara ,1,1.5,0.495
+2020/08/05,2020,08,Kuswanto,H 9581 FE,Colt,JALAN,Alun-alun,1,1.5,0.495
+2020/08/05,2020,08,Bani,H 9545 EE,Dum Truk,JALAN,Depan Pasar  Depan Termianal-Pecinan  bayangkara lama-baru Polres lama-Baru,1,1,0.33
+2020/08/05,2020,08,Ngatno ,,Colt,TPS,Kedunguter ,2,1.5,0.495
+2020/08/05,2020,08,Selamet,,Viar,TPS,Dempet ,2,2,0.66
+2020/08/05,2020,08,Widodo,,Viar,TPS,Karang Sari ,2,8,2.64
+2020/08/05,2020,08,Giarto,,Viar,TPS,Kalikondang ,1,1.5,0.495
+2020/08/05,2020,08,Samsuni,,Viar,TPS,Jatimulyo,3,3,0.99
+2020/08/05,2020,08,Hakim ,,Viar,TPS,Kalikondang ,2,2,0.66
+2020/08/05,2020,08,Giarto,,Viar,TPS,Kalikondang,2,2,0.66
+2020/08/05,2020,08,Sarwi,,Viar,TPS,Kalikondang ,4,4,1.32
+2020/08/05,2020,08,Bambang,,Viar,TPS,Manyar,2,2,0.66
+2020/08/05,2020,08,Andre ,,Kontainer,TPS,Pucang gading ,2,12,3.96
+2020/08/05,2020,08,Tri ,,Colt,TPS,Dukun (2),2,3,0.99
+2020/08/05,2020,08,Widodo,,Colt,TPS ,Pulosari,2,3,0.99
+2020/08/05,2020,08,Wasono,,Viar,TPS,SMA 2 Demak ,2,2,0.66
+2020/08/05,2020,08,Sumono,,Colt,TPS,Bango,1,4,1.32
+2020/08/05,2020,08,Bagus,,Viar,TPS,Temuroso,2,2,0.66
+2020/08/05,2020,08,Edi,,Viar,TPS,Nduduk,2,2,0.66
+2020/08/05,2020,08,Arwan ,,Viar,TPS,Batu,2,2,0.66
+2020/08/05,2020,08,Turmudzi,,Viar,TPS,Pidodo,2,2,0.66
+2020/08/05,2020,08,Wondo,,Colt,TPS,Wonowoso,2,2,3
+2020/08/05,2020,08,Ali Impron,,Colt,TPS,Wonokerto,1,1.5,0.495
+2020/08/06,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Belakang Lp(2)   TPS Timbangan   TPS Terminal ,4,24,7.92
+2020/08/06,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Sayung (2)  Pasar gebang Bonang ,2,12,3.96
+2020/08/06,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah II & I,2,12,3.96
+2020/08/06,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Mranak  TPS SMA 2  TPS RSS ,3,18,5.94
+2020/08/06,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS Kalikondang I  '& II TPS Pujasera ,4,24,7.92
+2020/08/06,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS Hutan kota   TPS Karang melati   TPS Kenep ,3,18,5.94
+2020/08/06,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)   Pasar wonopolo,4,24,7.92
+2020/08/06,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Sampangan   TPS Donorejo(2),4,24,7.92
+2020/08/06,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar karangawen   Pasar Buyaran   TPS gajah ,3,18,5.94
+2020/08/06,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS Rss TPs Timbangan TPS Donorejo ,1,7,2.31
+2020/08/06,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS santai   TPS Garuda   TPS LP ,1,7,2.31
+2020/08/06,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong pasar   jl nurcahya  Merbotan ,4,4,1.32
+2020/08/06,2020,08,Susanto,H 9786 LE,Viar,JALAN,Sapuan & Tong jl Trenggono ,1,1,0.33
+2020/08/06,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Sapuan Depan Pasar   Dukuh Botorejo,2,2,0.66
+2020/08/06,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Byangkara ,1,1,0.33
+2020/08/06,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan Kejaksaan,1,1,0.33
+2020/08/06,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Tong Pasar   jl Bogorame  DKK-Pukesmas ,1,1,0.33
+2020/08/06,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,TPS hutan kota ,1,1,0.33
+2020/08/06,2020,08,Kasmito,H 9787 LE,Viar,JALAN,Sapuan Jln bayangkara,1,1,0.33
+2020/08/06,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong pemuda   jl pemuda   Warga kauman ,3,3,0.99
+2020/08/06,2020,08,Suparno,H 9895 HE,Viar,JALAN,Tong terminal   sapuan jalan kodim   warga Petengan ,1,1,0.33
+2020/08/06,2020,08,Didik,H 9760 KE,Viar,JALAN,alun-alun (2),2,2,0.66
+2020/08/06,2020,08,Sukamto,H 9565 GE,Colt,JALAN,DPU -depan pasar-Jl Pemuda ,2,3,0.99
+2020/08/06,2020,08,Fangkali,H 9584 FE,Colt,JALAN,Jl kyai Mukni   jl bayangkara ,1,1.5,0.495
+2020/08/06,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Alun-alun  katonsari   bogorame  jl Pemuda,1,1.5,0.495
+2020/08/06,2020,08,Arwan ,,Viar,TPS,Batu ,2,8,2.64
+2020/08/06,2020,08,Giarto,,Viar,TPS,Kalikondang ,1,1.5,0.495
+2020/08/06,2020,08,Sulkan ,,Viar,TPS,Kalikondang (2),1,1,0.33
+2020/08/06,2020,08,Hakim ,,Viar,TPS,Kalikondang ,1,1,0.33
+2020/08/06,2020,08,Bani,,Dam Truk,TPS,Depan Pasar  Depan Termianal-Pecinan  bayangkara lama-baru Polres lama-Baru,2,14,4.62
+2020/08/06,2020,08,Sumono,,Colt,TPS,Bango,1,4,1.32
+2020/08/06,2020,08,Arwan ,,Viar,TPS,Batu,1,1,0.33
+2020/08/06,2020,08,Joko,,Truk,TPS,Dukun,1,1,0.33
+2020/08/06,2020,08,Wondo,,Viar,TPS,Wonowoso,1,1.5,0.495
+2020/08/06,2020,08,Ali Impron,,Viar,TPS,Wonokerto,1,1,0.33
+2020/08/06,2020,08,Hakim ,,Viar,TPS,Kalikondong (2),2,2,0.66
+2020/08/06,2020,08,Mukti,,Viar,TPS,Kalikondang ,1,1,0.33
+2020/08/07,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Timbangan  TPS LP   TPS RSS  TPS Hutan kota  TPS Kenep,5,30,9.9
+2020/08/07,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Sayung (2)  Wedung,3,18,5.94
+2020/08/07,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,TPS Pondak Raden Patah I & II,2,12,3.96
+2020/08/07,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Santai   TPS Kadilangun I   TPS Betengan   TPS Sampangan TPS Garuda,5,30,9.9
+2020/08/07,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS Kadilangun I   TPS wiku I  ,4,24,7.92
+2020/08/07,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS kenep Hutan Kota (2)  TPS Karangmlati ,4,24,7.92
+2020/08/07,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)   Pasar Gebang Bonang ,5,30,9.9
+2020/08/07,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Sampangan   TPS Donorejo(2),4,24,7.92
+2020/08/07,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Buyaran  Pasar wonokerto   Pasar Buyaran,3,18,5.94
+2020/08/07,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS Karangmelati  TPS kenep   TPS Hutan kota ,1,7,2.31
+2020/08/07,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS RSS   TPS Garuda   TPS SMA 2,1,7,2.31
+2020/08/07,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong pasar   Sapuan jl pasar   Bogorame  ,2,2,0.66
+2020/08/07,2020,08,Susanto,H 9786 LE,Viar,JALAN,Tong & Sapuan jl Trenggono  Jl hadi wijaya ,1,1,0.33
+2020/08/07,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Sapuan Pecinan -kejaksaan   Dukuh botorejo,1,1,0.33
+2020/08/07,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/07,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan Depan Pasar  tong bogorame ,1,1,0.33
+2020/08/07,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Tong Sultan fatah   Perumnas ,2,2,0.66
+2020/08/07,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,hutan kota  Taman Bogorame ,1,1,0.33
+2020/08/07,2020,08,Zaenal,H 9787 LE,Viar,JALAN,Sapuan Bayangkara lama - Baru  ,1,1,0.33
+2020/08/07,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong pemuda  Sapuan  jl pemuda    Warga kauman ,2,2,0.66
+2020/08/07,2020,08,Suparno,H 9895 HE,Viar,JALAN,Sapuan & Tong Alun2   Warga kauman   Tong kodim,2,2,0.66
+2020/08/07,2020,08,Sunarto ,H 9760 KE,Viar,JALAN,alun-alun (2),1,1,0.33
+2020/08/07,2020,08,Sukamto,H 9565 GE,Colt,JALAN,DPU -depan pasar  depan kelurahan mangujiwan  ,2,3,0.99
+2020/08/07,2020,08,Fangkali,H 9584 FE,Colt,JALAN,Jl kyai Mukni   jl bayangkara- warga petengan ,1,1.5,0.495
+2020/08/07,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Rambu lalulintas katonsari  taman kijang,1,1.5,0.495
+2020/08/07,2020,08,Jarwo,,Viar,TPS,Sumberejo ,1,1,0.33
+2020/08/07,2020,08,Giarto,,Viar,TPS,Kalikondang ,1,1,0.33
+2020/08/07,2020,08,Ali Impron,,Colt,TPS,Pulosari,2,3,0.99
+2020/08/07,2020,08,Didik,,Colt,JALAN,Proyek Jalan Tol,2,8,2.64
+2020/08/07,2020,08,Jamil,,Truk,TPS,Dukun,2,8,2.64
+2020/08/07,2020,08,Yoggi,,Viar,TPS,sapuan depan pasar ,2,8,2.64
+2020/08/07,2020,08,Saroni,,Colt,JALAN,Proyek Jalan Tol,3,12,3.96
+2020/08/07,2020,08,Andre,,Kontainer,TPS,Pucang gading ,2,8,2.64
+2020/08/07,2020,08,Ali,,Viar,TPS,Tempuran,1,1,0.33
+2020/08/07,2020,08,agus,,Colt,TPS,Dishub ,1,1.5,0.495
+2020/08/07,2020,08,Agus,,Colt,TPS,Wonokerto,1,1.5,0.495
+2020/08/07,2020,08,Didik,,Colt,TPS,Klitih,2,3,0.99
+2020/08/07,2020,08,Arwan ,,Viar,TPS,Batu ,2,8,2.64
+2020/08/07,2020,08,Turmudzi,,Viar,TPS,Pidodo,2,2,0.66
+2020/08/07,2020,08,Mohib,,Viar,TPS,Dempet,2,2,0.66
+2020/08/07,2020,08,Ngatno,,Viar,TPS,Manyar,1,1.5,0.495
+2020/08/07,2020,08,Samsudin ,,Colt,TPS,Gedunguter,1,1.5,0.495
+2020/08/07,2020,08,Ngatno,,Colt,TPS,Karangsari ,1,1.5,0.495
+2020/08/07,2020,08,Turmudzi,,Viar,TPS,Pidodo,1,1,0.33
+2020/08/07,2020,08,Ali Impron,,Viar,TPS,Wonokerto,1,1,0.33
+2020/08/07,2020,08,Bani,,Dam Truk,TPS,Depan Pasar  Depan Termianal-Pecinan  bayangkara lama-baru Polres lama-Baru,2,14,4.62
+2020/08/07,2020,08,Hakim ,,Viar,TPS,Kalikondang ,2,2,0.66
+2020/08/08,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Belakang Lp (2)   TPS Timbangan   TPS Terminal   TPS RSINU,5,30,9.9
+2020/08/08,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Sayung (2)  Pasar Sriwulan ,3,18,5.94
+2020/08/08,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah III & I,2,12,3.96
+2020/08/08,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS RSS(2)  TPS Garuda  TPS SMA 2,4,24,7.92
+2020/08/08,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai  TPS Kadilangu I &II  TPS Tembiring ,4,24,7.92
+2020/08/08,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS Kenep   TPS Hutan kota(2)  TPS Karang melati   TPS Polres,5,30,9.9
+2020/08/08,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)   Pasar wonopolo dempet ,5,30,9.9
+2020/08/08,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Sampangan  TPS Donorejo (2)  TPS masjid kadilangu,5,30,9.9
+2020/08/08,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Karangawen  Pasar Gajah   Pasar Buyaran ,3,18,5.94
+2020/08/08,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS RSS   TPS hutan kota ,1,7,2.31
+2020/08/08,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS Santai   TPS Garuda   TPS SMA 2 ,1,7,2.31
+2020/08/08,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong & sapuan  pasar   jl nurcahya Tong  Petengan,3,3,0.99
+2020/08/08,2020,08,Susanto,H 9786 LE,Viar,JALAN,Tong & Sapuan jl Trenggono,1,1,0.33
+2020/08/08,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Sapuan & Tong Pecinan -kejaksaan   Dukuh botorejo,1,1,0.33
+2020/08/08,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Petengan,1,1,0.33
+2020/08/08,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan Kejaksaan-pecinan  tong warga kauman ,2,2,0.66
+2020/08/08,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Tong Sepanjang jl sulfa  tong  jl Bogorame ,1,1,0.33
+2020/08/08,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Hutan Kota  taman bogorame ,1,1,0.33
+2020/08/08,2020,08,Maslikan ,H 9787 LE,Viar,JALAN,Sapuan sepanjang jl sulfa ,1,1,0.33
+2020/08/08,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong sapuan jebor ,1,1,0.33
+2020/08/08,2020,08,Suparno,H 9895 HE,Viar,JALAN,Tong terminal   sapuan jalan kodim   warga Mangujiwan ,1,1,0.33
+2020/08/08,2020,08,Sunarto ,H 9760 KE,Viar,JALAN,alun-alun (2),2,2,0.66
+2020/08/08,2020,08,Sukamto,H 9565 GE,Colt,JALAN,Depan pasar krajaan-SMA 2 Dolok-Pukesmas Bonang -mijen ,5,7.5,2.475
+2020/08/08,2020,08,Fangkali,H 9584 FE,Colt,JALAN,JL Kyai Mukni   jl Kyai Singkil,1,1.5,0.495
+2020/08/08,2020,08,Kuswanto,H 9581 FE,Colt,JALAN,Alun-alun  katonsari   bogorame  jl Pemuda,1,1.5,0.495
+2020/08/08,2020,08,Yuda ,,Colt,TPS,Trengguli,1,4,1.32
+2020/08/08,2020,08,Edi,,Viar,TPS,SMA N 3 Demak,3,4.5,1.485
+2020/08/08,2020,08,Wasono,,Viar,TPS,SMA N 2 Demak ,1,1.5,0.495
+2020/08/08,2020,08,Galih,,Viar,TPS,Dukun ,3,3,0.99
+2020/08/08,2020,08,Jamil,,Truk,TPS,Batu,1,4,1.32
+2020/08/08,2020,08,Faiz,,Colt,TPS,Kabupaten ,3,4.5,1.485
+2020/08/08,2020,08,Tarkom,,Colt,TPS,Trengguli,1,1.5,0.495
+2020/08/08,2020,08,Andre,,Kontainer,TPS,Pucang Gading (2),2,6,1.98
+2020/08/08,2020,08,Ali Impron,,Colt,TPS,Pulosari,2,3,0.99
+2020/08/08,2020,08,Turmudzi,,Viar,TPS,Pidodo,2,2,0.66
+2020/08/08,2020,08,Widodo,,Viar,TPS,karangsari,2,2,0.66
+2020/08/08,2020,08,Adi,,Viar,TPS,Tempuran ,1,1,0.33
+2020/08/08,2020,08,Giarto,,Viar,TPS,Kalikondang,3,12,3.96
+2020/08/08,2020,08,Arwan ,,Viar,TPS,Batu,2,2,0.66
+2020/08/08,2020,08,Joko,,Colt,TPS,Dukun,1,1,0.33
+2020/08/08,2020,08,Mukto,,Colt,TPS,Karangsono,1,1.5,0.495
+2020/08/08,2020,08,Ali Impron,,Colt,TPS,Wonokerto,2,2,0.66
+2020/08/08,2020,08,Hakim ,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/08,2020,08,Subadri,,Colt,TPS,Gedunguter,2,3,0.99
+2020/08/08,2020,08,Karto,,Colt,TPS,Klitih,2,8,2.64
+2020/08/09,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Belakang Lp   TPS Timbangan   TPS Terminal ,4,24,7.92
+2020/08/09,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Sayung   pasar sriwulan (2),3,18,5.94
+2020/08/09,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah I&II,2,12,3.96
+2020/08/09,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Mranak  TPS RSS (2),3,18,5.94
+2020/08/09,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai  TPS Kadilangu I& II  TPS pujasera,4,24,7.92
+2020/08/09,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,Karang Melati   Kenep (2)  Hutan kota (2)  RSUD ,6,36,11.88
+2020/08/09,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4) ,5,30,9.9
+2020/08/09,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Sampangan   TPS Donorejo (2),3,18,5.94
+2020/08/09,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Buyaran  Pasar Gajah  Pasar Karangawen ,1,6,1.98
+2020/08/09,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS Depo Terminal   TPS Hutan kota ,1,7,2.31
+2020/08/09,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS Garuda   TPS LP ,1,7,2.31
+2020/08/09,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong pasar   jl nurcahya  Petengan,3,3,0.99
+2020/08/09,2020,08,Susanto,H 9786 LE,Viar,JALAN,Sapuan & Tong jalan trenggono ,1,1,0.33
+2020/08/09,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Sapuan Bangjo - kadilangu    Dukuh botorejo,2,2,0.66
+2020/08/09,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Petengan,1,1,0.33
+2020/08/09,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan Kejaksaan,1,1,0.33
+2020/08/09,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Tong Pasar   jl Bogorame ,1,1,0.33
+2020/08/09,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Jl bayangkara,1,1,0.33
+2020/08/09,2020,08,Muslikhan ,H 9787 LE,Viar,JALAN,Sapuan Jln bayangkara,1,1,0.33
+2020/08/09,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong pemuda   jl pemuda  ,1,1,0.33
+2020/08/09,2020,08,Suparno,H 9895 HE,Viar,JALAN,Tong muka kabupaten & seputar alun-alun    warga Kauman ,1,1,0.33
+2020/08/09,2020,08,Sunarto,H 9760 KE,Viar,JALAN,alun-alun ,1,1,0.33
+2020/08/09,2020,08,Sukamto,H 9565 GE,Colt,JALAN,DPU- Depan Pasar bintoro kracan-Sma 2 Betengan  kadilangu,5,7.5,2.475
+2020/08/09,2020,08,Fangkali,H 9584 FE,Colt,JALAN,Jl kyai Mukni   jl pemuda,1,1.5,0.495
+2020/08/09,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Jl pemuda - Patung ,1,1.5,0.495
+2020/08/09,2020,08,Arwan ,,Viar,TPS,Batu ,2,8,2.64
+2020/08/09,2020,08,Giarto,,Viar,TPS,Kalikondang ,1,1.5,0.495
+2020/08/09,2020,08,Rokim,,Viar,TPS,Dempet (2),2,2,0.66
+2020/08/09,2020,08,Hakim ,,Viar,TPS,Kalikondang ,2,2,0.66
+2020/08/09,2020,08,Wasono,,Viar,TPS,SMA 2 Demak ,1,1,0.33
+2020/08/09,2020,08,Wondo,,Colt,TPS,Kalikondang,1,1.5,0.495
+2020/08/09,2020,08,Edi,,Viar,TPS,Wonosalam ,1,1,0.33
+2020/08/09,2020,08,Ngatno,,Colt,TPS,katonsari,1,1.5,0.495
+2020/08/09,2020,08,Dedi,,Viar,TPS,Tempuran ,1,1,0.33
+2020/08/09,2020,08,Andre,,Kontainer,TPS,Pucang Gading (2),2,12,3.96
+2020/08/09,2020,08,Galih,,Viar,TPS,Dukun ,2,2,0.66
+2020/08/09,2020,08,Edi,,Truk,TPS,Dukun,1,6,1.98
+2020/08/09,2020,08,Misbah,,Colt,TPS,Sayung,1,1,0.33
+2020/08/09,2020,08,Sumono,,Colt,TPS,Bango,1,1.5,0.495
+2020/08/09,2020,08,Arwan ,,Viar,TPS,Batu,2,2,0.66
+2020/08/09,2020,08,Aris,,Colt,TPS,Trengguli,1,1.5,0.495
+2020/08/09,2020,08,Turmdzi,,Viar,TPS,Pidodo,2,3,0.99
+2020/08/09,2020,08,Faiz,,Colt,TPS,Kedunguter,1,1.5,0.495
+2020/08/09,2020,08,Ali Impron,,Viar,TPS,Wonokerto,1,1,0.33
+2020/08/09,2020,08,Azim,,Colt,TPS,Dukun,1,1.5,0.495
+2020/08/09,2020,08,Surtin,,Colt,TPS,Klitih,2,3,0.99
+2020/08/09,2020,08,Darsono,,Colt,TPS,Karangsono,1,1.5,0.495
+2020/08/10,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Belakang Lp(2)   TPS Timbangan   TPS Terminal ,4,24,7.92
+2020/08/10,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Sayung (2)  Pasar Sriwulan ,3,18,5.94
+2020/08/10,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah I & II,2,12,3.96
+2020/08/10,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Mranak  TPS RSS (2) TPS SMA 2 ,4,24,7.92
+2020/08/10,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS Kadilangu  II (2)  TPS Kadilangu I,4,24,7.92
+2020/08/10,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS kenep  TPS RSUD  Hutan Kota (2)  TPS Karang Mlati,5,30,9.9
+2020/08/10,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4) ,4,24,7.92
+2020/08/10,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Sampangan  TPS Donorejo(2) TPS Masjid Kadilangu,5,30,9.9
+2020/08/10,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Buyaran  Pasar Gajah  Pasar Karangawen ,3,18,5.94
+2020/08/10,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS Kadilangu Pojok,1,7,2.31
+2020/08/10,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS LP   TPS Garuda ,1,7,2.31
+2020/08/10,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong pasar   jl nurcahya  Petengan ,3,3,0.99
+2020/08/10,2020,08,Susanto,H 9786 LE,Viar,JALAN,Sapuan & Tong jalan trenggono ,1,1,0.33
+2020/08/10,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Bangjo jogoloyo - Kadilangu   Dukuh botorejo,1,1,0.33
+2020/08/10,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/10,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan Depan Pasar  Sapuan kejaksaan - Pecinan ,1,1,0.33
+2020/08/10,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Sapuan jl sultan fatah  tong bogorame   wonosalam asri,1,1,0.33
+2020/08/10,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Hutan Kota  taman bogorame ,1,1,0.33
+2020/08/10,2020,08,Muslikhan ,H 9787 LE,Viar,JALAN,Jebor,1,1,0.33
+2020/08/10,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong pemuda   jl pemuda   Warga kauman ,1,1,0.33
+2020/08/10,2020,08,Suparno,H 9895 HE,Viar,JALAN,Tong terminal   sapuan jalan kodim   warga Petengan,1,1,0.33
+2020/08/10,2020,08,Sunarto,H 9760 KE,Viar,JALAN,alun-alun ,1,1,0.33
+2020/08/10,2020,08,Sukamto,H 9565 GE,Colt,JALAN,Depan Pasar Bintoro   Kracaan - SMA 2  Jebor   mijen ,5,7.5,2.475
+2020/08/10,2020,08,Fangkali,H 9584 FE,Colt,JALAN,jl SMK 1  Jl Hutan kota   jl SMP 1,1,1.5,0.495
+2020/08/10,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Tong Sampah Alun-alun ,1,1.5,0.495
+2020/08/10,2020,08,Wosono,,Viar,TPS,SMA N 2 Demak ,1,4,1.32
+2020/08/10,2020,08,Rokim,,Viar,TPS,Dempet ,1,1.5,0.495
+2020/08/10,2020,08,Sulkan ,,Viar,TPS,Duduk,1,1,0.33
+2020/08/10,2020,08,Hakim ,,Viar,TPS,Kalikondang ,2,2,0.66
+2020/08/10,2020,08,Turmudzi,,Viar,TPS,Pidodo,2,2,0.66
+2020/08/10,2020,08,Sumono,,Colt,TPS,Bango,1,4,1.32
+2020/08/10,2020,08,Arwan ,,Viar,TPS,Batu,2,2,0.66
+2020/08/10,2020,08,Joko,,Colt,TPS,Dukun,1,1,0.33
+2020/08/10,2020,08,Wondo,,Viar,TPS,Wonowoso,1,1.5,0.495
+2020/08/10,2020,08,Ali Impron,,Viar,TPS,Wonokerto,1,1,0.33
+2020/08/10,2020,08,Edi,,Viar,TPS,Tempuran ,1,1,0.33
+2020/08/10,2020,08,Abbas,,Viar,TPS,Sampah Swalyan aneka jaya,1,1,0.33
+2020/08/11,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Belakang Lp (2)  TPS Bango    TPS Terminal ,3,18,5.94
+2020/08/11,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Sayung (2) Pasar sriwulan ,2,12,3.96
+2020/08/11,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah I & II,3,18,5.94
+2020/08/11,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Mranak  TPS RSS (2),5,0,0
+2020/08/11,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS Kalikondang I & II TPS Tembiring,4,24,7.92
+2020/08/11,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS kenep  TPS RSUD  Hutan Kota (2)  TPS Karang Mlati,5,30,9.9
+2020/08/11,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)   Pasar Gebang Buyaran,5,30,9.9
+2020/08/11,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Samapangan   TPS Donorejo (2),4,24,7.92
+2020/08/11,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Merangen   pasar Sayung  Pasar Buyaran  pasar Wonosalam,4,24,7.92
+2020/08/11,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,Hutan Kota ,2,14,4.62
+2020/08/11,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,Garuda ,5,35,11.55
+2020/08/11,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong pasar   jl nurcahya  Bogorame  ,3,3,0.99
+2020/08/11,2020,08,Susanto,H 9786 LE,Viar,JALAN,Pasar Sayung (2)   Pasar wedung,1,1,0.33
+2020/08/11,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Pecinan -kejaksaan   Dukuh botorejo,1,1,0.33
+2020/08/11,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/11,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan Depan Pasar ,1,1,0.33
+2020/08/11,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Sapuan jl sultan fatah  tong bogorame   wonosalam asri,1,1,0.33
+2020/08/11,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Jl bayangkara,1,1,0.33
+2020/08/11,2020,08,Yoggi,,Viar,JALAN,Sapuan depan pasar ,1,1,0.33
+2020/08/11,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong pemuda   jl pemuda   Warga kauman ,1,1,0.33
+2020/08/11,2020,08,Suparno,H 9895 HE,Viar,JALAN,Tong terminal   sapuan jalan kodim   warga Petengan,1,1,0.33
+2020/08/11,2020,08,Didik,H 9760 KE,Viar,JALAN,Alun-Alun (3),3,3,0.99
+2020/08/11,2020,08,Sukamto,H 9565 GE,Colt,JALAN,Depan Pasar Bintoro   Kracaan - SMA 2  Jebor   mijen ,5,7.5,2.475
+2020/08/11,2020,08,Fangkali,H 9584 FE,Colt,JALAN,jl SMK 1  Jl Hutan kota   jl SMP 1,1,1.5,0.495
+2020/08/11,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Rambu lalulintas katonsari  rambu lalulintas jebor   Depan smp 5 taman kijang,1,1.5,0.495
+2020/08/11,2020,08,Wosono,,Viar,TPS,SMA N 2 Demak ,1,4,1.32
+2020/08/11,2020,08,Edi,,Viar,TPS,SMA N 3 Demak ,1,1,0.33
+2020/08/11,2020,08,Misbah,B 9353 BCD,Colt,TPS,Sayung,1,1.5,0.495
+2020/08/11,2020,08,Galih,,Viar,TPS,Dukun ,2,2,0.66
+2020/08/11,2020,08,Supratno,,Viar,TPS,Manyar,2,2,0.66
+2020/08/11,2020,08,Rokim,,Viar,TPS,Dempet ,2,3,0.99
+2020/08/11,2020,08,Sulkan ,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/11,2020,08,Hakim ,,Viar,TPS,Kalikondang ,1,1,0.33
+2020/08/11,2020,08,Turmudzi,,Viar,TPS,Pidodo,1,1,0.33
+2020/08/11,2020,08,Sumono,,Colt,TPS,Bango,1,4,1.32
+2020/08/11,2020,08,Arwan ,,Viar,TPS,Perum kuncoro,1,1,0.33
+2020/08/11,2020,08,Joko,,Truk,TPS,Dukun,1,1,0.33
+2020/08/11,2020,08,widodo,,Viar,TPS,Karangsari ,1,1.5,0.495
+2020/08/11,2020,08,Subali,,Viar,TPS,Wonokerto,1,1,0.33
+2020/08/11,2020,08,Sunarto,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/11,2020,08,Mukti,,Viar,TPS,Kalikondang ,1,1,0.33
+2020/08/12,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Belakang Lp   TPS Timbangan   TPS Terminal ,3,18,5.94
+2020/08/12,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar sriwulan (2) pasar Wedung ,3,18,5.94
+2020/08/12,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah II & Pondok raden patah III,2,12,3.96
+2020/08/12,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Mranak  TPS RSS (2) TPS Garuda ,4,24,7.92
+2020/08/12,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS Kalikondang I & II  TPS Tembiring ,4,24,7.92
+2020/08/12,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS Kenep  TPS Karangmelati   Hutan Kota (2),4,24,7.92
+2020/08/12,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4),4,24,7.92
+2020/08/12,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Sampangan    TPS Donorejo (2) TPS Perum Patiunus ,5,30,9.9
+2020/08/12,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Buyaran  Pasar Gajah  Pasar Karangawen ,3,18,5.94
+2020/08/12,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,Donorejo ,1,7,2.31
+2020/08/12,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS hosana,1,7,2.31
+2020/08/12,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong pasar   jl nurcahya  Bogorame  ,3,3,0.99
+2020/08/12,2020,08,Susanto,H 9786 LE,Viar,JALAN,Sapuan & Tong jalan trenggono ,1,1,0.33
+2020/08/12,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Sapuan bangjo jogoloyo-Kadilangu    Dukuh botorejo,1,1,0.33
+2020/08/12,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/12,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Sapuan pecinan kejaksaan  Dapur kabupaten,1,1,0.33
+2020/08/12,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Sapuan jl sultan fatah  tong bogorame   DKK - Pukesmas ,3,3,0.99
+2020/08/12,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Jl bayangkara,1,1,0.33
+2020/08/12,2020,08,Muslikhan ,H 9787 LE,Viar,JALAN,Sapuan Jebor,1,1,0.33
+2020/08/12,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong pemuda   jl pemuda  ,1,1,0.33
+2020/08/12,2020,08,Suparno,H 9895 HE,Viar,JALAN,Tong terminal   sapuan jalan kodim   warga Petengan,1,1,0.33
+2020/08/12,2020,08,Sunarto,H 9760 KE,Viar,JALAN,Alun-alun,1,1,0.33
+2020/08/12,2020,08,Sukamto,H 9565 GE,Colt,JALAN,Depan Pasar Bintoro   Kracaan - SMA 2  Mranak -cabean   betengan ,5,7.5,2.475
+2020/08/12,2020,08,Fangkali,H 9584 FE,Colt,JALAN,jl SMp 5  Jl Pemuda   jl Depan Smp 3,1,1.5,0.495
+2020/08/12,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Rambu lalulintas katonsari  rambu lalulintas jebor   Depan smp 5 taman kijang,1,1.5,0.495
+2020/08/12,2020,08,Wosono,,Viar,TPS,SMA N 2 Demak ,1,4,1.32
+2020/08/12,2020,08,Rokim,,Viar,TPS,Dempet ,2,3,0.99
+2020/08/12,2020,08,Giarto,,Viar,TPS,Kalikondang,1,1,0.33
+2020/08/12,2020,08,Hakim ,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/12,2020,08,Turmudzi,,Viar,TPS,Pidodo,1,1,0.33
+2020/08/12,2020,08,Sumono,,Colt,TPS,Bango,1,4,1.32
+2020/08/12,2020,08,Arwan ,,Viar,TPS,Batu,1,1,0.33
+2020/08/12,2020,08,Joko,,Colt,TPS,Dukun,1,1,0.33
+2020/08/12,2020,08,widodo,,Colt,TPS,Karangsari ,1,1.5,0.495
+2020/08/12,2020,08,Subali,,Viar,TPS,Wonokerto,1,1,0.33
+2020/08/12,2020,08,Zaki,,Colt,TPS,Kedunguter,1,1.5,0.495
+2020/08/12,2020,08,Andi,,Viar,TPS,Duduk,1,1,0.33
+2020/08/12,2020,08,Edi,,Viar,TPS,SMA 3 N Demak ,2,2,0.66
+2020/08/12,2020,08,Yoggi,,Viar,JALAN,Sapuan sepanjang jl sulfa ,1,1,0.33
+2020/08/13,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Nusa Indah   TPS Timbangan   TPS terminal  TPS Lp,4,24,7.92
+2020/08/13,2020,08,Arif,H 9577 AE,Kontainer,PASAR,pasar wedung   pasar sayung ,2,12,3.96
+2020/08/13,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah III ,1,6,1.98
+2020/08/13,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Garuda   TPS RSS (2),3,18,5.94
+2020/08/13,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS Kalikondang I & II TPS Pujasera,4,24,7.92
+2020/08/13,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,Karang Melati   Kenep   hutan Kota (2)  TPS RSUD ,4,24,7.92
+2020/08/13,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)   Pasar wonopolo dempet ,5,30,9.9
+2020/08/13,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Samapangan   TPS Donorejo (2)  TPS depan mesjid kadilangu ,5,30,9.9
+2020/08/13,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Buyaran  Pasar Gajah  Pasar Karangawen ,3,18,5.94
+2020/08/13,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS Donorejo  TPS Hutan kota ,1,7,2.31
+2020/08/13,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS Belakang LP ,1,7,2.31
+2020/08/13,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong pasar   jl nurcahya  Bogorame  ,1,1,0.33
+2020/08/13,2020,08,Susanto,H 9786 LE,Viar,JALAN,Sapuan  Tong jl Trenggono ,1,1,0.33
+2020/08/13,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Pecinan -kejaksaan   Dukuh botorejo,1,1,0.33
+2020/08/13,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/13,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Tong Jl Muka kabupaten   sapuan Pecinan - Warga Petengan ,1,1,0.33
+2020/08/13,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Sapuan jl sultan fatah  tong bogorame   Perum Mustika ,3,3,0.99
+2020/08/13,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Jl bayangkara,1,1,0.33
+2020/08/13,2020,08,Kasmito,H 9787 LE,Viar,JALAN,Sapuan Jln bayangkara,1,1,0.33
+2020/08/13,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong pemuda   jl pemuda    warga kauman ,1,1,0.33
+2020/08/13,2020,08,Suparno,H 9895 HE,Viar,JALAN,Tong terminal   sapuan jalan kodim   petengan ,1,1,0.33
+2020/08/13,2020,08,Didik,H 9760 KE,Viar,JALAN,Alun-Alun (4),4,4,1.32
+2020/08/13,2020,08,Sukamto,H 9565 GE,Colt,JALAN,Depan Pasar Bintoro   Kracaan - SMA 2  Mranak -cabean   betengan,4,6,1.98
+2020/08/13,2020,08,Fangkali,H 9584 FE,Colt,JALAN,jl kyai jebat   jl Kyai palembang ,1,1.5,0.495
+2020/08/13,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Alun -alun   bogorame   kalituntang ,1,1.5,0.495
+2020/08/13,2020,08,Edi ,,Viar,TPS,SMA N 3 Demak ,1,4,1.32
+2020/08/13,2020,08,Rokim,,Viar,TPS,Dempet (3),3,4.5,1.485
+2020/08/13,2020,08,Giarto,,Viar,TPS,Kalikondang ,1,1,0.33
+2020/08/13,2020,08,Hakim ,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/13,2020,08,Turmudzi,,Viar,TPS,Pidodo,1,1,0.33
+2020/08/13,2020,08,Sumono,,Colt,TPS,Bango ,1,4,1.32
+2020/08/13,2020,08,Arwan ,,Viar,TPS,Batu,2,2,0.66
+2020/08/13,2020,08,Beni ,,Dum Truk,JALAN,Depan pasar bintoro  depan pecinan -terminal   depan kodim -polres lama  bayangkara baru-lama,1,1,0.33
+2020/08/13,2020,08,widodo,,Viar,TPS,Karangsari ,1,1.5,0.495
+2020/08/13,2020,08,Edi,,Viar,TPS,Dinas pariwisata ,1,1,0.33
+2020/08/13,2020,08,Sunarto,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/13,2020,08,Aziz ,,Viar,TPS,katonsari,1,1,0.33
+2020/08/14,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Belakang Lp(2)   TPS Timbangan   TPS RSI NU,0,0,0
+2020/08/14,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Sayung (2)   Pasar wedung,3,18,5.94
+2020/08/14,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,TPS hutan kota  TPS Timbangan TPS RSS  TPS Pondok Raden Patah III,4,24,7.92
+2020/08/14,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Garuda   TPS RSS (2)   TPs mranak,0,0,0
+2020/08/14,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS Kalikondang I & TPS Betengan  TPS LP ,4,24,7.92
+2020/08/14,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,Karang Melati   Kenep   hutan Kota (2),0,0,0
+2020/08/14,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)   Pasar wonopolo dempet ,5,30,9.9
+2020/08/14,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Betengan   TPS Sampangan   TPS Donorejo (2)  TPS depan mesjid kadilangu ,0,0,0
+2020/08/14,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Krangawen  Pasar Buyaran Pasar gajah ,3,18,5.94
+2020/08/14,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS Hutan kota ,1,7,2.31
+2020/08/14,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS LP ,1,7,2.31
+2020/08/14,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong & Sapuan jl depan pasar   Tong jl nurcahya   tong petengan ,3,3,0.99
+2020/08/14,2020,08,Susanto,H 9786 LE,Viar,JALAN,Sapuan  & Tong jl Trenggono ,1,1,0.33
+2020/08/14,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Pecinan -kejaksaan   Dukuh botorejo,1,1,0.33
+2020/08/14,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/14,2020,08,Sunardi,H 9789 HE,Viar,JALAN,Tong Jl Muka kabupaten   sapuan Pecinan - Kejaksaan ,1,1,0.33
+2020/08/14,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Sapuan jl sultan fatah  tong bogorame   Perum Mustika ,3,3,0.99
+2020/08/14,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Jl bayangkara Taman bogorame ,1,1,0.33
+2020/08/14,2020,08,Sulikan ,H 9787 LE,Viar,JALAN,Sapuan Jln bayangkara,1,1,0.33
+2020/08/14,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong pemuda   jl pemuda    warga kauman ,1,1,0.33
+2020/08/14,2020,08,Suparno,H 9895 HE,Viar,JALAN,Tong terminal   sapuan jalan kodim ,1,1,0.33
+2020/08/14,2020,08,Sunarto ,H 9760 KE,Viar,JALAN,Alun-Alun ,1,1,0.33
+2020/08/14,2020,08,Sukamto,H 9565 GE,Colt,JALAN,DPU-Sapuan Sepanjang Jln sulfa ,4,6,1.98
+2020/08/14,2020,08,Fangkali,H 9584 FE,Colt,JALAN,Jl kyai singkil -Jl Az Zahra ,1,1.5,0.495
+2020/08/14,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Taman Baca AL Quran ,1,1.5,0.495
+2020/08/14,2020,08,Wosono,,Viar,TPS,SMA N 2 Demak ,1,4,1.32
+2020/08/14,2020,08,Rokim,,Viar,TPS,Dempet ,2,3,0.99
+2020/08/14,2020,08,Giarto,,Viar,TPS,Kalikondang ,2,2,0.66
+2020/08/14,2020,08,Hakim ,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/14,2020,08,Turmudzi,,Viar,TPS,Pidodo,2,2,0.66
+2020/08/14,2020,08,Sumono,,Colt,TPS,Bango,1,4,1.32
+2020/08/14,2020,08,Arwan ,,Viar,TPS,Batu,2,2,0.66
+2020/08/14,2020,08,Bantoso,,Colt,TPS,Jebor,1,1,0.33
+2020/08/14,2020,08,Galih,,Viar,TPS,Dukun,2,2,0.66
+2020/08/14,2020,08,Supratno,,Viar,TPS,Manyar,2,2,0.66
+2020/08/14,2020,08,Andra,,Kontainer,TPS,Pucang Gading (2),2,2,0.66
+2020/08/14,2020,08,Sumarto,,Colt,TPS,Kedunguter,1,1.5,0.495
+2020/08/14,2020,08,Ngatno,,Colt,TPS,Karangsari ,2,3,0.99
+2020/08/14,2020,08,Majib,,Viar,TPS,Jatimulyo,3,3,0.99
+2020/08/14,2020,08,Jarwo,,Viar,TPS,Sumberejo,2,2,0.66
+2020/08/14,2020,08,Ali Impron,,Colt,TPS,Pulosari,2,2,0.66
+2020/08/15,2020,08,Tri Hadi,H 9597 AE,Kontainer,TPS,TPS Belakang Lp(2)   TPS Timbangan   TPS RSI Nu TPS Wijaya kusuma ,5,30,9.9
+2020/08/15,2020,08,Arif,H 9577 AE,Kontainer,PASAR,Pasar Sayung (2)  Pasar wedung ,3,18,5.94
+2020/08/15,2020,08,Kusnadi,H 9544 EE,Kontainer,TPS,Pondok Raden Patah I & II,2,12,3.96
+2020/08/15,2020,08,Kusnin,H 9632 EE,Kontainer,TPS,TPS Garuda   TPS RSS (2)   TPS Mranak,4,24,7.92
+2020/08/15,2020,08,Eko Priyono,H 9530 EE,Kontainer,TPS,TPS Santai   TPS Kalikondang I & II TPS Temuroso,4,24,7.92
+2020/08/15,2020,08,Sunarto,H 9586 AE,Kontainer,TPS,TPS Karang Melati   Kenep   hutan Kota (2),4,24,7.92
+2020/08/15,2020,08,Udin,H 9577 AE,Kontainer,PASAR,Pasar Bintoro (4)   Pasar Wonopolo dempet ,5,30,9.9
+2020/08/15,2020,08,Rumidi,H 9599 AE,Kontainer,TPS,TPS Donorejo (2)  TPS Sampangan  TPS Betengan  TPS Depan Masjid ,5,30,9.9
+2020/08/15,2020,08,Agung ,H 9677 AE,Kontainer,PASAR,Pasar Buyaran  Pasar Gajah  Pasar Karangawen ,3,18,5.94
+2020/08/15,2020,08,Nur Kholis,H 9540 EE,Dum Truk,TPS,TPS Timbangan ,1,7,2.31
+2020/08/15,2020,08,Sapardi,H 9532 E,Dum Truk,TPS,TPS Garuda  TPS Mranak ,1,7,2.31
+2020/08/15,2020,08,Supardi,H 9759 KE,Viar,JALAN,Tong & Sapuan depan pasar   Tong  jl Petengan  Tong Bogorame,3,3,0.99
+2020/08/15,2020,08,Susanto,H 9786 LE,Viar,JALAN,Sapuan  & Tong jl Trenggono ,1,1,0.33
+2020/08/15,2020,08,Kusriyanto,H 9764 KE,Viar,JALAN,Sapuan depan pasar   Tong pom bensin Bogorame  Tong Warga botorejo ,2,2,0.66
+2020/08/15,2020,08,Bejo Susilo,H 9763 KE,Viar,JALAN,Sapuan jl Kyai mukni   Kyai Palembang  Tong sampah Bayangkara ,1,1,0.33
+2020/08/15,2020,08,Sunardi,H 9789 HE,Viar,JALAN,sapuan Pecinan - Kejaksaan tong bogorame,2,2,0.66
+2020/08/15,2020,08,Budiyanto,H 9761 KE,Viar,JALAN,Sapuan jl sultan fatah- terminal  tong bogorame  Pkk,3,3,0.99
+2020/08/15,2020,08,Sabiyono,H 9762 KE ,Viar,JALAN,Jl bayangkara Taman bogorame ,1,1,0.33
+2020/08/15,2020,08,Sulikhan ,H 9787 LE,Viar,JALAN,Jebor,1,1,0.33
+2020/08/15,2020,08,Purwadi,H 9788 LE,Viar,JALAN,Tong pemuda   jl pemuda    warga kauman ,1,1,0.33
+2020/08/15,2020,08,Suparno,H 9895 HE,Viar,JALAN,Sapuan & Tong sepanjang alun-alun   Warga Peteng ,1,1,0.33
+2020/08/15,2020,08,Sunarto ,H 9760 KE,Viar,JALAN,Alun-Alun,1,1,0.33
+2020/08/15,2020,08,Sukamto,H 9565 GE,Colt,JALAN,Depan Pasar Bintoro   Kracaan - SMA 2 Betengan mijen ,4,6,1.98
+2020/08/15,2020,08,Fangkaliana,H 9584 FE,Colt,JALAN,Jl kyai Palembang - Jl Kyai Jebat ,1,1.5,0.495
+2020/08/15,2020,08,Kuswanto,H 9581 FE,Truk,JALAN,Tong alun-alun ,1,1.5,0.495
+2020/08/15,2020,08,Wosono,,Viar,TPS,SMA N 2 Demak ,1,4,1.32
+2020/08/15,2020,08,Rokim,,Viar,TPS,Dempet (3),3,4.5,1.485
+2020/08/15,2020,08,Sulkan ,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/15,2020,08,Sobirin ,,Viar,TPS,Guntur ,1,1,0.33
+2020/08/15,2020,08,Badri,,Colt,TPS,Trengguli,1,1.5,0.495
+2020/08/15,2020,08,Muis,,Viar,TPS,Mranggen (3),1,1,0.33
+2020/08/15,2020,08,A zen ,,Viar,TPS,Karangtowo,3,3,0.99
+2020/08/15,2020,08,Juadi,,Colt,TPS,Kedunguter,1,1,0.33
+2020/08/15,2020,08,Majib,,Truk,TPS,Dukun,1,5,1.65
+2020/08/15,2020,08,Fahmi,,Viar,TPS,Tempuran ,1,1,0.33
+2020/08/15,2020,08,Edi,,Viar,TPS,Wonosalam ,1,1,0.33
+2020/08/15,2020,08,Jarwo,,Viar,TPS,Duduk,1,1,0.33
+2020/08/15,2020,08,Hakim ,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/15,2020,08,Turmudzi,,Viar,TPS,Pidodo,2,2,0.66
+2020/08/15,2020,08,Sumono,,Colt,TPS,Bango,1,4,1.32
+2020/08/15,2020,08,Arwan ,,Viar,TPS,Batu,2,2,0.66
+2020/08/15,2020,08,Ali Impron,,Colt,TPS,wonokerto,1,1,0.33
+2020/08/15,2020,08,widodo,,Viar,TPS,Karangsari ,1,1.5,0.495
+2020/08/15,2020,08,Edi,,Viar,TPS,Dinas pariwisata ,1,1,0.33
+2020/08/15,2020,08,Sunarto,,Viar,TPS,Kalikondang (2),2,2,0.66
+2020/08/15,2020,08,Yoggi,,Viar,JALAN,Sapuan depan pasar   Tong dinperta,2,2,0.66

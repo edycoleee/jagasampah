@@ -1,4 +1,4 @@
-import React, {  useContext } from "react";
+import React, { useContext } from "react";
 import AddSampah from "./AddSampah";
 import { AuthContext } from "../../context/AuthContext";
 import MenuAppbar from "../../components/MenuAppbar";
@@ -6,6 +6,7 @@ import ScrollButton from "../../components/ScrollButton";
 import { Box, Container, Typography } from "@material-ui/core";
 import SampahProvider from "./ContextSampah";
 import ListSampah from "./ListSampah";
+import FetchData from "./FetchData";
 
 function IndexSampahHari() {
   const { users } = useContext(AuthContext);
@@ -22,6 +23,7 @@ function IndexSampahHari() {
           {users.c_username}
         </Typography>
         <AddSampah />
+        <FetchData />
       </Container>
       <Box mt={2} />
       <Container maxWidth="md">

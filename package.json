@@ -16,7 +16,8 @@
     "react-dom": "^16.14.0",
     "react-leaflet": "^2.7.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "xlsx": "^0.16.8"
   },
   "scripts": {
     "start": "react-scripts start",
