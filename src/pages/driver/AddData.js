@@ -14,14 +14,17 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import AlertSnackbar from "../../components/AlertSnackbar";
 import { DataContext } from "./ContextData";
+import { CL_JNSKENDARAAN } from "../../util/dbschema";
+import { Autocomplete } from "@material-ui/lab";
 
 function AddData() {
   const { users } = useContext(AuthContext);
-  const { SaveData,AddDummyData } = useContext(DataContext);
+  const { SaveData, AddDummyData } = useContext(DataContext);
 
   //State Sampah----------------------------
   const [c_driver, setDriver] = useState("");
   const [c_nopol, setNopol] = useState("");
+  const [c_fkali, setFKali] = useState(1);
   const [c_kendaraan, setKendaraan] = useState("");
   const [c_jenis, setJenis] = useState("");
   //State SnackBar----------------------------
@@ -33,26 +36,51 @@ function AddData() {
     setOpenPortal(true);
   };
 
+  const onChangeValue = (event, value) => {
+    //Desctructuring Searching
+    const result = CL_JNSKENDARAAN.find(({ kendaraan }) => kendaraan === value);
+    if (result) {
+      setFKali(result.fkali);
+      setKendaraan(result.kendaraan);
+    } else {
+      setFKali(1);
+    }
+  };
+
   const handleClose = () => {
     setOpenPortal(false);
   };
   //Simpan Data------------------------------
-  const onSimpan = () => {
-    if (c_driver === "" || c_nopol === "") {
+  const onSimpan = async () => {
+    const onValid = (code, message) => {
       setErrMessage({
-        code: "ERROR",
-        message: "Isilah Form yang lengkap",
+        code,
+        message,
       });
       setOpenErr(true);
-    } else {
-      const newData = {
-        c_driver,
-        c_nopol,
-        c_kendaraan,
-        c_jenis,
-        c_user: users.c_username,
-      };
-      SaveData(newData);
+    };
+    if (c_driver === "") {
+      return onValid("ERROR", "ISILAH NAMA DRIVER");
+    }
+    if (c_nopol === "") {
+      return onValid("ERROR", "ISILAH NOMOR KENDARAAN");
+    }
+    if (c_kendaraan === "") {
+      return onValid("ERROR", "ISILAH JENIS KENDARAAN");
+    }
+    if (c_fkali === 0) {
+      return onValid("ERROR", "ISILAH FAKTOR KALI / 1");
+    }
+    const newData = {
+      c_driver,
+      c_nopol,
+      c_kendaraan,
+      c_jenis,
+      c_fkali,
+      c_user: users.c_username,
+    };
+
+    return await SaveData(newData).then(() => {
       setErrMessage({
         code: "SUCCESS",
         message: "Data Sudah Tersimpan",
@@ -60,7 +88,7 @@ function AddData() {
       setOpenErr(true);
       handleClose();
       ClearState();
-    }
+    });
   };
 
   //Close SnackBar----------------------------
@@ -80,6 +108,7 @@ function AddData() {
     setNopol("");
     setKendaraan("");
     setJenis("");
+    setFKali(1);
   };
 
   return (
@@ -93,7 +122,7 @@ function AddData() {
                 onClick={onOpenDialog}
                 variant="contained"
                 color="primary"
-                disabled={(users.c_tipeuser === "admin") ? false : true}
+                disabled={users.c_tipeuser === "admin" ? false : true}
               >
                 TAMBAH DATA
               </Button>
@@ -103,7 +132,7 @@ function AddData() {
                 onClick={() => AddDummyData()}
                 variant="contained"
                 color="primary"
-                disabled={true}
+                //disabled={true}
               >
                 DUMMY DATA
               </Button>
@@ -129,19 +158,48 @@ function AddData() {
                 value={c_nopol || ""}
               />
             </Grid>
+            {/* <Grid item xs={12} sm={6}>
+              <label>Lokasi TPA : {"  "}</label>
+              <select
+                id="c_kendaraan"
+                onChange={(e) => setKendaraan(e.currentTarget.value)}
+                value={c_kendaraan || ""}
+              >
+                {pilihJNS}
+              </select>
+            </Grid> */}
+
+            <Grid item xs={12} sm={6}>
+              <Autocomplete
+                id="cobafree"
+                freeSolo
+                options={CL_JNSKENDARAAN.map((option) => option.kendaraan)}
+                onChange={onChangeValue}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label="JENIS KENDARAAN"
+                    margin="normal"
+                    variant="outlined"
+                    onChange={(e) => setKendaraan(e.target.value)}
+                  />
+                )}
+              />
+            </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
                 required
-                id="c_kendaraan"
-                name="c_kendaraan"
-                label="Nama Kendaraan"
+                id="c_fkali"
+                name="c_fkali"
+                type="number"
+                label="Faktor Kali"
                 fullWidth
-                autoComplete="c_kendaraan"
-                onChange={(e) => setKendaraan(e.target.value)}
-                value={c_kendaraan || ""}
+                autoComplete="c_fkali"
+                onChange={(e) => setFKali(e.target.value)}
+                value={c_fkali || ""}
               />
             </Grid>
-          <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6}>
               <TextField
                 required
                 id="c_driver"

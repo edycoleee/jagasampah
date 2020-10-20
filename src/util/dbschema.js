@@ -1,10 +1,9 @@
 export const CL_TPA = ["KALIKONDANG", "CANDISARI", "BERAHAN", "LAINNYA"];
 export const CL_TPST = ["TPSTSATU", "TPSTDUA", "TPSTTIGA", "TPSTEMPAT"];
-
 export const CL_USER = [
   {
     c_username: "",
-    c_tipeuser: ["user","admin"],
+    c_tipeuser: ["user", "admin"],
     c_bidang: "",
     c_bagian: "",
     c_nohp: "",
@@ -61,13 +60,41 @@ export const CL_ASALSAMPAH = [
   "JALAN",
   "LAINNYA",
 ];
-export const CL_JNSKENDARAAN = [
+
+export const CL_JNSKENDARAAN1 = [
   "CONTAINER",
-  "DUMPTRUCK",
+  "DUMP TRUCK",
   "RODA3",
   "PICKUP",
-  "TRUK",
+  "TRUK KAYU",
   "LAINNYA",
+];
+
+export const CL_JNSKENDARAAN = [
+  {
+    kendaraan: "CONTAINER",
+    fkali: 6,
+  },
+  {
+    kendaraan: "DUMP TRUCK",
+    fkali: 7,
+  },
+  {
+    kendaraan: "RODA3",
+    fkali: 1,
+  },
+  {
+    kendaraan: "PICKUP",
+    fkali: 1.5,
+  },
+  {
+    kendaraan: "TRUK KAYU",
+    fkali: 8,
+  },
+  {
+    kendaraan: "LAINNYA",
+    fkali: 6,
+  },
 ];
 //export const CL_DRIVER = ["TRIHADI", "ARIF", "KUSNADI", "KUSNIN", "LAINNYA"];
 
@@ -77,8 +104,9 @@ export const CL_DRIVER = [
     c_nopol: "",
     c_kendaraan: "",
     c_jenis: "",
-  }
-]
+    c_fkali: 0,
+  },
+];
 
 export const CL_SAMPAHHARIAN = [
   {
@@ -135,8 +163,7 @@ export const CL_SAMPAH3R1 = [
   },
 ];
 
-export const PROSESLAPOR =
-["lapor", "uploud", "jadwal","jemput"]
+export const PROSESLAPOR = ["lapor", "uploud", "jadwal", "jemput"];
 export const CL_LAPOR = [
   {
     c_tanggal: "",
@@ -145,7 +172,7 @@ export const CL_LAPOR = [
     c_createdAt: "",
     c_user: "",
     c_lokasi: "",
-    c_noHP:"",
+    c_noHP: "",
     c_lat: "",
     c_lon: "",
     c_ket: "",
@@ -157,11 +184,9 @@ export const CL_LAPOR = [
     c_fileImg3: "",
     proses: "",
     c_tgljadwal: "",
-    c_ketjadwal:"",
+    c_ketjadwal: "",
     c_tgljemput: "",
-    c_ketjemput:"",
-    c_userclose:"",
+    c_ketjemput: "",
+    c_userclose: "",
   },
 ];
-
-

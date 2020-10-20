@@ -1,7 +1,7 @@
 import React, { createContext, useCallback, useState } from "react";
 import app, { Firebase } from "../../util/firebase";
 import moment from "moment";
-import {DATADRIVER} from "../../util/dbdukung"
+import { DATADRIVER } from "../../util/dbdukung";
 
 const db = app.firestore();
 
@@ -53,7 +53,7 @@ function DataProvider({ children }) {
 
   const SaveEditData = async (newData) => {
     console.log(newData);
-    const { id, c_driver, c_nopol, c_kendaraan, c_jenis } = newData;
+    const { id, c_driver, c_nopol, c_kendaraan, c_jenis, c_fkali } = newData;
 
     await db
       .collection("CL_DRIVER")
@@ -63,16 +63,18 @@ function DataProvider({ children }) {
         c_nopol,
         c_kendaraan,
         c_jenis,
+        c_fkali,
       })
       .then(() => GetAllData());
   };
 
   const AddDummyData = () => {
     console.log("Uploud Dummy Data");
-    const dummyData = DATADRIVER
-    const uploudDummy = async(item) => {
+    const dummyData = DATADRIVER;
+    const uploudDummy = async (item) => {
       console.log(item);
-      await db.collection("CL_DRIVER")
+      await db
+        .collection("CL_DRIVER")
         .add({
           c_user: "ADMIN",
           ...item,
@@ -80,7 +82,7 @@ function DataProvider({ children }) {
         .then(() => {
           console.log("Document Add Array");
         });
-    }
+    };
     dummyData.map((item, index) => uploudDummy(item));
   };
 

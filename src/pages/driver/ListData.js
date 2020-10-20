@@ -33,11 +33,10 @@ function ListData() {
     editItem(data);
   };
 
-  
   useEffect(() => {
     GetAllData();
   }, [GetAllData]);
-  
+
   useEffect(() => {
     let filterdata = dataAwal.filter((data) =>
       data.c_nopol.toLowerCase().includes(c_cari.toLowerCase())
@@ -60,12 +59,12 @@ function ListData() {
     DeleteData(id);
   };
 
-    // Get current page
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentData = dataFilter.slice(indexOfFirstPost, indexOfLastPost);
-    // Change page
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  // Get current page
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentData = dataFilter.slice(indexOfFirstPost, indexOfLastPost);
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div>
@@ -92,6 +91,7 @@ function ListData() {
                   <TableCell>Driver</TableCell>
                   <TableCell>Kendaraan</TableCell>
                   <TableCell>Asal</TableCell>
+                  <TableCell>FKali</TableCell>
                   <TableCell>ACTION</TableCell>
                 </TableRow>
               </TableHead>
@@ -104,6 +104,7 @@ function ListData() {
                     <TableCell>{row.c_nopol}</TableCell>
                     <TableCell>{row.c_kendaraan}</TableCell>
                     <TableCell>{row.c_jenis}</TableCell>
+                    <TableCell>{row.c_fkali}</TableCell>
                     <TableCell>
                       <Button
                         onClick={() => onDelete(row.id)}

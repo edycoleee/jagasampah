@@ -135,13 +135,33 @@ const EditSampah = React.memo(({ open, handleClose, currentItem }) => {
           <Grid item xs={12} sm={6}>
             <TextField
               required
+              id="c_fkali"
+              name="c_fkali"
+              label="Faktor Kali"
+              type="number"
+              fullWidth
+              autoComplete="c_fkali"
+              onChange={handleOnChange}
+              value={item.c_fkali || ""}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
               id="n_jmlrit"
               name="n_jmlrit"
               label="Volume (Rit)"
               type="number"
               fullWidth
               autoComplete="n_jmlrit"
-              onChange={handleOnChange}
+              onChange={(e) => {
+                setItem({
+                  ...item,
+                  n_jmlrit: e.target.value,
+                  n_volm3: e.target.value * item.c_fkali,
+                  n_volton: e.target.value * item.c_fkali * 0.33,
+                });
+              }}
               value={item.n_jmlrit || ""}
             />
           </Grid>

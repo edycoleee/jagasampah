@@ -34,7 +34,15 @@ export const mainListItems = (
         <ListItemIcon>
           <AssessmentTwoToneIcon />
         </ListItemIcon>
-        <ListItemText primary="Sampah Harian" />
+        <ListItemText primary="Residu TPA" />
+      </ListItem>
+    </Link>
+    <Link to="/harian">
+      <ListItem button>
+        <ListItemIcon>
+          <AssessmentTwoToneIcon />
+        </ListItemIcon>
+        <ListItemText primary="Pengelolaan TPA" />
       </ListItem>
     </Link>
     <Link to="/sampah3r">
@@ -61,14 +69,14 @@ export const mainListItems = (
         <ListItemText primary="Data Driver" />
       </ListItem>
     </Link>
-      <Link to="/datauser">
-        <ListItem button>
-          <ListItemIcon>
-            <LayersIcon />
-          </ListItemIcon>
-          <ListItemText primary="Data User" />
-        </ListItem>
-      </Link>
+    <Link to="/datauser">
+      <ListItem button>
+        <ListItemIcon>
+          <LayersIcon />
+        </ListItemIcon>
+        <ListItemText primary="Data User" />
+      </ListItem>
+    </Link>
     <Link to="/lapor">
       <ListItem button>
         <ListItemIcon>
@@ -84,52 +92,52 @@ export const secondaryListItems = (
   <div>
     <ListSubheader inset>Laporan Sampah</ListSubheader>
     <Link to="/tpahari">
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="TPA HARIAN" />
-    </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentIcon />
+        </ListItemIcon>
+        <ListItemText primary="TPA HARIAN" />
+      </ListItem>
     </Link>
     <Link to="/tpabulan">
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="TPA BULANAN" />
-    </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentIcon />
+        </ListItemIcon>
+        <ListItemText primary="TPA BULANAN" />
+      </ListItem>
     </Link>
     <Link to="/tpatahun">
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="TPA TAHUNAN" />
-    </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentIcon />
+        </ListItemIcon>
+        <ListItemText primary="TPA TAHUNAN" />
+      </ListItem>
     </Link>
     <Link to="/tpahari">
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentTurnedInTwoToneIcon />
-      </ListItemIcon>
-      <ListItemText primary="3R HARIAN" />
-    </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentTurnedInTwoToneIcon />
+        </ListItemIcon>
+        <ListItemText primary="3R HARIAN" />
+      </ListItem>
     </Link>
     <Link to="/tpabulan">
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentTurnedInTwoToneIcon />
-      </ListItemIcon>
-      <ListItemText primary="3R  BULANAN" />
-    </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentTurnedInTwoToneIcon />
+        </ListItemIcon>
+        <ListItemText primary="3R  BULANAN" />
+      </ListItem>
     </Link>
     <Link to="/tpatahun">
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentTurnedInTwoToneIcon />
-      </ListItemIcon>
-      <ListItemText primary="3R  TAHUNAN" />
-    </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentTurnedInTwoToneIcon />
+        </ListItemIcon>
+        <ListItemText primary="3R  TAHUNAN" />
+      </ListItem>
     </Link>
   </div>
 );

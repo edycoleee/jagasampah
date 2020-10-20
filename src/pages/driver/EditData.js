@@ -19,7 +19,6 @@ const EditData = React.memo(({ open, handleClose, currentItem }) => {
     setItem(currentItem);
   }, [currentItem]);
 
-
   const onSimpanEdit = () => {
     //console.log(item);
     SaveEditData(item);
@@ -83,6 +82,19 @@ const EditData = React.memo(({ open, handleClose, currentItem }) => {
               autoComplete="c_jenis"
               onChange={handleOnChange}
               value={item.c_jenis || ""}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              id="c_fkali"
+              name="c_fkali"
+              label="Faktor Kali"
+              type="number"
+              fullWidth
+              autoComplete="c_fkali"
+              onChange={handleOnChange}
+              value={item.c_fkali || ""}
             />
           </Grid>
         </Grid>

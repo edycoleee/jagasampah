@@ -34,10 +34,12 @@ function AddSampah() {
   const [c_nopol, setNopol] = useState("");
   const [c_kendaraan, setKendaraan] = useState("");
   const [c_jenis, setJenis] = useState("");
+  const [c_fkali, setFKali] = useState(1);
   const [c_asal, setAsal] = useState("");
   const [n_jmlrit, setJmlRit] = useState(0);
   const [n_volm3, setVolM3] = useState(0);
   const [n_volton, setVolTon] = useState(0);
+  const [b_save, setBSave] = useState(false);
   //State SnackBar----------------------------
   const [errMessage, setErrMessage] = useState("");
   const [openErr, setOpenErr] = useState(false);
@@ -51,53 +53,62 @@ function AddSampah() {
     setOpenPortal(false);
   };
   //Simpan Data------------------------------
-  const onSimpan = () => {
-    if (
-      c_driver === "" ||
-      c_nopol === "" ||
-      c_asal === "" ||
-      c_kendaraan === "" ||
-      n_jmlrit === 0 ||
-      n_volm3 === 0 ||
-      n_volton === 0
-    ) {
-      console.log("Isilah Form yang lengkap");
+  const onSimpan = async () => {
+    const onValid = (code, message) => {
       setErrMessage({
-        code: "ERROR",
-        message: "Isilah Form yang lengkap",
+        code,
+        message,
       });
       setOpenErr(true);
-    } else {
-      //console.log(c_driver, c_nopol, c_asal, n_jmlrit);
-      let tgl = new Date(c_tanggal);
-      let tahun = String(tgl.getFullYear());
-      let bulan = String(tgl.getMonth() + 1);
+    };
 
-      const newData = {
-        c_tpa,
-        c_tanggal,
-        c_driver,
-        c_nopol,
-        c_asal,
-        c_jenis,
-        c_kendaraan,
-        n_jmlrit,
-        n_volm3,
-        n_volton,
-        c_bulan: bulan,
-        c_tahun: tahun,
-        c_user: users.c_username,
-      };
-      SaveData(newData);
+    if (c_nopol === "") {
+      return onValid("ERROR", "No Kendaraan Kosong");
+    }
+    if (c_driver === "") {
+      return onValid("ERROR", "Nama Driver Kosong");
+    }
+    if (c_asal === "") {
+      return onValid("ERROR", "Asal Sampah Kosong");
+    }
+    if (c_kendaraan === "") {
+      return onValid("ERROR", "Jenis Kendaraan Tidak Ada");
+    }
+    if (n_jmlrit === 0) {
+      return onValid("ERROR", "Masukkan Jumlah RIT");
+    }
 
+    let tgl = new Date(c_tanggal);
+    let tahun = String(tgl.getFullYear());
+    let bulan = String(tgl.getMonth() + 1);
+
+    const newData = {
+      c_tpa,
+      c_tanggal,
+      c_driver,
+      c_nopol,
+      c_asal,
+      c_jenis,
+      c_kendaraan,
+      c_fkali,
+      n_jmlrit,
+      n_volm3,
+      n_volton,
+      c_bulan: bulan,
+      c_tahun: tahun,
+      c_user: users.c_username,
+    };
+    setBSave(true);
+    return await SaveData(newData).then(() => {
       setErrMessage({
         code: "SUCCESS",
         message: "Data Sudah Tersimpan",
       });
       setOpenErr(true);
-      handleClose();
+      setBSave(false);
       ClearState();
-    }
+      handleClose();
+    });
   };
 
   //Default TPA--------------------------------
@@ -141,6 +152,7 @@ function AddSampah() {
     setJmlRit(0);
     setVolM3(0);
     setVolTon(0);
+    setFKali(0);
   };
 
   const onCariData = () => {
@@ -156,6 +168,7 @@ function AddSampah() {
       setNopol(result.c_nopol);
       setJenis(result.c_jenis);
       setKendaraan(result.c_kendaraan);
+      setFKali(result.c_fkali);
     } else {
       setDriver("");
       setNopol("");
@@ -227,22 +240,11 @@ function AddSampah() {
                     label="NOPOL"
                     margin="normal"
                     variant="outlined"
+                    onChange={(e) => setNopol(e.target.value)}
                   />
                 )}
               />
             </Grid>
-            {/* <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                id="c_nopol"
-                name="c_nopol"
-                label="Nomer Kendaraan"
-                fullWidth
-                autoComplete="c_nopol"
-                onChange={(e) => setNopol(e.target.value)}
-                value={c_nopol || ""}
-              />
-            </Grid> */}
             <Grid item xs={12} sm={6}>
               <TextField
                 required
@@ -300,8 +302,25 @@ function AddSampah() {
                 type="number"
                 fullWidth
                 autoComplete="n_jmlrit"
-                onChange={(e) => setJmlRit(e.target.value)}
+                onChange={(e) => {
+                  setJmlRit(e.target.value);
+                  setVolM3(e.target.value * c_fkali);
+                  setVolTon(e.target.value * c_fkali * 0.33);
+                }}
                 value={n_jmlrit || ""}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                id="c_fkali"
+                name="c_fkali"
+                label="Faktor Kali"
+                type="number"
+                fullWidth
+                autoComplete="c_fkali"
+                onChange={(e) => setFKali(e.target.value)}
+                value={c_fkali || ""}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -333,10 +352,20 @@ function AddSampah() {
           </Grid>
         </DialogContent>
         <DialogActions>
-          <Button onClick={onBatal} variant="contained" color="primary">
+          <Button
+            onClick={onBatal}
+            disabled={b_save}
+            variant="contained"
+            color="primary"
+          >
             BATAL
           </Button>
-          <Button onClick={onSimpan} variant="contained" color="primary">
+          <Button
+            onClick={onSimpan}
+            disabled={b_save}
+            variant="contained"
+            color="primary"
+          >
             SIMPAN DATA
           </Button>
         </DialogActions>
