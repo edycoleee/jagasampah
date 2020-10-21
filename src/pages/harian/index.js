@@ -17,7 +17,7 @@ function IndexSampahHari() {
       <Container maxWidth="sm">
         <Box mt={2} />
         <Typography component="h1" variant="h4" align="center">
-          Laporan Sampah Harian
+        Residu TPA Harian
         </Typography>
         <Typography variant="h6" align="center">
           {users.c_username}
