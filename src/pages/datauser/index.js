@@ -5,6 +5,7 @@ import ScrollButton from "../../components/ScrollButton";
 import { Box, Container, Typography } from "@material-ui/core";
 import DataProvider from "./ContextData";
 import ListData from "./ListData";
+import UploudData from "./UploudData";
 
 function IndexUserAdmin() {
   const { users } = useContext(AuthContext);
@@ -19,6 +20,10 @@ function IndexUserAdmin() {
         <Typography variant="h6" align="center">
           {users.c_username}
         </Typography>
+      </Container>
+      <Box mt={2} />
+      <Container maxWidth="sm">
+        <UploudData />
       </Container>
       <Box mt={2} />
       <Container maxWidth="md">

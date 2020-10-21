@@ -5,12 +5,30 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Link,
+  Box,
 } from "@material-ui/core";
 import React, { useContext, useState } from "react";
+import AlertSnackbar from "../../components/AlertSnackbar";
 import * as XLSX from "xlsx";
 import { SampahContext } from "./ContextSampah";
 
 function FetchData() {
+  //State SnackBar----------------------------
+  const [errMessage, setErrMessage] = useState("");
+  const [openErr, setOpenErr] = useState(false);
+  //Close SnackBar----------------------------
+  const handleCloseErr = () => {
+    setOpenErr(false);
+  };
+  const onValid = (code, message) => {
+    setErrMessage({
+      code,
+      message,
+    });
+    setOpenErr(true);
+  };
+
   const [columns, setColumns] = useState([]);
   const [data, setData] = useState([]);
   const { UploudDummy } = useContext(SampahContext);
@@ -51,12 +69,12 @@ function FetchData() {
       selector: c,
     }));
     setColumns(columns);
-    console.log("Data awal: ", list);
+    //console.log("Data awal: ", list);
     const newData = list.map((data) => ({
       c_tanggal: `${data.c_tahun}-${data.c_bulan}-${data.tanggal}`,
       ...data,
     }));
-    console.log("Data 1: ", newData);
+    //console.log("Data 1: ", newData);
     setData(newData);
   };
 
@@ -81,12 +99,26 @@ function FetchData() {
 
   const onFetchData = () => {
     console.log("Simpan Data1", data);
-    UploudDummy(data);
+    if (data.length === 0) {
+      return onValid("ERROR", "DATA KOSONG");
+    }
+    return UploudDummy(data);
+    //return onValid("SUCESS", "SIMPAN DATA");
   };
 
   return (
     <div>
-      <h3>Read CSV file</h3>
+      <Box mt={3} />
+      <h3>Uploud CSV file ke database</h3>
+      <Link
+        href={
+          "https://firebasestorage.googleapis.com/v0/b/jagasampah.appspot.com/o/Sampah8.csv?alt=media&token=d870b179-cf70-47ac-95c6-ed7ff7a3fb5b"
+        }
+        onClick={(e) => e.preventDefault}
+      >
+        Contoh File CSV
+      </Link>
+      <p></p>
       <input type="file" accept=".csv,.xlsx,.xls" onChange={handleFileUpload} />
       <p></p>
       <button onClick={onFetchData}> Uploud Data Excel</button>
@@ -128,6 +160,11 @@ function FetchData() {
           </TableBody>
         </Table>
       </TableContainer>
+      <AlertSnackbar
+        open={openErr}
+        handleClose={handleCloseErr}
+        errMessage={errMessage}
+      />
     </div>
   );
 }

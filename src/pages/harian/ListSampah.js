@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Grid,
   Paper,
   Table,
   TableBody,
@@ -8,10 +9,12 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TextField,
 } from "@material-ui/core";
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import { SampahContext } from "./ContextSampah";
 import EditSampah from "./EditSampah";
+import Pagination from "../../components/Pagination";
 
 function ListSampah() {
   const { dataSampah, GetData, DeleteData } = useContext(SampahContext);
@@ -23,6 +26,21 @@ function ListSampah() {
     setOpenDlg(true);
     editItem(data);
   };
+
+  //pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+  const [dataFilter, setDataFilter] = useState([]);
+  const [c_cari, setCari] = useState("");
+
+  useEffect(() => {
+    let filterdata = dataSampah.filter((data) =>
+      data.c_nopol.toLowerCase().includes(c_cari.toLowerCase())
+    );
+    //console.log("Filter :", filterdata);
+    setDataFilter(filterdata);
+    setCurrentPage(1);
+  }, [c_cari, dataSampah]);
 
   useEffect(() => {
     GetData();
@@ -69,12 +87,32 @@ function ListSampah() {
     DeleteData(id, tgl);
   };
 
+  // Get current page
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentData = dataFilter.slice(indexOfFirstPost, indexOfLastPost);
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div>
       <Paper elevation={2}>
         <Box pt={2} pb={2} ml={2} mr={2}>
-          <h4>List Sampah</h4>
+          <h4>List Sampah : {dataSampah.length} data</h4>
           Tot Rit : {RitRit}, Tot M3 : {M3M3}, Tot Ton : {TotTon}
+          <p></p>
+          <Grid item xs={12} sm={4}>
+            <TextField
+              required
+              id="c_cari"
+              name="c_cari"
+              label="CARI NOPOL"
+              fullWidth
+              autoComplete="c_cari"
+              onChange={(e) => setCari(e.target.value)}
+              value={c_cari || ""}
+            />
+          </Grid>
           <TableContainer component={Paper}>
             <Table aria-label="a dense table">
               <TableHead>
@@ -93,7 +131,7 @@ function ListSampah() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {dataSampah.map((row) => (
+                {currentData.map((row) => (
                   <TableRow key={row.Id}>
                     <TableCell component="th" scope="row">
                       {row.c_tanggal}
@@ -130,6 +168,11 @@ function ListSampah() {
             </Table>
           </TableContainer>
         </Box>
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={dataFilter.length}
+          paginate={paginate}
+        />
       </Paper>
       <EditSampah
         open={openDlg}
