@@ -5,7 +5,7 @@ import ScrollButton from "../../components/ScrollButton";
 import { Box, Container, Typography } from "@material-ui/core";
 import DataProvider from "./ContextData";
 import ListData from "./ListData";
-import UploudData from "./UploudData";
+//import UploudData from "./UploudData";
 
 function IndexUserAdmin() {
   const { users } = useContext(AuthContext);
@@ -21,10 +21,10 @@ function IndexUserAdmin() {
           {users.c_username}
         </Typography>
       </Container>
-      <Box mt={2} />
+      {/* <Box mt={2} />
       <Container maxWidth="sm">
         <UploudData />
-      </Container>
+      </Container> */}
       <Box mt={2} />
       <Container maxWidth="md">
         {users.c_tipeuser === "admin" ? <ListData /> : "Khusus Admin"}

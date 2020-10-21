@@ -1,6 +1,8 @@
 import React, { createContext, useCallback, useState } from "react";
 import app, { Firebase } from "../../util/firebase";
 import moment from "moment";
+
+
 const db = app.firestore();
 
 export const DataContext = createContext();
@@ -40,16 +42,15 @@ function DataProvider({ children }) {
       .then(() => GetAllData());
   };
 
-
   const SaveEditData = async (newData) => {
     console.log(newData);
-    const { id, c_tipeuser} = newData;
+    const { id, c_tipeuser } = newData;
 
     await db
       .collection("CL_USER")
       .doc(id)
       .update({
-        c_tipeuser
+        c_tipeuser,
       })
       .then(() => GetAllData());
   };
