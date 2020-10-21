@@ -23,7 +23,7 @@ function IndexSampahHari() {
           {users.c_username}
         </Typography>
         <AddSampah />
-        <FetchData />
+        {users.c_tipeuser === "admin" ? <FetchData /> : "Khusus Admin"}
       </Container>
       <Box mt={2} />
       <Container maxWidth="md">

@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@material-ui/core";
+import React, { useContext, useState } from "react";
 import * as XLSX from "xlsx";
+import { SampahContext } from "./ContextSampah";
 
 function FetchData() {
   const [columns, setColumns] = useState([]);
   const [data, setData] = useState([]);
-
+  const { UploudDummy } = useContext(SampahContext);
   // process CSV data
   const processData = (dataString) => {
     const dataStringLines = dataString.split(/\r\n|\n/);
@@ -17,13 +26,13 @@ function FetchData() {
       const row = dataStringLines[i].split(
         /,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/
       );
-      if (headers && row.length == headers.length) {
+      if (headers && row.length === headers.length) {
         const obj = {};
         for (let j = 0; j < headers.length; j++) {
           let d = row[j];
           if (d.length > 0) {
-            if (d[0] == '"') d = d.substring(1, d.length - 1);
-            if (d[d.length - 1] == '"') d = d.substring(d.length - 2, 1);
+            if (d[0] === '"') d = d.substring(1, d.length - 1);
+            if (d[d.length - 1] === '"') d = d.substring(d.length - 2, 1);
           }
           if (headers[j]) {
             obj[headers[j]] = d;
@@ -36,15 +45,19 @@ function FetchData() {
         }
       }
     }
-
     // prepare columns list from headers
     const columns = headers.map((c) => ({
       name: c,
       selector: c,
     }));
-    setData(list);
     setColumns(columns);
-    console.log(list);
+    console.log("Data awal: ", list);
+    const newData = list.map((data) => ({
+      c_tanggal: `${data.c_tahun}-${data.c_bulan}-${data.tanggal}`,
+      ...data,
+    }));
+    console.log("Data 1: ", newData);
+    setData(newData);
   };
 
   // handle file upload
@@ -61,8 +74,14 @@ function FetchData() {
       /* Convert array of arrays */
       const data = XLSX.utils.sheet_to_csv(ws, { header: 1 });
       processData(data);
+      //console.log(data);
     };
     reader.readAsBinaryString(file);
+  };
+
+  const onFetchData = () => {
+    console.log("Simpan Data1", data);
+    UploudDummy(data);
   };
 
   return (
@@ -70,9 +89,45 @@ function FetchData() {
       <h3>Read CSV file</h3>
       <input type="file" accept=".csv,.xlsx,.xls" onChange={handleFileUpload} />
       <p></p>
-      <button> Uploud Data Excel</button>
+      <button onClick={onFetchData}> Uploud Data Excel</button>
       <p></p>
-      {JSON.stringify(data)}
+      {/* {JSON.stringify(data)} */}
+      <TableContainer>
+        <Table aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Tanggal</TableCell>
+              <TableCell align="right">Driver</TableCell>
+              <TableCell align="right">Nopol</TableCell>
+              <TableCell align="right">Kendrn</TableCell>
+              <TableCell align="right">Jenis</TableCell>
+              <TableCell align="right">Asal</TableCell>
+              <TableCell align="right">Rit</TableCell>
+              <TableCell align="right">M3</TableCell>
+              <TableCell align="right">TON</TableCell>
+              <TableCell align="right">TPA</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {data.map((row, index) => (
+              <TableRow key={index}>
+                <TableCell component="th" scope="row">
+                  {row.c_tanggal}
+                </TableCell>
+                <TableCell align="right">{row.c_driver}</TableCell>
+                <TableCell align="right">{row.c_nopol}</TableCell>
+                <TableCell align="right">{row.c_kendaraan}</TableCell>
+                <TableCell align="right">{row.c_jenis}</TableCell>
+                <TableCell align="right">{row.c_asal}</TableCell>
+                <TableCell align="right">{row.n_jmlrit}</TableCell>
+                <TableCell align="right">{row.n_volm3}</TableCell>
+                <TableCell align="right">{row.n_volton}</TableCell>
+                <TableCell align="right">{row.c_tpa}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 }

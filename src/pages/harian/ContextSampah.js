@@ -147,6 +147,31 @@ function SampahProvider({ children }) {
       .then(() => GetDataTanggal(c_tanggal));
   };
 
+  const UploudDummy = (newData) => {
+    console.log("Simpan Data2");
+    let tglserver1 = new Date(
+      Firebase.firestore.Timestamp.now().seconds * 1000
+    );
+    let tglserver = moment(tglserver1).format("YYYY-MM-DD");
+
+    const uploudData = async (item) => {
+      console.log(item);
+      await db
+        .collection("CL_SAMPAHHARI")
+        .add({
+          createdAt: tglserver,
+          c_user: "ADMIN",
+          c_tpa: "KALIKONDANG",
+          ...item,
+        })
+        .then(() => {
+          console.log("Document Add Array");
+        });
+    };
+
+    newData.map((item, index) => uploudData(item));
+  };
+
   const SampahState = {
     SaveData,
     dataSampah,
@@ -158,6 +183,7 @@ function SampahProvider({ children }) {
     setTanggal,
     GetDriver,
     dataDriver,
+    UploudDummy,
   };
   return (
     <SampahContext.Provider value={SampahState}>
