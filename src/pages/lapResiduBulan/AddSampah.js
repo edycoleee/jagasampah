@@ -58,11 +58,11 @@ function AddSampah() {
     );
   });
 
-  const onCariData = () => {
+  const onCariData = async () => {
     if (checkedAll) {
-      return GetAllDataBln(tahun, kode);
+      return await GetAllDataBln(tahun, kode)
     }
-    return GetDataBln(tahun, kode, c_tpa);
+    return await GetDataBln(tahun, kode, c_tpa).then(()=> console.log("FINISH"))
   };
 
   const onChangeBulan = (event) => {
@@ -79,6 +79,10 @@ function AddSampah() {
     }
   };
 
+  const onLihatData = () => {
+
+  }
+  
   return (
     <div>
       <Paper elevation={2}>
@@ -109,7 +113,7 @@ function AddSampah() {
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              {JSON.stringify(kode)}
+              {/* {JSON.stringify(kode)} */}
               <label>Bulan : {"  "}</label>
               <select
                 id="bulan"
@@ -121,7 +125,7 @@ function AddSampah() {
               </select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              {JSON.stringify(tahun)}
+              {/* {JSON.stringify(tahun)} */}
               <Autocomplete
                 inputValue={tahun}
                 onInputChange={(event, newInputValue) => {
@@ -138,7 +142,10 @@ function AddSampah() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <Button onClick={onCariData} variant="contained" color="primary">
-                CARI DATA
+                HITUNG DATA
+              </Button> {" "}
+              <Button onClick={onLihatData} variant="contained" color="primary">
+                LIHAT DATA
               </Button>
             </Grid>
           </Grid>

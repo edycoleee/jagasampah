@@ -7,6 +7,7 @@ import { Box, Container, Typography } from "@material-ui/core";
 import SampahProvider from "./ContextSampah";
 import ListSampah from "./ListSampah";
 
+
 function IndexLapResiduBulan() {
   const { users } = useContext(AuthContext);
 

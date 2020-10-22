@@ -15,6 +15,8 @@ function SampahProvider({ children }) {
 
   const [dataSampah, setDataSampah] = useState([]);
   const [dataBulanan, setDataBulanan] = useState([]);
+  const [labelChart, setLabelChart] = useState([]);
+  const [sampahChart, setSampahChart] = useState([]);
   const [c_tanggal, setTanggal] = useState(today);
 
   const GetDataBln = async (tahun, bulan, c_tpa) => {
@@ -67,68 +69,35 @@ function SampahProvider({ children }) {
             n_volton: TotTon,
             n_jmlrit: RitRit,
             n_volm3: M3M3,
+            c_tpa,
+            c_bulan: bulan,
+            c_tahun: tahun,
           };
-          setDataBulanan(...dataBulanan, newData);
           arr.push(newData);
+            xlabel.push(tgl)
+            ylabel.push(TotTon.toFixed(2))
         };
         let arr = [];
-        AllTgl.map((tgl, index) => uploudData(tgl));
+        let xlabel =[]
+        let ylabel =[]
+        AllTgl.sort(function (a, b) {
+          return (
+            parseInt(a.substr(8, 2)) -
+            parseInt(b.substr(8, 2))
+          );
+        }).map((tgl, index) => uploudData(tgl));
         console.log(arr);
         setDataBulanan(arr);
+        setLabelChart(xlabel)
+        setSampahChart(ylabel)
         setDataSampah(data);
+        return arr;
       })
-      // .then((AllTgl) => {
-      //   const uploudData = async (item) => {
-      //     console.log(item);
-
-      //     await db
-      //       .collection("CL_SAMPAHHARI")
-      //       .where("c_tanggal", "==", item)
-      //       .get()
-      //       .then((snapshot) => {
-      //         const data = snapshot.docs.map((doc) => ({
-      //           Id: doc.id,
-      //           ...doc.data(),
-      //         }));
-
-      //         const calcTon = (data) => {
-      //           return data.reduce((total, item) => {
-      //             const volton = parseFloat(item.n_volton);
-      //             return total + volton;
-      //           }, 0);
-      //         };
-      //         const TotTon = calcTon(data);
-
-      //         const calcRit = (data) => {
-      //           return data.reduce((total, item) => {
-      //             const volrit = parseFloat(item.n_jmlrit);
-      //             return total + volrit;
-      //           }, 0);
-      //         };
-      //         const RitRit = calcRit(data);
-
-      //         const calcM3 = (data) => {
-      //           return data.reduce((total, item) => {
-      //             const volm3 = parseFloat(item.n_volm3);
-      //             //console.log(volm3);
-      //             return total + volm3;
-      //           }, 0);
-      //         };
-      //         const M3M3 = calcM3(data);
-      //         console.log("item : ", item, M3M3, RitRit, TotTon);
-      //         const newData = {
-      //           c_tanggal: item,
-      //           n_volton: TotTon,
-      //           n_jmlrit: RitRit,
-      //           n_volm3: M3M3,
-      //         };
-      //         setDataBulanan(...dataBulanan, newData);
-      //       });
-      //   };
-
-      //   AllTgl.map((item, index) => uploudData(item));
-      // })
-
+      .then((arr) => {
+        db.collection("CL_REKAPTPA")
+          .doc(`${tahun}${bulan}`)
+          .set({ ...arr });
+      })
       .catch((error) => console.error("Error Get Data :", error));
   };
 
@@ -174,6 +143,9 @@ function SampahProvider({ children }) {
     setTanggal,
     GetAllDataBln,
     dataBulanan,
+    labelChart,
+    sampahChart,
+
   };
   return (
     <SampahContext.Provider value={SampahState}>
