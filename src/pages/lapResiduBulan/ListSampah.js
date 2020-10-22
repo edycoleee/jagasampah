@@ -9,7 +9,7 @@ import {
   TableRow,
   Typography,
 } from "@material-ui/core";
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useMemo } from "react";
 import ChartSampah from "./ChartSampah";
 import { SampahContext } from "./ContextSampah";
 
@@ -49,7 +49,7 @@ function ListSampah() {
     <div>
       <Paper elevation={2}>
         <Box pt={2} pb={2} ml={2} mr={2}>
-        {dataBulanan[0] && <ChartSampah dataBulanan={dataBulanan[0]}/>}
+        {dataBulanan[0] && <ChartSampah />}
         </Box>
         </Paper>
         <Box mt={2} />

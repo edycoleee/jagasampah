@@ -37,6 +37,7 @@ function AddSampah() {
   //Default TPA--------------------------------
   useEffect(() => {
     setTPA(users.c_defTPA);
+    console.log("Effect");
   }, [users.c_defTPA]);
 
   //Option TPA-----------------------------------
