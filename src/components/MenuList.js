@@ -91,7 +91,7 @@ export const mainListItems = (
 export const secondaryListItems = (
   <div>
     <ListSubheader inset>Laporan Sampah</ListSubheader>
-    <Link to="/tpahari">
+    <Link to="/lapresidu">
       <ListItem button>
         <ListItemIcon>
           <AssignmentIcon />

@@ -16,6 +16,7 @@ import DataBank from "./pages/banksampah";
 import Sampah3r from "./pages/sampah3r";
 import LaporSampah from "./pages/lapor";
 import IndexSampahTPA from "./pages/sampahTPA";
+import IndexLapResidu from "./pages/lapResidu";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <PrivateRoute exact path="/sampah3r" component={Sampah3r} />
         <PrivateRoute exact path="/sampahTPA" component={IndexSampahTPA} />
         <PrivateRoute exact path="/lapor" component={LaporSampah} />
+        <PrivateRoute exact path="/lapresidu" component={IndexLapResidu} />
         <Route component={ErrorPage} />
       </Switch>
     </Router>

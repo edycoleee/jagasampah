@@ -52,24 +52,6 @@ export const CL_SAMPAH3R = [
   },
 ];
 
-export const CL_ASALSAMPAH = [
-  "TPS",
-  "PASAR",
-  "PERUMAHAN",
-  "PERUSAHAAN",
-  "JALAN",
-  "LAINNYA",
-];
-
-export const CL_JNSKENDARAAN1 = [
-  "CONTAINER",
-  "DUMP TRUCK",
-  "RODA3",
-  "PICKUP",
-  "TRUK KAYU",
-  "LAINNYA",
-];
-
 export const CL_JNSKENDARAAN = [
   {
     kendaraan: "CONTAINER",
@@ -96,7 +78,6 @@ export const CL_JNSKENDARAAN = [
     fkali: 6,
   },
 ];
-//export const CL_DRIVER = ["TRIHADI", "ARIF", "KUSNADI", "KUSNIN", "LAINNYA"];
 
 export const CL_DRIVER = [
   {
@@ -188,5 +169,18 @@ export const CL_LAPOR = [
     c_tgljemput: "",
     c_ketjemput: "",
     c_userclose: "",
+  },
+];
+
+export const CL_KECAMTAN = [
+  {
+    Kecamatan1: {
+      DESA: ["DESA1", "DESA2", "DESA3", "DESA4", "DESA5"],
+    },
+  },
+  {
+    Kecamatan2: {
+      DESA: ["DESA1", "DESA2", "DESA3", "DESA4", "DESA5"],
+    },
   },
 ];
