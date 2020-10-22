@@ -33,6 +33,22 @@ function SampahProvider({ children }) {
       .catch((error) => console.error("Error Get Data :", error));
   };
 
+  const GetAllDataTgl = async (tgl) => {
+    await db
+      .collection("CL_SAMPAHHARI")
+      .where("c_tanggal", "==", tgl)
+      .get()
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => ({
+          Id: doc.id,
+          ...doc.data(),
+        }));
+        ///console.log("Render List Effect :", data);
+        setDataSampah(data);
+      })
+      .catch((error) => console.error("Error Get Data :", error));
+  };
+
   const GetData = useCallback(async () => {
     await db
       .collection("CL_SAMPAHHARI")
@@ -55,6 +71,7 @@ function SampahProvider({ children }) {
     GetDataTgl,
     c_tanggal,
     setTanggal,
+    GetAllDataTgl,
   };
   return (
     <SampahContext.Provider value={SampahState}>

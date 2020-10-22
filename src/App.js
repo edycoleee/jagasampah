@@ -17,6 +17,7 @@ import Sampah3r from "./pages/sampah3r";
 import LaporSampah from "./pages/lapor";
 import IndexSampahTPA from "./pages/sampahTPA";
 import IndexLapResidu from "./pages/lapResidu";
+import IndexLapResiduBulan from "./pages/lapResiduBulan";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <PrivateRoute exact path="/sampahTPA" component={IndexSampahTPA} />
         <PrivateRoute exact path="/lapor" component={LaporSampah} />
         <PrivateRoute exact path="/lapresidu" component={IndexLapResidu} />
+        <PrivateRoute exact path="/tpabulan" component={IndexLapResiduBulan} />
         <Route component={ErrorPage} />
       </Switch>
     </Router>

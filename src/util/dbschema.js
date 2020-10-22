@@ -184,3 +184,54 @@ export const CL_KECAMTAN = [
     },
   },
 ];
+
+export const CL_BULAN = [
+  {
+    nama: "Januari",
+    kode: "01",
+  },
+  {
+    nama: "Februari",
+    kode: "02",
+  },
+  {
+    nama: "Maret",
+    kode: "03",
+  },
+  {
+    nama: "April",
+    kode: "04",
+  },
+  {
+    nama: "Mei",
+    kode: "05",
+  },
+  {
+    nama: "Juni",
+    kode: "06",
+  },
+  {
+    nama: "Juli",
+    kode: "07",
+  },
+  {
+    nama: "Agustus",
+    kode: "08",
+  },
+  {
+    nama: "September",
+    kode: "09",
+  },
+  {
+    nama: "Oktober",
+    kode: "10",
+  },
+  {
+    nama: "September",
+    kode: "11",
+  },
+  {
+    nama: "Desember",
+    kode: "12",
+  },
+];
