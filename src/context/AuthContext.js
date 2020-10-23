@@ -1,29 +1,31 @@
 import React, { useEffect, useState } from "react";
-import app,{auth} from "../util/firebase";
+import app, { auth, LocalServer } from "../util/firebase";
 
 export const AuthContext = React.createContext();
 const db = app.firestore();
 //setting jika menggunakan emulator firestore
-//db.settings({ host: "localhost:8080", ssl: false });
+if (LocalServer) {
+  db.settings({ host: "localhost:8080", ssl: false });
+}
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [pending, setPending] = useState(true);
   const [users, setUsers] = useState([]);
   //scroll context
-  const [height, setHeight] = useState(0)
+  const [height, setHeight] = useState(0);
 
-  useEffect(()=>{
-    window.addEventListener('scroll', ()=>{
-      setHeight(window.pageYOffset)
-    })
-    return () => window.removeEventListener("scroll",()=>{})
-  })
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setHeight(window.pageYOffset);
+    });
+    return () => window.removeEventListener("scroll", () => {});
+  });
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
-      if (user){
+      if (user) {
         db.collection("CL_USER")
           .doc(user.uid)
           .get()
@@ -79,6 +81,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={contextState}>{!pending && children}</AuthContext.Provider>
+    <AuthContext.Provider value={contextState}>
+      {!pending && children}
+    </AuthContext.Provider>
   );
 };

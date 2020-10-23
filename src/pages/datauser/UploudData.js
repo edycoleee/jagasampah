@@ -1,5 +1,5 @@
 import React from "react";
-import { Firebase, db } from "../../util/firebase";
+import app, { Firebase, LocalServer } from "../../util/firebase";
 import {
   DATAKECAMATAN,
   Bonang,
@@ -17,6 +17,12 @@ import {
   Wedung,
   Wonosalam,
 } from "../../util/dbKelurahan";
+
+const db = app.firestore();
+//setting jika menggunakan emulator firestore
+if (LocalServer) {
+  db.settings({ host: "localhost:8080", ssl: false });
+}
 
 function UploudData() {
   const onUploudData = () => {

@@ -1,9 +1,13 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { Firebase, storage } from "../../util/firebase";
+import app, { Firebase, storage, LocalServer } from "../../util/firebase";
 import moment from "moment";
 import { DATADRIVER } from "../../util/dbdukung";
 
 const db = app.firestore();
+//setting jika menggunakan emulator firestore
+if (LocalServer) {
+  db.settings({ host: "localhost:8080", ssl: false });
+}
 
 export const DataContext = createContext();
 
@@ -103,20 +107,17 @@ function DataProvider({ children }) {
     c_tgljemput,
     c_ketjemput,
     proses,
-    file,
+    file
   ) => {
-    await db
-      .collection("CL_LAPOR")
-      .doc(id)
-      .update({
-        c_tgljadwal,
-        c_ketjadwal,
-        c_tgljemput,
-        c_ketjemput,
-        proses,
-        c_namafile3: file,
-      })
-      //.then(() => GetAllData());
+    await db.collection("CL_LAPOR").doc(id).update({
+      c_tgljadwal,
+      c_ketjadwal,
+      c_tgljemput,
+      c_ketjemput,
+      proses,
+      c_namafile3: file,
+    });
+    //.then(() => GetAllData());
   };
 
   const AddDummyData = () => {

@@ -1,7 +1,11 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { Firebase } from "../../util/firebase";
+import app, { Firebase, LocalServer } from "../../util/firebase";
 import moment from "moment";
 const db = app.firestore();
+//setting jika menggunakan emulator firestore
+if (LocalServer) {
+  db.settings({ host: "localhost:8080", ssl: false });
+}
 
 export const SampahContext = createContext();
 
@@ -88,7 +92,7 @@ function SampahProvider({ children }) {
     );
     let tglserver = moment(tglserver1).format("YYYY-MM-DD");
 
-    console.log(newData);
+    //console.log(newData);
     await db
       .collection("CL_SAMPAHHARI")
       .add({
@@ -99,7 +103,7 @@ function SampahProvider({ children }) {
   };
 
   const DeleteData = async (id, tgl) => {
-    console.log("delete item :", id);
+    //console.log("delete item :", id);
     await db
       .collection("CL_SAMPAHHARI")
       .doc(id)
@@ -108,7 +112,7 @@ function SampahProvider({ children }) {
   };
 
   const SaveEditData = async (newData) => {
-    console.log(newData);
+    //console.log(newData);
     const {
       Id,
       c_driver,

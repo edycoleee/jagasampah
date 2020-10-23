@@ -1,7 +1,13 @@
 import React, { createContext, useCallback, useState } from "react";
-import { db } from "../../util/firebase";
+import app, { LocalServer } from "../../util/firebase";
 
 export const SampahContext = createContext();
+
+const db = app.firestore();
+//setting jika menggunakan emulator firestore
+if (LocalServer) {
+  db.settings({ host: "localhost:8080", ssl: false });
+}
 
 function SampahProvider({ children }) {
   //Init Today----------------------------

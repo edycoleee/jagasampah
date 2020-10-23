@@ -17,4 +17,7 @@ export const auth = app.auth();
 export const db = app.firestore();
 export const storage = firebase.storage();
 export const Firebase = firebase;
+
+export const LocalServer = true;
+
 export default app;

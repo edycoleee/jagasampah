@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { Firebase } from "../../util/firebase";
+import app, { Firebase, LocalServer } from "../../util/firebase";
 import moment from "moment";
 // import {
 //   Gajah,
@@ -7,6 +7,11 @@ import moment from "moment";
 import { DATABANKSAMPAH } from "../../util/dbdukung";
 
 const db = app.firestore();
+//setting jika menggunakan emulator firestore
+if (LocalServer) {
+  db.settings({ host: "localhost:8080", ssl: false });
+}
+
 export const DataContext = createContext();
 
 function DataProvider({ children }) {

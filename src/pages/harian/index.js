@@ -17,13 +17,13 @@ function IndexSampahHari() {
       <Container maxWidth="sm">
         <Box mt={2} />
         <Typography component="h1" variant="h4" align="center">
-        Residu TPA Harian
+          Residu TPA Harian
         </Typography>
         <Typography variant="h6" align="center">
           {users.c_username}
         </Typography>
         <AddSampah />
-        {users.c_tipeuser === "admin" ? <FetchData /> : "Khusus Admin"}
+        {users.c_tipeuser === "admin" ? <FetchData /> : ""}
       </Container>
       <Box mt={2} />
       <Container maxWidth="md">

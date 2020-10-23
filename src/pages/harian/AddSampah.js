@@ -55,6 +55,7 @@ function AddSampah() {
 
   //Simpan Data------------------------------
   const onSimpan = async () => {
+    console.log("Simpan Data");
     const onValid = (code, message) => {
       setErrMessage({
         code,
@@ -163,7 +164,7 @@ function AddSampah() {
   const onChangeValue = (event, value) => {
     //Desctructuring Searching
     const result = dataDriver.find(({ c_nopol }) => c_nopol === value);
-    console.log("hasilnya destructuring", result);
+    //console.log("hasilnya destructuring", result);
     if (result) {
       setDriver(result.c_driver);
       setNopol(result.c_nopol);
@@ -238,7 +239,7 @@ function AddSampah() {
                 renderInput={(params) => (
                   <TextField
                     {...params}
-                    label="NOPOL"
+                    label="No Kendaraan"
                     margin="normal"
                     variant="outlined"
                     onChange={(e) => setNopol(e.target.value)}

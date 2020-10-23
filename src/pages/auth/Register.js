@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useState } from "react";
 import { withRouter } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
-import app, { Firebase } from "../../util/firebase";
+import app, { Firebase, LocalServer } from "../../util/firebase";
 import MuiAlert from "@material-ui/lab/Alert";
 import { Link } from "react-router-dom";
 //material ui
@@ -20,7 +20,10 @@ import moment from "moment";
 
 const db = app.firestore();
 //setting jika menggunakan emulator firestore
-//db.settings({ host: "localhost:8080", ssl: false });
+if (LocalServer) {
+  db.settings({ host: "localhost:8080", ssl: false });
+}
+
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -65,6 +68,7 @@ const Register = ({ history }) => {
         setOpen(true);
       } else {
         try {
+          console.log("STEP : REGISTER");
           setLoading(false);
           await signup(email.value, password.value);
           const user = app.auth().currentUser;
@@ -79,6 +83,8 @@ const Register = ({ history }) => {
           await db.collection("CL_USER").doc(uid).set({
             c_username: username.value,
             c_createdAt: tglserver,
+            c_defTPA: "KALIKONDANG",
+            c_defTPST: "TPSTSATU",
             c_tipeuser: "user",
           });
           setLoading(true);

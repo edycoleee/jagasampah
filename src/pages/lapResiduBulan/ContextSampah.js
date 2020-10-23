@@ -1,7 +1,13 @@
 import React, { createContext, useCallback, useState } from "react";
-import { db } from "../../util/firebase";
+import app, { LocalServer } from "../../util/firebase";
 
 export const SampahContext = createContext();
+
+const db = app.firestore();
+//setting jika menggunakan emulator firestore
+if (LocalServer) {
+  db.settings({ host: "localhost:8080", ssl: false });
+}
 
 function SampahProvider({ children }) {
   //Init Today----------------------------
@@ -74,22 +80,19 @@ function SampahProvider({ children }) {
             c_tahun: tahun,
           };
           arr.push(newData);
-            xlabel.push(tgl)
-            ylabel.push(TotTon.toFixed(2))
+          xlabel.push(tgl);
+          ylabel.push(TotTon.toFixed(2));
         };
         let arr = [];
-        let xlabel =[]
-        let ylabel =[]
+        let xlabel = [];
+        let ylabel = [];
         AllTgl.sort(function (a, b) {
-          return (
-            parseInt(a.substr(8, 2)) -
-            parseInt(b.substr(8, 2))
-          );
+          return parseInt(a.substr(8, 2)) - parseInt(b.substr(8, 2));
         }).map((tgl, index) => uploudData(tgl));
         console.log(arr);
         setDataBulanan(arr);
-        setLabelChart(xlabel)
-        setSampahChart(ylabel)
+        setLabelChart(xlabel);
+        setSampahChart(ylabel);
         setDataSampah(data);
         return arr;
       })
@@ -145,7 +148,6 @@ function SampahProvider({ children }) {
     dataBulanan,
     labelChart,
     sampahChart,
-
   };
   return (
     <SampahContext.Provider value={SampahState}>

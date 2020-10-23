@@ -30,7 +30,14 @@ import ScrollButton from "../../components/ScrollButton";
 import { AuthContext } from "../../context/AuthContext";
 import AlertSnackbar from "../../components/AlertSnackbar";
 import { CL_TPA, CL_TPST } from "../../util/dbschema";
-import { db } from "../../util/firebase";
+import app, { LocalServer } from "../../util/firebase";
+import Pagination from "../../components/Pagination";
+
+const db = app.firestore();
+//setting jika menggunakan emulator firestore
+if (LocalServer) {
+  db.settings({ host: "localhost:8080", ssl: false });
+}
 
 function IndexUser() {
   const { users, currentUser, updatePassword, updateEmail } = useContext(
@@ -44,6 +51,9 @@ function IndexUser() {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const [loading, setLoading] = useState(false);
+  //pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(5);
 
   //state Snackbar
   const [errMessage, setErrMessage] = useState("");
@@ -94,6 +104,7 @@ function IndexUser() {
     );
     //console.log("Filter :", filterdata);
     setDataFilter(filterdata);
+    setCurrentPage(1);
   }, [c_cari, databank]);
 
   const onEdit = () => {
@@ -119,6 +130,7 @@ function IndexUser() {
   });
 
   const onSimpan = async () => {
+    console.log("SIMPAN DATA PROFILE : ", ProfilUser);
     await db
       .collection("CL_USER")
       .doc(currentUser.uid)
@@ -126,7 +138,7 @@ function IndexUser() {
         ...ProfilUser,
       })
       .then(() => {
-        console.log("Document Updated");
+        //console.log("Document Updated");
       })
       .then(() => {
         setEditing(false);
@@ -169,7 +181,7 @@ function IndexUser() {
   };
 
   const onSimpanEmail = () => {
-    console.log(passwordRef.current.value);
+    //console.log(passwordRef.current.value);
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       setErrMessage({
@@ -209,6 +221,13 @@ function IndexUser() {
         setEditingEmail(false);
       });
   };
+
+  // Get current page
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentData = dataFilter.slice(indexOfFirstPost, indexOfLastPost);
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div>
@@ -506,21 +525,17 @@ function IndexUser() {
             <Table aria-label="a dense table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="right">Nama</TableCell>
-                  <TableCell align="right">Alamat</TableCell>
-                  <TableCell align="right">Tempat</TableCell>
-                  <TableCell align="right">Kecamatan</TableCell>
-                  <TableCell align="right">ACTION</TableCell>
+                  <TableCell>ACTION</TableCell>
+                  <TableCell>Nama</TableCell>
+                  <TableCell>Alamat</TableCell>
+                  <TableCell>Tempat</TableCell>
+                  <TableCell>Kecamatan</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {dataFilter.map((row) => (
+                {currentData.map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell align="right">{row.c_nama}</TableCell>
-                    <TableCell align="right">{row.c_alamat}</TableCell>
-                    <TableCell align="right">{row.c_tempat}</TableCell>
-                    <TableCell align="right">{row.c_kecamatan}</TableCell>
-                    <TableCell align="right">
+                    <TableCell>
                       <Button
                         onClick={() => onPilihCari(row.id, row.c_nama)}
                         variant="contained"
@@ -528,13 +543,21 @@ function IndexUser() {
                       >
                         PILIH
                       </Button>
-                      <Box mt={1} />
                     </TableCell>
+                    <TableCell>{row.c_nama}</TableCell>
+                    <TableCell>{row.c_alamat}</TableCell>
+                    <TableCell>{row.c_tempat}</TableCell>
+                    <TableCell>{row.c_kecamatan}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={dataFilter.length}
+            paginate={paginate}
+          />
         </DialogContent>
         <DialogActions>
           <Button onClick={onBatalCari} variant="contained" color="primary">
