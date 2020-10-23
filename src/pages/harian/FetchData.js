@@ -29,7 +29,7 @@ function FetchData() {
     setOpenErr(true);
   };
 
-  const [columns, setColumns] = useState([]);
+  // const [columns, setColumns] = useState([]);
   const [data, setData] = useState([]);
   const { UploudDummy } = useContext(SampahContext);
   // process CSV data
@@ -64,17 +64,17 @@ function FetchData() {
       }
     }
     // prepare columns list from headers
-    const columns = headers.map((c) => ({
-      name: c,
-      selector: c,
-    }));
-    setColumns(columns);
-    //console.log("Data awal: ", list);
+    // const columns = headers.map((c) => ({
+    //   name: c,
+    //   selector: c,
+    // }));
+    // setColumns(columns);
+    // //console.log("Data awal: ", list);
     const newData = list.map((data) => ({
       c_tanggal: `${data.c_tahun}-${data.c_bulan}-${data.tanggal}`,
       ...data,
     }));
-    //console.log("Data 1: ", newData);
+    console.log("Data 1: ", newData);
     setData(newData);
   };
 

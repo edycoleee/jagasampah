@@ -1,5 +1,5 @@
 import { Box, Grid, Paper } from "@material-ui/core";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { CL_TPA } from "../../util/dbschema";
 import { DataContext } from "./ContextData";
@@ -11,7 +11,7 @@ function PilihData() {
   //Default TPA--------------------------------
   useEffect(() => {
     setTPA(users.c_defTPA);
-  }, [users.c_defTPA]);
+  }, [users.c_defTPA, setTPA]);
 
   //Option TPA-----------------------------------
   let pilihTPA = CL_TPA;

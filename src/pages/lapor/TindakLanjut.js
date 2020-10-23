@@ -26,7 +26,6 @@ function TindakLanjut() {
     semuaData,
     GetAllData,
     DeleteData,
-    GetUserData,
     SaveEditData,
     simpanFileImg3,
   } = useContext(DataContext);

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Line } from "react-chartjs-2";
 import { SampahContext } from "./ContextSampah";
 

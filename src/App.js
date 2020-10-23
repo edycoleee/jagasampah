@@ -3,11 +3,11 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ErrorPage from "./pages/errorpage";
 import Landing from "./pages/landing";
-import Dashboard from "./pages/dashboard";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
-import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./pages/auth/ForgotPassword";
+import PrivateRoute from "./components/PrivateRoute";
+import Dashboard from "./pages/dashboard";
 import IndexUser from "./pages/userProfile";
 import DataDriver from "./pages/driver";
 import UserAdmin from "./pages/datauser";
@@ -34,8 +34,8 @@ function App() {
         <PrivateRoute exact path="/harian" component={Harian} />
         <PrivateRoute exact path="/bsampah" component={DataBank} />
         <PrivateRoute exact path="/sampah3r" component={Sampah3r} />
-        <PrivateRoute exact path="/sampahTPA" component={IndexSampahTPA} />
         <PrivateRoute exact path="/lapor" component={LaporSampah} />
+        <PrivateRoute exact path="/sampahTPA" component={IndexSampahTPA} />
         <PrivateRoute exact path="/lapresidu" component={IndexLapResidu} />
         <PrivateRoute exact path="/tpabulan" component={IndexLapResiduBulan} />
         <Route component={ErrorPage} />

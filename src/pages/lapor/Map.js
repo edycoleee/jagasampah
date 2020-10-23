@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { Map, Marker, Popup, TileLayer, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -7,7 +7,7 @@ import { DataContext } from "./ContextData";
 const LeafletMap = () => {
   const { mapPoints, setMapPoints } = useContext(DataContext);
 
-  const getClientLocation = () => {
+  const getClientLocation = useCallback(async () => {
     if (!navigator.geolocation) {
       alert.show("Your browser does not support geolocation.");
     } else {
@@ -20,7 +20,7 @@ const LeafletMap = () => {
         setMapPoints(mapPoints1);
       });
     }
-  };
+  }, [setMapPoints, mapPoints]);
 
   const addMarker = (mapClickInfo) => {
     let updatedArray = [...mapPoints];
@@ -43,7 +43,7 @@ const LeafletMap = () => {
 
   useEffect(() => {
     getClientLocation();
-  }, []);
+  }, [getClientLocation]);
 
   const icon = L.icon({
     iconSize: [25, 41],
