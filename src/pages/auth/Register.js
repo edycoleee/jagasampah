@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useState } from "react";
 import { withRouter } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
-import app, { Firebase, LocalServer } from "../../util/firebase";
+import app, { Firebase, LocalServer, Develop } from "../../util/firebase";
 import MuiAlert from "@material-ui/lab/Alert";
 import { Link } from "react-router-dom";
 //material ui
@@ -68,7 +68,9 @@ const Register = ({ history }) => {
         setOpen(true);
       } else {
         try {
-          console.log("STEP : REGISTER");
+          if (Develop) {
+            console.log("STEP : REGISTER");
+          }
           setLoading(false);
           await signup(email.value, password.value);
           const user = app.auth().currentUser;
@@ -87,6 +89,9 @@ const Register = ({ history }) => {
             c_defTPST: "TPSTSATU",
             c_tipeuser: "user",
           });
+          if (Develop) {
+            console.log("STEP : SIMPAN USER");
+          }
           setLoading(true);
           history.push("/dashboard");
         } catch (error) {

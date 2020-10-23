@@ -19,5 +19,6 @@ export const storage = firebase.storage();
 export const Firebase = firebase;
 
 export const LocalServer = true;
+export const Develop = true;
 
 export default app;

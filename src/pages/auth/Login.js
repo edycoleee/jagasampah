@@ -3,6 +3,7 @@ import { withRouter, Redirect } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 import MuiAlert from "@material-ui/lab/Alert";
 import { Link } from "react-router-dom";
+import { Develop } from "../../util/firebase";
 //material ui
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -49,7 +50,9 @@ const Login = ({ history }) => {
 
   const handleLogin = useCallback(
     async (event) => {
-      console.log("STEP : LOGIN");
+      if (Develop) {
+        console.log("STEP : LOGIN");
+      }
       event.preventDefault();
       const { email, password } = event.target.elements;
       try {
