@@ -30,7 +30,7 @@ import ScrollButton from "../../components/ScrollButton";
 import { AuthContext } from "../../context/AuthContext";
 import AlertSnackbar from "../../components/AlertSnackbar";
 import { CL_TPA, CL_TPST } from "../../util/dbschema";
-import app, { LocalServer } from "../../util/firebase";
+import app, { LocalServer,Develop } from "../../util/firebase";
 import Pagination from "../../components/Pagination";
 
 const db = app.firestore();
@@ -73,7 +73,9 @@ function IndexUser() {
           id: doc.id,
           ...doc.data(),
         }));
-        //console.log("Render List Effect :", data);
+        if (Develop) {
+          console.log("STEP : GET BANKSAMPAH", data);
+        }
         setDataBank(data);
       })
       .then(() => setOpenPortal(true))
@@ -84,7 +86,9 @@ function IndexUser() {
   };
 
   const getProfile = useCallback(async () => {
-    //console.log("render effect");
+    if (Develop) {
+      console.log("STEP : EFFECT CB PROFIL");
+    }
     db.collection("CL_USER")
       .doc(currentUser.uid)
       .get()
@@ -102,7 +106,9 @@ function IndexUser() {
     let filterdata = databank.filter((data) =>
       data.c_nama.toLowerCase().includes(c_cari.toLowerCase())
     );
-    //console.log("Filter :", filterdata);
+    if (Develop) {
+      console.log("STEP : EFFECT FILTER PROFIL", filterdata);
+    }
     setDataFilter(filterdata);
     setCurrentPage(1);
   }, [c_cari, databank]);
@@ -130,7 +136,9 @@ function IndexUser() {
   });
 
   const onSimpan = async () => {
-    console.log("SIMPAN DATA PROFILE : ", ProfilUser);
+    if (Develop) {
+      console.log("STEP : SIMPAN DATA PROFILE", ProfilUser);
+    }
     await db
       .collection("CL_USER")
       .doc(currentUser.uid)
@@ -171,7 +179,9 @@ function IndexUser() {
   };
 
   const onPilihCari = (id, c_nama) => {
-    //console.log(id, c_nama);
+    if (Develop) {
+      console.log("STEP : ONPILIH", id, c_nama);
+    }
     setProfilUser({
       ...ProfilUser,
       c_defBankID: id,
@@ -181,8 +191,9 @@ function IndexUser() {
   };
 
   const onSimpanEmail = () => {
-    //console.log(passwordRef.current.value);
-
+    if (Develop) {
+      console.log("STEP : EMAIL PASSWORD CHANGE", passwordRef.current.value);
+    }
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       setErrMessage({
         code: "ERROR",

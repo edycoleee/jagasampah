@@ -1,6 +1,5 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { Firebase, LocalServer } from "../../util/firebase";
-import moment from "moment";
+import app, { LocalServer, Develop } from "../../util/firebase";
 
 const db = app.firestore();
 //setting jika menggunakan emulator firestore
@@ -14,7 +13,6 @@ function DataProvider({ children }) {
   const [dataAwal, setDataAwal] = useState([]);
 
   const GetAllData = useCallback(async () => {
-    console.log("GetAllData");
     await db
       .collection("CL_USER")
       .get()
@@ -23,30 +21,35 @@ function DataProvider({ children }) {
           id: doc.id,
           ...doc.data(),
         }));
-        console.log("Render List Effect :", data);
+
+        if (Develop) {
+          console.log("STEP : GET USER DATA", data);
+        }
         setDataAwal(data);
       })
       .catch((error) => console.error("Error Get Data :", error));
   }, []);
 
-  const SaveData = async (newData) => {
-    let tglserver1 = new Date(
-      Firebase.firestore.Timestamp.now().seconds * 1000
-    );
-    let tglserver = moment(tglserver1).format("YYYY-MM-DD");
+  // const SaveData = async (newData) => {
+  //   let tglserver1 = new Date(
+  //     Firebase.firestore.Timestamp.now().seconds * 1000
+  //   );
+  //   let tglserver = moment(tglserver1).format("YYYY-MM-DD");
 
-    console.log(newData);
-    await db
-      .collection("CL_USER")
-      .add({
-        createdAt: tglserver,
-        ...newData,
-      })
-      .then(() => GetAllData());
-  };
+  //   console.log(newData);
+  //   await db
+  //     .collection("CL_USER")
+  //     .add({
+  //       createdAt: tglserver,
+  //       ...newData,
+  //     })
+  //     .then(() => GetAllData());
+  // };
 
   const SaveEditData = async (newData) => {
-    console.log(newData);
+    if (Develop) {
+      console.log("STEP : SAVE EDIT DATA", newData);
+    }
     const { id, c_tipeuser } = newData;
 
     await db
@@ -59,7 +62,6 @@ function DataProvider({ children }) {
   };
 
   const DataState = {
-    SaveData,
     dataAwal,
     GetAllData,
     SaveEditData,

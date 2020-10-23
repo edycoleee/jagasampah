@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import app, { auth, LocalServer,Develop } from "../util/firebase";
+import app, { auth, LocalServer, Develop } from "../util/firebase";
 
 export const AuthContext = React.createContext();
 const db = app.firestore();
@@ -25,9 +25,6 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
-      if (Develop) {
-        console.log("STEP : EFFECT GET USER AUTH");
-      }
       if (user) {
         db.collection("CL_USER")
           .doc(user.uid)
@@ -35,6 +32,9 @@ export const AuthProvider = ({ children }) => {
           .then((doc) => {
             if (!doc.exists) return;
             setUsers(doc.data());
+            if (Develop) {
+              console.log("STEP : EFFECT GET USER AUTH", doc.data());
+            }
           });
       }
       setPending(false);

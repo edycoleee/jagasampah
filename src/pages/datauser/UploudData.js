@@ -1,7 +1,7 @@
 import React from "react";
 import app, { Firebase, LocalServer } from "../../util/firebase";
 import {
-  DATAKECAMATAN,
+  //DATAKECAMATAN,
   Bonang,
   Demak,
   Dempet,
@@ -31,6 +31,8 @@ function UploudData() {
     //   console.log(item)
 
     // })
+
+    
     db.collection("CL_KECAMATAN")
       .doc("Bonang")
       .set({

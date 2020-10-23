@@ -21,11 +21,12 @@ function IndexUserAdmin() {
           {users.c_username}
         </Typography>
       </Container>
-      {/* <Box mt={2} />
-      <Container maxWidth="sm">
-        <UploudData />
-      </Container> */}
       <Box mt={2} />
+      {/* ----------------Uploud Data Kecamatan Kelurahan */}
+      {/* <Container maxWidth="sm">
+        <UploudData />
+      </Container>
+      <Box mt={2} /> */}
       <Container maxWidth="md">
         {users.c_tipeuser === "admin" ? <ListData /> : "Khusus Admin"}
       </Container>
