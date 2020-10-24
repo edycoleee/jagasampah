@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { Firebase, LocalServer } from "../../util/firebase";
+import app, { Firebase, LocalServer,Develop } from "../../util/firebase";
 import moment from "moment";
 const db = app.firestore();
 //setting jika menggunakan emulator firestore
@@ -31,10 +31,12 @@ function SampahProvider({ children }) {
       .get()
       .then((snapshot) => {
         const data = snapshot.docs.map((doc) => ({
-          Id: doc.id,
+          id: doc.id,
           ...doc.data(),
         }));
-        ///console.log("Render List Effect :", data);
+        if (Develop) {
+          console.log("STEP : GET DATA HARIAN TGL TPA");
+        }
         setDataSampah(data);
       })
       .catch((error) => console.error("Error Get Data :", error));
@@ -47,10 +49,12 @@ function SampahProvider({ children }) {
       .get()
       .then((snapshot) => {
         const data = snapshot.docs.map((doc) => ({
-          Id: doc.id,
+          id: doc.id,
           ...doc.data(),
         }));
-        //console.log("Render List Effect :", data);
+        if (Develop) {
+          console.log("STEP : GET DATA HARIAN TGL");
+        }
         setDataSampah(data);
       })
       .catch((error) => console.error("Error Get Data :", error));
@@ -63,10 +67,12 @@ function SampahProvider({ children }) {
       .get()
       .then((snapshot) => {
         const data = snapshot.docs.map((doc) => ({
-          Id: doc.id,
+          id: doc.id,
           ...doc.data(),
         }));
-        //console.log("Render List Effect :", data);
+        if (Develop) {
+          console.log("STEP : GET DATA ALL HARIAN");
+        }
         setDataSampah(data);
       })
       .catch((error) => console.error("Error Get Data :", error));
@@ -82,17 +88,21 @@ function SampahProvider({ children }) {
           ...doc.data(),
         }));
         setDataDriver(data);
+        if (Develop) {
+          console.log("STEP : GET DATA DRIVER");
+        }
       })
       .catch((error) => console.error("Error Get Data :", error));
   }, []);
 
   const SaveData = async (newData) => {
+    if (Develop) {
+      console.log("STEP : SAVE DATA SAMPAH", newData);
+    }
     let tglserver1 = new Date(
       Firebase.firestore.Timestamp.now().seconds * 1000
     );
     let tglserver = moment(tglserver1).format("YYYY-MM-DD");
-
-    //console.log(newData);
     await db
       .collection("CL_SAMPAHHARI")
       .add({
@@ -103,7 +113,9 @@ function SampahProvider({ children }) {
   };
 
   const DeleteData = async (id, tgl) => {
-    //console.log("delete item :", id);
+    if (Develop) {
+      console.log("STEP : DELETE DATA", id);
+    }
     await db
       .collection("CL_SAMPAHHARI")
       .doc(id)
@@ -112,9 +124,11 @@ function SampahProvider({ children }) {
   };
 
   const SaveEditData = async (newData) => {
-    //console.log(newData);
+    if (Develop) {
+      console.log("STEP : SAVE EDIT DATA", newData);
+    }
     const {
-      Id,
+      id,
       c_driver,
       c_nopol,
       c_kendaraan,
@@ -133,7 +147,7 @@ function SampahProvider({ children }) {
 
     await db
       .collection("CL_SAMPAHHARI")
-      .doc(Id)
+      .doc(id)
       .update({
         c_driver,
         c_nopol,
@@ -152,7 +166,9 @@ function SampahProvider({ children }) {
   };
 
   const UploudDummy = (newData) => {
-    console.log("Simpan Data2");
+    if (Develop) {
+      console.log("STEP : UPLOUD DUMMY DATA");
+    }
     let tglserver1 = new Date(
       Firebase.firestore.Timestamp.now().seconds * 1000
     );

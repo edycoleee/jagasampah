@@ -23,12 +23,18 @@ function IndexSampahHari() {
           {users.c_username}
         </Typography>
         <AddSampah />
-        {users.c_tipeuser === "admin" ? <FetchData /> : ""}
       </Container>
       <Box mt={2} />
       <Container maxWidth="md">
         <ListSampah />
       </Container>
+      {users.c_tipeuser === "admin" ? (
+        <Container maxWidth="md">
+          <FetchData />
+        </Container>
+      ) : (
+        ""
+      )}
       <ScrollButton />
     </SampahProvider>
   );

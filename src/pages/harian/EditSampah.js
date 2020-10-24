@@ -31,8 +31,8 @@ const EditSampah = React.memo(({ open, handleClose, currentItem }) => {
   });
 
   const onSimpanEdit = () => {
-    console.log(item, currentItem.Id);
-    SaveEditData(item, currentItem.Id);
+    //console.log(item, currentItem.id);
+    SaveEditData(item, currentItem.id);
     handleClose();
   };
 
@@ -113,7 +113,7 @@ const EditSampah = React.memo(({ open, handleClose, currentItem }) => {
               required
               id="c_jenis"
               name="c_jenis"
-              label="Jenis Sampah"
+              label="Asal Kendaraan"
               fullWidth
               autoComplete="c_jenis"
               onChange={handleOnChange}

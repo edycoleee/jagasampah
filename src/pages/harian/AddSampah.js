@@ -55,7 +55,7 @@ function AddSampah() {
 
   //Simpan Data------------------------------
   const onSimpan = async () => {
-    console.log("Simpan Data");
+    //console.log("Simpan Data");
     const onValid = (code, message) => {
       setErrMessage({
         code,

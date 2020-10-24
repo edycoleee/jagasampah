@@ -23,6 +23,7 @@ function IndexSampahTPA() {
           {users.c_username}
         </Typography>
         <PilihData />
+        <Box mt={2} />
         <AddData />
       </Container>
       <Box mt={2} />

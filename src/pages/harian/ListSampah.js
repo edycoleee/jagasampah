@@ -118,36 +118,36 @@ function ListSampah() {
               <TableHead>
                 <TableRow>
                   <TableCell>Tanggal</TableCell>
-                  <TableCell align="right">Driver</TableCell>
-                  <TableCell align="right">Nopol</TableCell>
-                  <TableCell align="right">Kendrn</TableCell>
-                  <TableCell align="right">Jenis</TableCell>
-                  <TableCell align="right">Asal</TableCell>
+                  <TableCell>Driver</TableCell>
+                  <TableCell>Nomor</TableCell>
+                  <TableCell>Kendrn</TableCell>
+                  <TableCell>Dinas</TableCell>
+                  <TableCell>Asal</TableCell>
                   <TableCell align="right">Rit</TableCell>
                   <TableCell align="right">M3</TableCell>
                   <TableCell align="right">TON</TableCell>
-                  <TableCell align="right">TPA</TableCell>
-                  <TableCell align="right">ACTION</TableCell>
+                  <TableCell>TPA</TableCell>
+                  <TableCell>ACTION</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {currentData.map((row) => (
-                  <TableRow key={row.Id}>
+                  <TableRow key={row.id}>
                     <TableCell component="th" scope="row">
                       {row.c_tanggal}
                     </TableCell>
-                    <TableCell align="right">{row.c_driver}</TableCell>
-                    <TableCell align="right">{row.c_nopol}</TableCell>
-                    <TableCell align="right">{row.c_kendaraan}</TableCell>
-                    <TableCell align="right">{row.c_jenis}</TableCell>
-                    <TableCell align="right">{row.c_asal}</TableCell>
+                    <TableCell>{row.c_driver}</TableCell>
+                    <TableCell>{row.c_nopol}</TableCell>
+                    <TableCell>{row.c_kendaraan}</TableCell>
+                    <TableCell>{row.c_jenis}</TableCell>
+                    <TableCell>{row.c_asal}</TableCell>
                     <TableCell align="right">{row.n_jmlrit}</TableCell>
                     <TableCell align="right">{row.n_volm3}</TableCell>
                     <TableCell align="right">{row.n_volton}</TableCell>
-                    <TableCell align="right">{row.c_tpa}</TableCell>
-                    <TableCell align="right">
+                    <TableCell>{row.c_tpa}</TableCell>
+                    <TableCell>
                       <Button
-                        onClick={() => onDelete(row.Id, row.c_tanggal)}
+                        onClick={() => onDelete(row.id, row.c_tanggal)}
                         variant="contained"
                         color="primary"
                       >

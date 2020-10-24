@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Map, Marker, Popup, TileLayer, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -7,20 +7,22 @@ import { DataContext } from "./ContextData";
 const LeafletMap = () => {
   const { mapPoints, setMapPoints } = useContext(DataContext);
 
-  const getClientLocation = useCallback(async () => {
-    if (!navigator.geolocation) {
-      alert.show("Your browser does not support geolocation.");
-    } else {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const {
-          coords: { latitude, longitude },
-        } = position;
-        const mapPoints1 = [...mapPoints];
-        mapPoints1[0] = [latitude, longitude];
-        setMapPoints(mapPoints1);
-      });
-    }
-  }, [setMapPoints, mapPoints]);
+  // const getClientLocation = useCallback(async () => {
+  //   if (!navigator.geolocation) {
+  //     alert.show("Your browser does not support geolocation.");
+  //   } else {
+  //     navigator.geolocation.getCurrentPosition((position) => {
+  //       const {
+  //         coords: { latitude, longitude },
+  //       } = position;
+  //       const mapPoints1 = [...mapPoints];
+  //       //mapPoints1[0] = [latitude, longitude];
+  //       mapPoints1[0] = [-6.9837621, 110.469170799];
+  //       setMapPoints(mapPoints1);
+  //       setMapPoints(mapPoints1);
+  //     });
+  //   }
+  // }, [mapPoints]);
 
   const addMarker = (mapClickInfo) => {
     let updatedArray = [...mapPoints];
@@ -42,8 +44,26 @@ const LeafletMap = () => {
   };
 
   useEffect(() => {
-    getClientLocation();
-  }, [getClientLocation]);
+
+    if (!navigator.geolocation) {
+      alert.show("Your browser does not support geolocation.");
+    } else {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const {
+          coords: { latitude, longitude },
+        } = position;
+        const mapPoints1 = [...mapPoints];
+        mapPoints1[0] = [latitude, longitude];
+        setMapPoints(mapPoints1);
+        //mapPoints1[0] = [-6.9837621, 110.469170799];
+        //setMapPoints(mapPoints1);
+
+      });
+    }
+    //getClientLocation()
+  }, [setMapPoints]);
+  
+  console.log(mapPoints[0]);
 
   const icon = L.icon({
     iconSize: [25, 41],
@@ -53,6 +73,7 @@ const LeafletMap = () => {
     shadowUrl: "https://unpkg.com/leaflet@1.6/dist/images/marker-shadow.png",
   });
 
+  
   return (
     <Map
       center={mapPoints[0]}

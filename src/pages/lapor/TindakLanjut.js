@@ -19,6 +19,7 @@ import { DataContext } from "./ContextData";
 import { PROSESLAPOR } from "../../util/dbschema";
 import Pagination from "../../components/Pagination";
 import AlertSnackbar from "../../components/AlertSnackbar";
+import {Develop } from "../../util/firebase";
 
 function TindakLanjut() {
   const { users } = useContext(AuthContext);
@@ -42,7 +43,9 @@ function TindakLanjut() {
     setOpenErr(false);
   };
   useEffect(() => {
-    console.log("render Effect");
+    if (Develop) {
+      console.log("STEP : EFFECT GET ALL DATA");
+    }
     GetAllData();
   }, [GetAllData]);
 
@@ -101,15 +104,17 @@ function TindakLanjut() {
 
     if (fileImg3 === null) {
       const file = "";
-      console.log(
-        "Simpan tanpa foto :",
-        id,
-        c_tgljadwal,
-        c_ketjadwal,
-        c_tgljemput,
-        c_ketjemput,
-        proses
-      );
+      if (Develop) {
+        console.log(
+          "Simpan tanpa foto :",
+          id,
+          c_tgljadwal,
+          c_ketjadwal,
+          c_tgljemput,
+          c_ketjemput,
+          proses
+        );
+      }
       await SaveEditData(
         id,
         c_tgljadwal,
@@ -128,7 +133,9 @@ function TindakLanjut() {
           setOpenErr(true);
         });
     } else {
-      console.log("Simpan tanpa dg foto :", item, fileImg3);
+      if (Develop) {
+        console.log("STEP : Simpan tanpa dg foto :", item, fileImg3);
+      }
       let file = fileImg3.name;
       await SaveEditData(
         id,

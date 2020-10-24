@@ -11,12 +11,12 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import AlertSnackbar from "../../components/AlertSnackbar";
 import { DataContext } from "./ContextData";
+import {Develop } from "../../util/firebase";
 
 function AddData() {
   const { users } = useContext(AuthContext);
   const {
     SaveData,
-    AddDummyData,
     mapPoints,
     simpanFileImg1,
     simpanFileImg2,
@@ -68,7 +68,6 @@ function AddData() {
       return errorValid("ERROR", "FOTO2 MAX 5MB");
     }
 
-    console.log("SIMPAN DATA");
     let id=""
     const newData = {
       c_noHP,
@@ -85,7 +84,9 @@ function AddData() {
     await SaveData(newData)
       .then((doc) => {
         id = doc.id;
-        console.log("Save Data : ", doc.id);
+        if (Develop) {
+          console.log("STEP : Save Data : ", doc.id);
+        }
       })
       .then(() => {
         setErrMessage({
@@ -192,16 +193,6 @@ function AddData() {
                 disabled={progressUploud}
               >
                 LAPOR
-              </Button>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Button
-                onClick={() => AddDummyData()}
-                variant="contained"
-                color="primary"
-                disabled={true}
-              >
-                DUMMY DATA
               </Button>
             </Grid>
             <Grid item xs={12}>

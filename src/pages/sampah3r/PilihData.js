@@ -20,7 +20,7 @@ import {
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { DataContext } from "./ContextData";
-import Pagination from "../../components/Pagination"
+import Pagination from "../../components/Pagination";
 
 function PilihData() {
   const { users } = useContext(AuthContext);
@@ -37,12 +37,14 @@ function PilihData() {
   const [openPortal, setOpenPortal] = useState(false);
 
   const onOpenDialog = async () => {
-    console.log("Getdata1");
-    await getDataBank()
-      .then((data) => setDataBank(data))
-      .then(() => setOpenPortal(true))
-      .then(() => console.log("Getdata4"))
-      .catch((error) => console.error("Error Get Data :", error));
+    if (databank.length === 0) {
+      await getDataBank()
+        .then((data) => setDataBank(data))
+        .then(() => setOpenPortal(true))
+        .catch((error) => console.error("Error Get Data :", error));
+    } else {
+      setOpenPortal(true);
+    }
   };
 
   useEffect(() => {
@@ -51,7 +53,7 @@ function PilihData() {
     );
     //console.log("Filter :", filterdata);
     setDataFilter(filterdata);
-    setCurrentPage(1)
+    setCurrentPage(1);
   }, [c_cari, databank]);
 
   const handleClose = () => {
@@ -62,8 +64,8 @@ function PilihData() {
     //console.log(id, c_nama);
     setNmBank(nama);
     setIdBank(id);
-    setCari("")
-    setCurrentPage(1)
+    setCari("");
+    setCurrentPage(1);
     handleClose();
   };
 
@@ -71,8 +73,8 @@ function PilihData() {
   const onBatal = () => {
     setNmBank(users.c_defBankName);
     setIdBank(users.c_defBankID);
-    setCari("")
-    setCurrentPage(1)
+    setCari("");
+    setCurrentPage(1);
     handleClose();
   };
 
@@ -81,7 +83,7 @@ function PilihData() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = dataFilter.slice(indexOfFirstPost, indexOfLastPost);
   // Change page
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div>
@@ -122,7 +124,7 @@ function PilihData() {
                 required
                 id="c_cari"
                 name="c_cari"
-                label="Cari Data"
+                label="Cari Nama"
                 fullWidth
                 autoComplete="c_cari"
                 onChange={(e) => setCari(e.target.value)}
@@ -137,20 +139,16 @@ function PilihData() {
             <Table aria-label="a dense table">
               <TableHead>
                 <TableRow>
+                  <TableCell align="center">ACTION</TableCell>
                   <TableCell align="left">Nama</TableCell>
                   <TableCell align="left">Alamat</TableCell>
                   <TableCell align="left">Tempat</TableCell>
                   <TableCell align="left">Kecamatan</TableCell>
-                  <TableCell align="center">ACTION</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {currentPosts.map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell align="left">{row.c_nama}</TableCell>
-                    <TableCell align="left">{row.c_alamat}</TableCell>
-                    <TableCell align="left">{row.c_tempat}</TableCell>
-                    <TableCell align="left">{row.c_kecamatan}</TableCell>
                     <TableCell align="center">
                       <Button
                         onClick={() => onPilihCari(row.id, row.c_nama)}
@@ -160,6 +158,10 @@ function PilihData() {
                         PILIH
                       </Button>
                     </TableCell>
+                    <TableCell align="left">{row.c_nama}</TableCell>
+                    <TableCell align="left">{row.c_alamat}</TableCell>
+                    <TableCell align="left">{row.c_tempat}</TableCell>
+                    <TableCell align="left">{row.c_kecamatan}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -167,10 +169,10 @@ function PilihData() {
           </TableContainer>
         </DialogContent>
         <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={dataFilter.length}
-        paginate={paginate}
-      />
+          postsPerPage={postsPerPage}
+          totalPosts={dataFilter.length}
+          paginate={paginate}
+        />
         <DialogActions>
           <Button onClick={onBatal} variant="contained" color="primary">
             BATAL

@@ -1,7 +1,7 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { Firebase, storage, LocalServer } from "../../util/firebase";
+import app, { Firebase, storage, LocalServer,Develop } from "../../util/firebase";
 import moment from "moment";
-import { DATADRIVER } from "../../util/dbdukung";
+
 
 const db = app.firestore();
 //setting jika menggunakan emulator firestore
@@ -18,7 +18,6 @@ function DataProvider({ children }) {
   const [progressUploud, setProgressUploud] = useState(false);
 
   const GetAllData = useCallback(async () => {
-    console.log("GetAllData");
     const unsubscribe = db
       .collection("CL_LAPOR")
       .orderBy("c_createdAt")
@@ -28,12 +27,17 @@ function DataProvider({ children }) {
           tempData.push({ ...doc.data(), id: doc.id });
         });
         setSemuaData(tempData);
+        if (Develop) {
+          console.log("STEP : GET ALL DATA");
+        }
       });
     return unsubscribe;
   }, []);
 
   const GetUserData = useCallback(async (id) => {
-    console.log("GetUserData");
+    if (Develop) {
+      console.log("STEP : GET USER LAPOR DATA");
+    }
     await db
       .collection("CL_LAPOR")
       .doc(id)
@@ -43,12 +47,14 @@ function DataProvider({ children }) {
         let data = doc.data();
         data.id = id;
         setDataAwal(data);
-        console.log("Simpan :", data);
       })
       .catch((error) => console.error("Error Get Data :", error));
   }, []);
 
   const SaveData = async (newData) => {
+    if (Develop) {
+      console.log("STEP : SAVE DATA LAPOR", newData);
+    }
     setProgressUploud(true);
     //Init Today----------------------------
     let date = new Date();
@@ -92,7 +98,9 @@ function DataProvider({ children }) {
   };
 
   const DeleteData = async (id) => {
-    console.log("delete item :", id);
+    if (Develop) {
+      console.log("STEP : DELETE DATA", id);
+    }
     await db
       .collection("CL_LAPOR")
       .doc(id)
@@ -109,6 +117,9 @@ function DataProvider({ children }) {
     proses,
     file
   ) => {
+    if (Develop) {
+      console.log("STEP : SAVE EDIT DATA");
+    }
     await db.collection("CL_LAPOR").doc(id).update({
       c_tgljadwal,
       c_ketjadwal,
@@ -118,24 +129,6 @@ function DataProvider({ children }) {
       c_namafile3: file,
     });
     //.then(() => GetAllData());
-  };
-
-  const AddDummyData = () => {
-    console.log("Uploud Dummy Data");
-    const dummyData = DATADRIVER;
-    const uploudDummy = async (item) => {
-      console.log(item);
-      await db
-        .collection("CL_LAPOR")
-        .add({
-          c_user: "ADMIN",
-          ...item,
-        })
-        .then(() => {
-          console.log("Document Add Array");
-        });
-    };
-    dummyData.map((item, index) => uploudDummy(item));
   };
 
   const simpanFileImg1 = async (fileygdisimpan, id) => {
@@ -187,7 +180,6 @@ function DataProvider({ children }) {
     semuaData,
     DeleteData,
     SaveEditData,
-    AddDummyData,
     mapPoints,
     setMapPoints,
     GetUserData,

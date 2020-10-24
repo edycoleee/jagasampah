@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { Firebase, LocalServer } from "../../util/firebase";
+import app, { Firebase, LocalServer,Develop } from "../../util/firebase";
 import moment from "moment";
 
 const db = app.firestore();
@@ -25,7 +25,6 @@ function DataProvider({ children }) {
   const [c_tpa, setTPA] = useState("");
 
   const GetDataFTgl = useCallback(async (tgl) => {
-    console.log("GetSingleData", tgl);
     await db
       .collection("CL_KELOLATPA")
       .where("c_tanggal", "==", tgl)
@@ -35,7 +34,9 @@ function DataProvider({ children }) {
           id: doc.id,
           ...doc.data(),
         }));
-        console.log("Render List Effect :", data);
+        if (Develop) {
+          console.log("STEP : GET DATA 3R TGL");
+        }
         setDataAwal(data);
       })
       .catch((error) => console.error("Error Get Data :", error));
@@ -51,19 +52,22 @@ function DataProvider({ children }) {
           id: doc.id,
           ...doc.data(),
         }));
-        console.log("Render List Effect :", data);
+        if (Develop) {
+          console.log("STEP : GET DATA 3R ALL");
+        }
         setDataAwal(data);
       })
       .catch((error) => console.error("Error Get Data :", error));
   }, []);
 
   const SaveData = async (newData) => {
+    if (Develop) {
+      console.log("STEP : SAVE DATA SAMPAH", newData);
+    }
     let tglserver1 = new Date(
       Firebase.firestore.Timestamp.now().seconds * 1000
     );
     let tglserver = moment(tglserver1).format("YYYY-MM-DD");
-
-    console.log(newData);
     await db
       .collection("CL_KELOLATPA")
       .add({
@@ -74,7 +78,9 @@ function DataProvider({ children }) {
   };
 
   const DeleteData = async (id, tgl) => {
-    console.log("delete item :", id);
+    if (Develop) {
+      console.log("STEP : DELETE DATA", id);
+    }
     await db
       .collection("CL_KELOLATPA")
       .doc(id)
@@ -83,7 +89,9 @@ function DataProvider({ children }) {
   };
 
   const SaveEditData = async (newData) => {
-    console.log(newData);
+    if (Develop) {
+      console.log("STEP : SAVE EDIT DATA", newData);
+    }
     const {
       id,
       c_tanggal,
