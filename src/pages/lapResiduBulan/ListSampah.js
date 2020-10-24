@@ -14,7 +14,7 @@ import ChartSampah from "./ChartSampah";
 import { SampahContext } from "./ContextSampah";
 
 function ListSampah() {
-  const { dataSampah, dataBulanan } = useContext(SampahContext);
+  const { dataBulanan } = useContext(SampahContext);
 
 
   const calcTon = (dataSampah) => {
@@ -24,7 +24,7 @@ function ListSampah() {
     }, 0);
   };
 
-  const TotTon = useMemo(() => calcTon(dataSampah), [dataSampah]);
+  const TotTon = useMemo(() => calcTon(dataBulanan), [dataBulanan]);
 
   const calcRit = (dataSampah) => {
     return dataSampah.reduce((total, item) => {
@@ -33,7 +33,7 @@ function ListSampah() {
     }, 0);
   };
 
-  const RitRit = useMemo(() => calcRit(dataSampah), [dataSampah]);
+  const RitRit = useMemo(() => calcRit(dataBulanan), [dataBulanan]);
 
   const calcM3 = (dataSampah) => {
     return dataSampah.reduce((total, item) => {
@@ -43,7 +43,7 @@ function ListSampah() {
     }, 0);
   };
 
-  const M3M3 = useMemo(() => calcM3(dataSampah), [dataSampah]);
+  const M3M3 = useMemo(() => calcM3(dataBulanan), [dataBulanan]);
 
   return (
     <div>
@@ -56,10 +56,10 @@ function ListSampah() {
       <Paper elevation={2}>
         <Box pt={2} pb={2} ml={2} mr={2}>
           <Typography variant="h5" gutterBottom>
-            Data Sampah : {dataSampah.length} data, TOTAL => Rit : {RitRit}, M3
+            Data Sampah : {dataBulanan.length} data, TOTAL => Rit : {RitRit}, M3
             : {M3M3}
           </Typography>
-          {/* {JSON.stringify(dataBulanan)} */}
+          {JSON.stringify(dataBulanan)}
           <Typography variant="h1" component="h2" gutterBottom>
             TOTAL : {TotTon.toFixed(2)} TON
           </Typography>
@@ -94,7 +94,7 @@ function ListSampah() {
                           <TableCell align="right">{row.n_jmlrit}</TableCell>
                           <TableCell align="right">{row.n_volm3}</TableCell>
                           <TableCell align="right">
-                            {n_volton.toFixed(2)}
+                            {parseInt(n_volton).toFixed(2)}
                           </TableCell>
                           <TableCell>{row.c_tpa}</TableCell>
                         </TableRow>

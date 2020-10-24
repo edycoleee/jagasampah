@@ -16,7 +16,7 @@ import { Autocomplete } from "@material-ui/lab";
 
 function AddSampah() {
   const { users } = useContext(AuthContext);
-  const { GetDataBln, GetAllDataBln } = useContext(SampahContext);
+  const { GetDataBln, LihatDataTpa } = useContext(SampahContext);
   const [checkedAll, setCheckedAll] = useState(false);
 
   const thn = new Date().getFullYear();
@@ -33,11 +33,11 @@ function AddSampah() {
   const [kode, setKode] = useState("01");
   const [bulan, setBulan] = useState("Januari");
   const [tahun, setTahun] = useState("");
+  const [loading, setLoading] = useState(false);
 
   //Default TPA--------------------------------
   useEffect(() => {
     setTPA(users.c_defTPA);
-    console.log("Effect");
   }, [users.c_defTPA]);
 
   //Option TPA-----------------------------------
@@ -60,10 +60,13 @@ function AddSampah() {
   });
 
   const onCariData = async () => {
-    if (checkedAll) {
-      return await GetAllDataBln(tahun, kode)
-    }
-    return await GetDataBln(tahun, kode, c_tpa).then(()=> console.log("FINISH"))
+    setLoading(true);
+    // if (checkedAll) {
+    //   return await GetAllDataBln(tahun, kode, c_tpa)
+    // }
+    return await GetDataBln(tahun, kode, c_tpa).then(() => {
+      setLoading(false);
+    });
   };
 
   const onChangeBulan = (event) => {
@@ -81,9 +84,9 @@ function AddSampah() {
   };
 
   const onLihatData = () => {
+    LihatDataTpa(tahun, kode, c_tpa);
+  };
 
-  }
-  
   return (
     <div>
       <Paper elevation={2}>
@@ -142,9 +145,14 @@ function AddSampah() {
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Button onClick={onCariData} variant="contained" color="primary">
+              <Button
+                onClick={onCariData}
+                disabled={loading}
+                variant="contained"
+                color="primary"
+              >
                 HITUNG DATA
-              </Button> {" "}
+              </Button>{" "}
               <Button onClick={onLihatData} variant="contained" color="primary">
                 LIHAT DATA
               </Button>

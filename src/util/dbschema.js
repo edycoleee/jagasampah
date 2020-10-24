@@ -227,7 +227,7 @@ export const CL_BULAN = [
     kode: "10",
   },
   {
-    nama: "September",
+    nama: "November",
     kode: "11",
   },
   {

@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { LocalServer } from "../../util/firebase";
+import app, { LocalServer, Develop } from "../../util/firebase";
 
 export const SampahContext = createContext();
 
@@ -36,7 +36,7 @@ function SampahProvider({ children }) {
       .then((snapshot) => {
         //ketemu data tanggal
         const data = snapshot.docs.map((doc) => ({
-          Id: doc.id,
+          id: doc.id,
           ...doc.data(),
         }));
         const AllTgl = [...new Set(data.map((item) => item.c_tanggal))];
@@ -69,7 +69,9 @@ function SampahProvider({ children }) {
             }, 0);
           };
           const M3M3 = calcM3(dataFilter);
-          console.log("item : ", tgl, M3M3, RitRit, TotTon);
+          if (Develop) {
+            console.log("STEP item : ", tgl, M3M3, RitRit, TotTon);
+          }
           const newData = {
             c_tanggal: tgl,
             n_volton: TotTon,
@@ -89,35 +91,53 @@ function SampahProvider({ children }) {
         AllTgl.sort(function (a, b) {
           return parseInt(a.substr(8, 2)) - parseInt(b.substr(8, 2));
         }).map((tgl, index) => uploudData(tgl));
-        console.log(arr);
-        setDataBulanan(arr);
+        if (Develop) {
+          console.log("DATA", arr);
+        }
+        //setDataBulanan(arr);
         setLabelChart(xlabel);
         setSampahChart(ylabel);
         setDataSampah(data);
         return arr;
       })
-      .then((arr) => {
-        db.collection("CL_REKAPTPA")
-          .doc(`${tahun}${bulan}`)
-          .set({ ...arr });
+      .then((REKAP) => {
+        if (REKAP.length === 0) {
+          if (Develop) {
+            console.log("STEP DATA KOSONG");
+          }
+        } else {
+          if (Develop) {
+            console.log("STEP DATA DISIMPAN");
+          }
+          db.collection("CL_REKAPTPA")
+            .doc(`${tahun}${bulan}${c_tpa}`)
+            .set({ REKAP });
+        }
       })
+      .then(() => LihatDataTpa(tahun, bulan, c_tpa))
       .catch((error) => console.error("Error Get Data :", error));
   };
 
-  const GetAllDataBln = async (tahun, bulan) => {
-    console.log(tahun, bulan);
+  const GetAllDataBln = () => {};
+
+  const LihatDataTpa = async (tahun, bulan, c_tpa) => {
     await db
-      .collection("CL_SAMPAHHARI")
-      .where("c_bulan", "==", bulan)
-      .where("c_tahun", "==", tahun)
+      .collection("CL_REKAPTPA")
+      .doc(`${tahun}${bulan}${c_tpa}`)
       .get()
-      .then((snapshot) => {
-        const data = snapshot.docs.map((doc) => ({
-          Id: doc.id,
+      .then((doc) => {
+        if (!doc.exists) return console.log("Document Not Found : ");
+        console.log("get Document : ", doc.data());
+        const data = {
+          id: doc.id,
           ...doc.data(),
-        }));
-        ///console.log("Render List Effect :", data);
-        setDataSampah(data);
+        };
+        const { REKAP } = doc.data();
+        setDataBulanan(REKAP);
+        if (Develop) {
+          console.log("STEP GET DATA", data, REKAP);
+        }
+        console.log("STEP FINAL DATA", dataBulanan, REKAP);
       })
       .catch((error) => console.error("Error Get Data :", error));
   };
@@ -129,7 +149,7 @@ function SampahProvider({ children }) {
       .get()
       .then((snapshot) => {
         const data = snapshot.docs.map((doc) => ({
-          Id: doc.id,
+          id: doc.id,
           ...doc.data(),
         }));
         //console.log("Render List Effect :", data);
@@ -148,6 +168,7 @@ function SampahProvider({ children }) {
     dataBulanan,
     labelChart,
     sampahChart,
+    LihatDataTpa,
   };
   return (
     <SampahContext.Provider value={SampahState}>

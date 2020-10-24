@@ -1,28 +1,33 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { SampahContext } from "./ContextSampah";
 
 function ChartSampah() {
-  const { labelChart, sampahChart } = useContext(SampahContext);
-  //   const [labelChart, setLabelChart] = useState(dataBulanan);
-  //   const [sampahChart, setSampahChart] = useState(dataBulanan);
+  const { dataBulanan } = useContext(SampahContext);
+  const [labelChart, setLabelChart] = useState([]);
+  const [sampahChart, setSampahChart] = useState([]);
 
-  //   useEffect(() => {
-  //     if(dataBulanan.length !== 0){
-  //         console.log(dataBulanan.length);
-  //         let xlabel =[]
-  //         let ylabel =[]
-  //         dataBulanan.map((data) => {
-  //             const { n_volton } = data
-  //             xlabel.push(data.c_tanggal)
-  //             ylabel.push(n_volton.toFixed(2))
+  useEffect(() => {
+    //if(dataBulanan.length !== 0){
 
-  //         })
-  //         setLabelChart(xlabel)
-  //         setSampahChart(ylabel)
-  //         console.log(xlabel,ylabel);
-  //     }
-  //   }, [dataBulanan]);
+    console.log("EFFECT1 ", dataBulanan.length, dataBulanan);
+    let xlabel = [];
+    let ylabel = [];
+    dataBulanan.map((data) => {
+      const { n_volton } = data;
+      xlabel.push(data.c_tanggal);
+      ylabel.push(parseInt(n_volton).toFixed(2));
+    });
+    setLabelChart(xlabel);
+    setSampahChart(ylabel);
+    console.log("CHART EFFECT", xlabel, ylabel);
+    
+    //}
+  }, [dataBulanan]);
+
+  //     useEffect(() => {
+  //  console.log(labelChart,sampahChart);
+  //     },[labelChart,sampahChart])
 
   const data = {
     //labels: ["January", "February", "March", "April", "May", "June", "July"],

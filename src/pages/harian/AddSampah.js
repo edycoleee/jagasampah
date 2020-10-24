@@ -83,7 +83,8 @@ function AddSampah() {
     let tgl = new Date(c_tanggal);
     let tahun = String(tgl.getFullYear());
     let bulan = String(tgl.getMonth() + 1);
-
+    if (bulan < 10) bulan = "0" + bulan;
+    
     const newData = {
       c_tpa,
       c_tanggal,
