@@ -18,12 +18,14 @@ import LaporSampah from "./pages/lapor";
 import IndexSampahTPA from "./pages/sampahTPA";
 import IndexLapResidu from "./pages/lapResidu";
 import IndexLapResiduBulan from "./pages/lapResiduBulan";
+import IndexMap from "./pages/map";
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Landing} />
+        <Route exact path="/map" component={IndexMap} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route path="/forgot-password" component={ForgotPassword} />

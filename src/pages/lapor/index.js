@@ -9,6 +9,7 @@ import AddData from "./AddData";
 import DataLapor from "./DataLapor";
 import TindakLanjut from "./TindakLanjut";
 
+
 function IndexLapor() {
   const { users } = useContext(AuthContext);
 
@@ -42,6 +43,7 @@ function IndexLapor() {
         <Box mt={2} />
         <TindakLanjut />
       </Container>
+
       <ScrollButton />
     </DataProvider>
   );

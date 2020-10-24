@@ -12,6 +12,11 @@ import {
   TableRow,
   TableCell,
   TableBody,
+  Dialog,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+  DialogTitle,
 } from "@material-ui/core";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
@@ -19,7 +24,8 @@ import { DataContext } from "./ContextData";
 import { PROSESLAPOR } from "../../util/dbschema";
 import Pagination from "../../components/Pagination";
 import AlertSnackbar from "../../components/AlertSnackbar";
-import {Develop } from "../../util/firebase";
+import { Develop } from "../../util/firebase";
+import LeafletMapAll from "./MapAll";
 
 function TindakLanjut() {
   const { users } = useContext(AuthContext);
@@ -42,6 +48,17 @@ function TindakLanjut() {
   const handleCloseErr = () => {
     setOpenErr(false);
   };
+
+  //State Portal------------------------------
+  const [openPortal, setOpenPortal] = useState(false);
+  const onOpenDialog = () => {
+    setOpenPortal(true);
+  };
+
+  const handleClose = () => {
+    setOpenPortal(false);
+  };
+
   useEffect(() => {
     if (Develop) {
       console.log("STEP : EFFECT GET ALL DATA");
@@ -158,6 +175,10 @@ function TindakLanjut() {
     }
   };
 
+  const onLihat = () => {
+    onOpenDialog();
+  };
+
   return (
     <div>
       <Paper elevation={2}>
@@ -177,12 +198,12 @@ function TindakLanjut() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <Button
-                //onClick={onSimpan}
+                onClick={onLihat}
                 variant="contained"
                 color="primary"
-                //disabled={item.id}
+                disabled={currentData.length === 0 ? true : false}
               >
-                CARI
+                LIHAT MAP
               </Button>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -389,6 +410,22 @@ function TindakLanjut() {
           paginate={paginate}
         />
       </Paper>
+
+      {/* -----------------------Dialog Add------------------------ */}
+      <Dialog open={openPortal} onClose={handleClose} fullWidth>
+        <DialogTitle id="alert-dialog-title">LAPORAN SAMPAH </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description"></DialogContentText>
+
+          <LeafletMapAll />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} variant="contained" color="primary">
+            BATAL
+          </Button>
+        </DialogActions>
+      </Dialog>
+
       <AlertSnackbar
         open={openErr}
         handleClose={handleCloseErr}

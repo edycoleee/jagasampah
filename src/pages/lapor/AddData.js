@@ -73,8 +73,8 @@ function AddData() {
       c_noHP,
       c_ket,
       c_lokasi,
-      c_lat: latit,
-      c_lon: longi,
+      c_lat: mapPoints[0],
+      c_lon: mapPoints[1],
       c_namafile1: fileImg1.name,
       c_fileImg1: "",
       c_namafile2: fileImg2.name,
@@ -112,13 +112,7 @@ function AddData() {
     setNoHP("");
   };
 
-  let latit = "";
-  let longi = "";
-  if (mapPoints[0]) {
-    const map = mapPoints[0];
-    latit = map[0];
-    longi = map[1];
-  }
+
 
   return (
     <div>
@@ -133,12 +127,12 @@ function AddData() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <Typography variant="subtitle2" align="center">
-                Location Latitude : {mapPoints[0] ? latit : ""}
+                Location Latitude : {mapPoints ? mapPoints[0] : ""}
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Typography variant="subtitle2" align="center">
-                Location Longitude : {mapPoints[0] ? longi : ""}
+                Location Longitude : {mapPoints ? mapPoints[1] : ""}
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>

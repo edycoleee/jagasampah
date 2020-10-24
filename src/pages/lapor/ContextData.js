@@ -14,7 +14,10 @@ export const DataContext = createContext();
 function DataProvider({ children }) {
   const [dataAwal, setDataAwal] = useState([]);
   const [semuaData, setSemuaData] = useState([]);
-  const [mapPoints, setMapPoints] = useState([]);
+  const [mapPoints, setMapPoints] = useState({
+    lat: -6.8909,
+    lng: 110.6396,
+  })
   const [progressUploud, setProgressUploud] = useState(false);
 
   const GetAllData = useCallback(async () => {

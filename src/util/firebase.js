@@ -18,9 +18,11 @@ export const db = app.firestore();
 export const storage = firebase.storage();
 export const Firebase = firebase;
 
-//for develop in local server
+//for develop in local server => true
 export const LocalServer = true;
-//for develop with console log every step
+//export const LocalServer = false;
+//for develop with console log every step => true
 export const Develop = true;
+//export const Develop = false;
 
 export default app;
