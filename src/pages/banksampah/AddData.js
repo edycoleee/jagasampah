@@ -15,6 +15,7 @@ import { CL_KELOLABANK } from "../../util/dbschema";
 import { AuthContext } from "../../context/AuthContext";
 import AlertSnackbar from "../../components/AlertSnackbar";
 import { DataContext } from "./ContextData";
+import { Develop } from "../../util/firebase";
 
 function AddData() {
   const { users } = useContext(AuthContext);
@@ -35,7 +36,7 @@ function AddData() {
   const [c_lang, setLang] = useState("");
   const [c_long, setlong] = useState("");
   const [c_Sktetap, setSKTetap] = useState("");
-  const [c_pengelola, setPengelola] = useState("");
+  const [c_pengelola, setPengelola] = useState("SISWA");
   const [c_pildesa, setPilDesa] = useState([]);
   const [c_ket, setKet] = useState("");
 
@@ -62,40 +63,49 @@ function AddData() {
     );
   });
 
+  const onMessage = (code, message) => {
+    setErrMessage({
+      code,
+      message,
+    });
+    setOpenErr(true);
+  };
+
   //Simpan Data------------------------------
-  const onSimpan = () => {
-    if (
-      c_nama === "" ||
-      c_alamat === "" ||
-      c_kecamatan === "" ||
-      c_desa === ""
-    ) {
-      setErrMessage({
-        code: "ERROR",
-        message: "Isilah Form yang lengkap",
-      });
-      setOpenErr(true);
-    } else {
-      let tgl = new Date(c_tanggal);
-      let tahun = String(tgl.getFullYear());
-      let bulan = String(tgl.getMonth() + 1);
-      const newData = {
-        c_nama,
-        c_alamat,
-        c_tempat,
-        c_kecamatan,
-        c_desa,
-        c_lang,
-        c_long,
-        c_Sktetap,
-        c_pengelola,
-        c_ket,
-        c_bulan: bulan,
-        c_tahun: tahun,
-        c_user: users.c_username,
-      };
-      console.log(newData);
-      SaveData(newData);
+  const onSimpan = async () => {
+    if (c_nama === "") {
+      return onMessage("ERROR", "Nama Bank Sampah Kosong");
+    }
+    if (c_alamat === "") {
+      return onMessage("ERROR", "Alamat Bank Sampah Kosong");
+    }
+    if (c_kecamatan === "") {
+      return onMessage("ERROR", "Alamat Kecamatan Sampah Kosong");
+    }
+    if (c_desa === "") {
+      return onMessage("ERROR", "Alamat Desa/Kel Kosong");
+    }
+
+    let tgl = new Date(c_tanggal);
+    let tahun = String(tgl.getFullYear());
+    let bulan = String(tgl.getMonth() + 1);
+    const newData = {
+      c_nama,
+      c_alamat,
+      c_tempat,
+      c_kecamatan,
+      c_desa,
+      c_lang,
+      c_long,
+      c_Sktetap,
+      c_pengelola,
+      c_ket,
+      c_bulan: bulan,
+      c_tahun: tahun,
+      c_user: users.c_username,
+    };
+
+    await SaveData(newData).then(() => {
       setErrMessage({
         code: "SUCCESS",
         message: "Data Sudah Tersimpan",
@@ -103,7 +113,7 @@ function AddData() {
       setOpenErr(true);
       handleClose();
       ClearState();
-    }
+    });
   };
 
   //Close SnackBar----------------------------
@@ -178,16 +188,21 @@ function AddData() {
                 TAMBAH DATA
               </Button>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <Button
-                onClick={() => UploudBankSampah()}
-                variant="contained"
-                color="primary"
-                disabled={false}
-              >
-                DUMMY DATA
-              </Button>
-            </Grid>
+            {/* ----------------Uploud Dummy Data */}
+            {Develop ? (
+              <Grid item xs={12} sm={6}>
+                <Button
+                  onClick={() => UploudBankSampah()}
+                  variant="contained"
+                  color="primary"
+                  disabled={false}
+                >
+                  DUMMY DATA
+                </Button>
+              </Grid>
+            ) : (
+              ""
+            )}
           </Grid>
         </Box>
       </Paper>
@@ -254,7 +269,7 @@ function AddData() {
               </select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <label>Desa : </label>
+              <label>Desa/Kel : </label>
               <select
                 id="c_desa"
                 onChange={(e) => setDesa(e.currentTarget.value)}

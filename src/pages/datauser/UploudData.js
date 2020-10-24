@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import app, { Firebase, LocalServer } from "../../util/firebase";
 import {
-  //DATAKECAMATAN,
+  DATAKECAMATAN,
   Bonang,
   Demak,
   Dempet,
@@ -25,315 +25,67 @@ if (LocalServer) {
 }
 
 function UploudData() {
-  const onUploudData = () => {
-    console.log("Uploud Data");
-    // DATAKECAMATAN.map((item, index) => {
-    //   console.log(item)
+  const [loading, setLoading] = useState(false)
+  const onUploudData = async () => {
+    setLoading(true)
+    //Simpan Kecamatan
+    const simpanKecamatan = async (Kecamatan) => {
+      await db
+        .collection("CL_KECAMATAN")
+        .doc(Kecamatan)
+        .set({
+          DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
+        })
+        .then(() => {
+          //console.log(Kecamatan);
+        });
+    };
+    const kecamatanloop = async (KelKecamatan) => {
+      for (const k of KelKecamatan) {
+        await simpanKecamatan(k);
+      }
+    };
+    await kecamatanloop(DATAKECAMATAN);
 
-    // })
-
-    
-    db.collection("CL_KECAMATAN")
-      .doc("Bonang")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Bonang.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Bonang")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Demak")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Demak.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Demak")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Dempet")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Dempet.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Dempet")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Gajah")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Gajah.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Gajah")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Guntur")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Guntur.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Guntur")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Karanganyar")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Karanganyar.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Karanganyar")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Karangawen")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Karangawen.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Karangawen")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Karangtengah")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Karangtengah.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Karangtengah")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Kebonagung")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Kebonagung.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Kebonagung")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Mijen")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Mijen.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Mijen")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Mranggen")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Mranggen.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Mranggen")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Sayung")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Sayung.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Sayung")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Wedung")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Wedung.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Wedung")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
-
-    db.collection("CL_KECAMATAN")
-      .doc("Wonosalam")
-      .set({
-        DESA: Firebase.firestore.FieldValue.arrayUnion("PILIH"),
-      })
-      .then(() => {
-        let Desaku = () =>
-          Wonosalam.map((item, index) => {
-            console.log(item);
-            db.collection("CL_KECAMATAN")
-              .doc("Wonosalam")
-              .update({
-                DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-              })
-              .then(() => {
-                console.log("Document Add Array");
-              });
-          });
-        Desaku();
-      });
+    //Simpan Desa
+    const simpanDesa = async (desa,NamaDesa) => {
+      await db
+        .collection("CL_KECAMATAN")
+        .doc(NamaDesa)
+        .update({
+          DESA: Firebase.firestore.FieldValue.arrayUnion(desa),
+        })
+        .then(() => {
+          //console.log(desa);
+        });
+    };
+    const desaloop = async (KelDesa,NamaDesa) => {
+      for (const d of KelDesa) {
+        await simpanDesa(d,NamaDesa);
+      }
+    };
+    await desaloop(Bonang, "Bonang");
+    await desaloop(Demak, "Demak");
+    await desaloop(Dempet,"Dempet");
+    await desaloop(Gajah,"Gajah");
+    await desaloop(Guntur,"Guntur");
+    await desaloop(Karanganyar,"Karanganyar");
+    await desaloop(Karangawen,"Karangawen");
+    await desaloop(Karangtengah,"Karangtengah");
+    await desaloop(Kebonagung,"Kebonagung");
+    await desaloop(Mijen,"Mijen");
+    await desaloop(Mranggen,"Mranggen");
+    await desaloop(Sayung,"Sayung");
+    await desaloop(Wedung,"Wedung");
+    await desaloop(Wonosalam,"Wonosalam");
+    await console.log("SELESAI SIMPAN");
+    await setLoading(false)
   };
 
   return (
     <div>
-      <h3>Uploud Data Kecamatan</h3>
-      <button onClick={onUploudData}>UPLOUD</button>
-      <h3>Uploud Data Kelurahan</h3>
-      <button>UPLOUD</button>
+      <h3>Uploud Data Kecamatan dan Kelurahan</h3>
+      <button onClick={onUploudData} disabled={loading}>UPLOUD</button>
     </div>
   );
 }

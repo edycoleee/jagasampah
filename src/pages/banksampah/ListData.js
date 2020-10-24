@@ -16,6 +16,7 @@ import { DataContext } from "./ContextData";
 import EditData from "./EditData";
 import Pagination from "../../components/Pagination";
 import { AuthContext } from "../../context/AuthContext";
+import { Develop } from "../../util/firebase";
 
 function ListData() {
   const { dataAwal, GetAllData, DeleteData } = useContext(DataContext);
@@ -38,12 +39,17 @@ function ListData() {
     let filterdata = dataAwal.filter((data) =>
       data.c_nama.toLowerCase().includes(c_cari.toLowerCase())
     );
-    //console.log("Filter :", filterdata);
+    if (Develop) {
+      console.log("STEP : LIST EFFECT FILTER", filterdata);
+    }
     setDataFilter(filterdata);
     setCurrentPage(1);
   }, [c_cari, dataAwal]);
 
   useEffect(() => {
+    if (Develop) {
+      console.log("STEP : LIST EFFECT GETDATA");
+    }
     GetAllData();
   }, [GetAllData]);
 
@@ -73,10 +79,9 @@ function ListData() {
         <Box pt={2} pb={2} ml={2} mr={2}>
           <Grid item xs={12} sm={4}>
             <TextField
-              required
               id="c_cari"
               name="c_cari"
-              label="CARI KECAMATAN"
+              label="CARI NAMA BANK SAMPAH"
               fullWidth
               autoComplete="c_cari"
               onChange={(e) => setCari(e.target.value)}
@@ -88,14 +93,14 @@ function ListData() {
               <TableHead>
                 <TableRow>
                   <TableCell>User</TableCell>
-                  <TableCell align="right">Nama</TableCell>
-                  <TableCell align="right">Alamat</TableCell>
-                  <TableCell align="right">Tempat</TableCell>
-                  <TableCell align="right">Kecamatan</TableCell>
-                  <TableCell align="right">Desa</TableCell>
-                  <TableCell align="right">SKPenetapan</TableCell>
-                  <TableCell align="right">Pengelola</TableCell>
-                  <TableCell align="right">ACTION</TableCell>
+                  <TableCell>Nama</TableCell>
+                  <TableCell>Alamat</TableCell>
+                  <TableCell>Tempat</TableCell>
+                  <TableCell>Kecamatan</TableCell>
+                  <TableCell>Desa</TableCell>
+                  <TableCell>SKPenetapan</TableCell>
+                  <TableCell>Pengelola</TableCell>
+                  <TableCell>ACTION</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -104,14 +109,14 @@ function ListData() {
                     <TableCell component="th" scope="row">
                       {row.c_user}
                     </TableCell>
-                    <TableCell align="right">{row.c_nama}</TableCell>
-                    <TableCell align="right">{row.c_alamat}</TableCell>
-                    <TableCell align="right">{row.c_tempat}</TableCell>
-                    <TableCell align="right">{row.c_kecamatan}</TableCell>
-                    <TableCell align="right">{row.c_desa}</TableCell>
-                    <TableCell align="right">{row.c_Sktetap}</TableCell>
-                    <TableCell align="right">{row.c_pengelola}</TableCell>
-                    <TableCell align="right">
+                    <TableCell>{row.c_nama}</TableCell>
+                    <TableCell>{row.c_alamat}</TableCell>
+                    <TableCell>{row.c_tempat}</TableCell>
+                    <TableCell>{row.c_kecamatan}</TableCell>
+                    <TableCell>{row.c_desa}</TableCell>
+                    <TableCell>{row.c_Sktetap}</TableCell>
+                    <TableCell>{row.c_pengelola}</TableCell>
+                    <TableCell>
                       <Button
                         onClick={() => onDelete(row.id)}
                         variant="contained"

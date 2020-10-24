@@ -30,22 +30,6 @@ function DataProvider({ children }) {
       .catch((error) => console.error("Error Get Data :", error));
   }, []);
 
-  // const SaveData = async (newData) => {
-  //   let tglserver1 = new Date(
-  //     Firebase.firestore.Timestamp.now().seconds * 1000
-  //   );
-  //   let tglserver = moment(tglserver1).format("YYYY-MM-DD");
-
-  //   console.log(newData);
-  //   await db
-  //     .collection("CL_USER")
-  //     .add({
-  //       createdAt: tglserver,
-  //       ...newData,
-  //     })
-  //     .then(() => GetAllData());
-  // };
-
   const SaveEditData = async (newData) => {
     if (Develop) {
       console.log("STEP : SAVE EDIT DATA", newData);

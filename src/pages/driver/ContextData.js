@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { Firebase, LocalServer } from "../../util/firebase";
+import app, { Firebase, LocalServer,Develop } from "../../util/firebase";
 import moment from "moment";
 import { DATADRIVER } from "../../util/dbdukung";
 
@@ -35,8 +35,9 @@ function DataProvider({ children }) {
       Firebase.firestore.Timestamp.now().seconds * 1000
     );
     let tglserver = moment(tglserver1).format("YYYY-MM-DD");
-
-    //console.log(newData);
+    if (Develop) {
+      console.log("STEP : SAVE DATA", newData);
+    }
     await db
       .collection("CL_DRIVER")
       .add({
@@ -47,7 +48,9 @@ function DataProvider({ children }) {
   };
 
   const DeleteData = async (id) => {
-    console.log("delete item :", id);
+    if (Develop) {
+      console.log("STEP : DELETE DATA", id);
+    }
     await db
       .collection("CL_DRIVER")
       .doc(id)
@@ -56,7 +59,9 @@ function DataProvider({ children }) {
   };
 
   const SaveEditData = async (newData) => {
-    console.log(newData);
+    if (Develop) {
+      console.log("STEP : SAVE EDIT DATA", newData);
+    }
     const { id, c_driver, c_nopol, c_kendaraan, c_jenis, c_fkali } = newData;
 
     await db
@@ -73,7 +78,9 @@ function DataProvider({ children }) {
   };
 
   const AddDummyData = () => {
-    console.log("Uploud Dummy Data");
+    if (Develop) {
+      console.log("STEP : UPLOUD DUMMY DATA");
+    }
     const dummyData = DATADRIVER;
     const uploudDummy = async (item) => {
       console.log(item);
@@ -87,7 +94,8 @@ function DataProvider({ children }) {
           console.log("Document Add Array");
         });
     };
-    dummyData.map((item, index) => uploudDummy(item));
+    dummyData.map((item, index) => uploudDummy(item))
+    GetAllData()
   };
 
   const DataState = {

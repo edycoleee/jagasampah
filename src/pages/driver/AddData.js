@@ -16,6 +16,7 @@ import AlertSnackbar from "../../components/AlertSnackbar";
 import { DataContext } from "./ContextData";
 import { CL_JNSKENDARAAN } from "../../util/dbschema";
 import { Autocomplete } from "@material-ui/lab";
+import { Develop } from "../../util/firebase";
 
 function AddData() {
   const { users } = useContext(AuthContext);
@@ -127,16 +128,21 @@ function AddData() {
                 TAMBAH DATA
               </Button>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <Button
-                onClick={() => AddDummyData()}
-                variant="contained"
-                color="primary"
-                //disabled={true}
-              >
-                DUMMY DATA
-              </Button>
-            </Grid>
+            {/* ----------------Uploud Dummy Data */}
+            {Develop ? (
+              <Grid item xs={12} sm={6}>
+                <Button
+                  onClick={() => AddDummyData()}
+                  variant="contained"
+                  color="primary"
+                  //disabled={true}
+                >
+                  DUMMY DATA
+                </Button>
+              </Grid>
+            ) : (
+              ""
+            )}
           </Grid>
         </Box>
       </Paper>

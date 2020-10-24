@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { Firebase, LocalServer } from "../../util/firebase";
+import app, { Firebase, LocalServer,Develop } from "../../util/firebase";
 import moment from "moment";
 // import {
 //   Gajah,
@@ -28,23 +28,6 @@ function DataProvider({ children }) {
   const [kecamatan, setKecamatan] = useState([]);
   const [c_tanggal, setTanggal] = useState(today);
 
-  const GetDataFTgl = async (tgl) => {
-    //console.log("GetSingleData", tgl);
-    await db
-      .collection("CL_BANKSAMPAH")
-      .where("c_tanggal", "==", tgl)
-      .get()
-      .then((snapshot) => {
-        const data = snapshot.docs.map((doc) => ({
-          Id: doc.id,
-          ...doc.data(),
-        }));
-        //console.log("Render List Effect :", data);
-        setDataAwal(data);
-      })
-      .catch((error) => console.error("Error Get Data :", error));
-  };
-
   const GetAllData = useCallback(async () => {
     //console.log("GetAllData");
     await db
@@ -62,13 +45,15 @@ function DataProvider({ children }) {
   }, []);
 
   const SaveData = async (newData) => {
+    if (Develop) {
+      console.log("STEP : SAVE BANK SAMPAH", newData);
+    }
     let tglserver1 = new Date(
       Firebase.firestore.Timestamp.now().seconds * 1000
     );
     let tglserver = moment(tglserver1).format("YYYY-MM-DD");
 
-    console.log(newData);
-    await db
+    return await db
       .collection("CL_BANKSAMPAH")
       .add({
         createdAt: tglserver,
@@ -77,8 +62,10 @@ function DataProvider({ children }) {
       .then(() => GetAllData());
   };
 
-  const DeleteData = async (id, tgl) => {
-    console.log("delete item :", id);
+  const DeleteData = async (id) => {
+    if (Develop) {
+      console.log("STEP : DELETE DATA", id);
+    }
     await db
       .collection("CL_BANKSAMPAH")
       .doc(id)
@@ -87,7 +74,9 @@ function DataProvider({ children }) {
   };
 
   const SaveEditData = async (newData) => {
-    console.log(newData);
+    if (Develop) {
+      console.log("STEP : SAVE EDIT DATA", newData);
+    }
     const {
       id,
       c_nama,
@@ -136,32 +125,10 @@ function DataProvider({ children }) {
       .catch((error) => console.error("Error Get Data :", error));
   }, []);
 
-  const UploudData = () => {
-    // console.log("Uploud Data");
-    // db.collection("CL_KECAMATAN")
-    //   .doc("Gajah")
-    //   .set({
-    //     DESA: Firebase.firestore.FieldValue.arrayUnion("COBA"),
-    //   })
-    //   .then(() => {
-    //     let Desaku = () =>
-    //       Gajah.map((item, index) => {
-    //         console.log(item);
-    //         db.collection("CL_KECAMATAN")
-    //           .doc("Gajah")
-    //           .update({
-    //             DESA: Firebase.firestore.FieldValue.arrayUnion(item),
-    //           })
-    //           .then(() => {
-    //             console.log("Document Add Array");
-    //           });
-    //       });
-    //     Desaku();
-    //   });
-  };
-
   const UploudBankSampah = () => {
-    console.log("Uploud Data BankSampah");
+    if (Develop) {
+      console.log("STEP : UPLOUD DUMMY DATA");
+    }
     let tglserver1 = new Date(
       Firebase.firestore.Timestamp.now().seconds * 1000
     );
@@ -189,6 +156,7 @@ function DataProvider({ children }) {
     };
 
     DATABANKSAMPAH.map((item, index) => uploudData(item));
+    GetAllData()
   };
 
   const DataState = {
@@ -197,12 +165,10 @@ function DataProvider({ children }) {
     GetAllData,
     DeleteData,
     SaveEditData,
-    GetDataFTgl,
     c_tanggal,
     setTanggal,
     kecamatan,
     GetKecData,
-    UploudData,
     UploudBankSampah,
   };
   return (

@@ -16,6 +16,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { DataContext } from "./ContextData";
 import EditData from "./EditData";
 import Pagination from "../../components/Pagination";
+import { Develop } from "../../util/firebase";
 
 function ListData() {
   const { dataAwal, GetAllData, DeleteData } = useContext(DataContext);
@@ -34,6 +35,9 @@ function ListData() {
   };
 
   useEffect(() => {
+    if (Develop) {
+      console.log("STEP : LIST EFFECT GETDATA");
+    }
     GetAllData();
   }, [GetAllData]);
 
@@ -41,7 +45,9 @@ function ListData() {
     let filterdata = dataAwal.filter((data) =>
       data.c_nopol.toLowerCase().includes(c_cari.toLowerCase())
     );
-    //console.log("Filter :", filterdata);
+    if (Develop) {
+      console.log("STEP : LIST EFFECT FILTER", filterdata);
+    }
     setDataFilter(filterdata);
     setCurrentPage(1);
   }, [c_cari, dataAwal]);

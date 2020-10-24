@@ -5,7 +5,8 @@ import ScrollButton from "../../components/ScrollButton";
 import { Box, Container, Typography } from "@material-ui/core";
 import DataProvider from "./ContextData";
 import ListData from "./ListData";
-//import UploudData from "./UploudData";
+import UploudData from "./UploudData";
+import { Develop } from "../../util/firebase";
 
 function IndexUserAdmin() {
   const { users } = useContext(AuthContext);
@@ -23,10 +24,14 @@ function IndexUserAdmin() {
       </Container>
       <Box mt={2} />
       {/* ----------------Uploud Data Kecamatan Kelurahan */}
-      {/* <Container maxWidth="sm">
-        <UploudData />
-      </Container>
-      <Box mt={2} /> */}
+      {Develop ? (
+        <Container maxWidth="sm">
+          <UploudData />
+        </Container>
+      ) : (
+        ""
+      )}
+      <Box mt={2} />
       <Container maxWidth="md">
         {users.c_tipeuser === "admin" ? <ListData /> : "Khusus Admin"}
       </Container>
