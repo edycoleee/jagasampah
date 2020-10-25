@@ -26,6 +26,7 @@ function SampahProvider({ children }) {
   const [c_tanggal, setTanggal] = useState(today);
 
   const GetDataBln = async (tahun, bulan, c_tpa) => {
+
     console.log(tahun, bulan, c_tpa);
     await db
       .collection("CL_SAMPAHHARI")
@@ -121,6 +122,7 @@ function SampahProvider({ children }) {
   const GetAllDataBln = () => {};
 
   const LihatDataTpa = async (tahun, bulan, c_tpa) => {
+    setDataBulanan([])
     await db
       .collection("CL_REKAPTPA")
       .doc(`${tahun}${bulan}${c_tpa}`)

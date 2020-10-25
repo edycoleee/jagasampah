@@ -99,7 +99,7 @@ function ListSampah() {
       <Paper elevation={2}>
         <Box pt={2} pb={2} ml={2} mr={2}>
           <h4>List Sampah : {dataSampah.length} data</h4>
-          Tot Rit : {RitRit}, Tot M3 : {M3M3}, Tot Ton : {TotTon}
+          Tot Rit : {RitRit}, Tot M3 : {M3M3}, Tot Ton : {TotTon.toFixed(2)}
           <p></p>
           <Grid item xs={12} sm={4}>
             <TextField
@@ -143,7 +143,7 @@ function ListSampah() {
                     <TableCell>{row.c_asal}</TableCell>
                     <TableCell align="right">{row.n_jmlrit}</TableCell>
                     <TableCell align="right">{row.n_volm3}</TableCell>
-                    <TableCell align="right">{row.n_volton}</TableCell>
+                    <TableCell align="right">{ parseFloat(row.n_volton).toFixed(2)}</TableCell>
                     <TableCell>{row.c_tpa}</TableCell>
                     <TableCell>
                       <Button

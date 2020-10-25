@@ -32,6 +32,24 @@ export const CL_BANKSAMPAH = [
     c_user: "",
   },
 ];
+
+export const CL_TPS = [
+  {
+    c_kontak: "",
+    c_noHP:"",
+    c_alamat: "",
+    c_kecamatan: "",
+    c_desa: "",
+    c_lang: "",
+    c_long: "",
+    c_fileImg1:"",
+    c_namafile1:"",
+    c_keterangan: "",
+    c_createdAt: "",
+    c_user: "",
+  },
+];
+
 export const CL_SAMPAH3R = [
   {
     n_plastik: "",

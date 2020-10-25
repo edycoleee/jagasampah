@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { SampahContext } from "./ContextSampah";
+import { Develop } from "../../util/firebase";
 
 function ChartSampah() {
   const { dataBulanan } = useContext(SampahContext);
@@ -13,15 +14,21 @@ function ChartSampah() {
     console.log("EFFECT1 ", dataBulanan.length, dataBulanan);
     let xlabel = [];
     let ylabel = [];
+
     dataBulanan.map((data) => {
       const { n_volton } = data;
       xlabel.push(data.c_tanggal);
-      ylabel.push(parseInt(n_volton).toFixed(2));
+      ylabel.push(parseFloat(n_volton).toFixed(2));
+      //always return some value
+      return data;
     });
+
     setLabelChart(xlabel);
     setSampahChart(ylabel);
-    console.log("CHART EFFECT", xlabel, ylabel);
-    
+    if (Develop) {
+      console.log("CHART EFFECT", xlabel, ylabel);
+    }
+
     //}
   }, [dataBulanan]);
 

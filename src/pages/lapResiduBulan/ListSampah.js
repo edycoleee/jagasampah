@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import React, { useContext, useMemo } from "react";
+import { Develop } from "../../util/firebase";
 import ChartSampah from "./ChartSampah";
 import { SampahContext } from "./ContextSampah";
 
@@ -59,7 +60,7 @@ function ListSampah() {
             Data Sampah : {dataBulanan.length} data, TOTAL => Rit : {RitRit}, M3
             : {M3M3}
           </Typography>
-          {JSON.stringify(dataBulanan)}
+          { Develop && JSON.stringify(dataBulanan) }
           <Typography variant="h1" component="h2" gutterBottom>
             TOTAL : {TotTon.toFixed(2)} TON
           </Typography>
@@ -94,7 +95,7 @@ function ListSampah() {
                           <TableCell align="right">{row.n_jmlrit}</TableCell>
                           <TableCell align="right">{row.n_volm3}</TableCell>
                           <TableCell align="right">
-                            {parseInt(n_volton).toFixed(2)}
+                            {parseFloat(n_volton).toFixed(2)}
                           </TableCell>
                           <TableCell>{row.c_tpa}</TableCell>
                         </TableRow>

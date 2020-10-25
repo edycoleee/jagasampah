@@ -105,7 +105,7 @@ function AddData() {
     setOpenErr(false);
   };
 
-  //Close SnackBar----------------------------
+  //Clear State----------------------------
   const ClearState = () => {
     setKeterangan("");
     setLokasi("");

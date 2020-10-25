@@ -21,7 +21,7 @@ function DataProvider({ children }) {
   const [progressUploud, setProgressUploud] = useState(false);
 
   const GetAllData = useCallback(async () => {
-    const unsubscribe = db
+    const unsubscribe = await db
       .collection("CL_LAPOR")
       .orderBy("c_createdAt")
       .onSnapshot((snapshot) => {
@@ -41,7 +41,7 @@ function DataProvider({ children }) {
     if (Develop) {
       console.log("STEP : GET USER LAPOR DATA");
     }
-    await db
+    const unsubscribe = await db
       .collection("CL_LAPOR")
       .doc(id)
       .get()
@@ -52,6 +52,7 @@ function DataProvider({ children }) {
         setDataAwal(data);
       })
       .catch((error) => console.error("Error Get Data :", error));
+      return unsubscribe;
   }, []);
 
   const SaveData = async (newData) => {

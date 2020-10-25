@@ -351,6 +351,7 @@ function TindakLanjut() {
                         onClick={() => setItem(row)}
                         variant="contained"
                         color="primary"
+                        disabled={users.c_tipeuser === "admin" ? false : true}
                       >
                         PILIH
                       </Button>

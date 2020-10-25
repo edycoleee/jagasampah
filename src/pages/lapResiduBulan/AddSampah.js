@@ -13,10 +13,11 @@ import { CL_BULAN } from "../../util/dbschema";
 import { AuthContext } from "../../context/AuthContext";
 import { SampahContext } from "./ContextSampah";
 import { Autocomplete } from "@material-ui/lab";
+import { Develop } from "../../util/firebase";
 
 function AddSampah() {
   const { users } = useContext(AuthContext);
-  const { GetDataBln, LihatDataTpa } = useContext(SampahContext);
+  const { GetDataBln, LihatDataTpa,dataBulanan } = useContext(SampahContext);
   const [checkedAll, setCheckedAll] = useState(false);
 
   const thn = new Date().getFullYear();
@@ -83,8 +84,8 @@ function AddSampah() {
     }
   };
 
-  const onLihatData = () => {
-    LihatDataTpa(tahun, kode, c_tpa);
+  const onLihatData =async () => {
+    await LihatDataTpa(tahun, kode, c_tpa)
   };
 
   return (
@@ -103,6 +104,7 @@ function AddSampah() {
                 {pilihTPA}
               </select>
             </Grid>
+            {Develop && (
             <Grid item xs={12} sm={6}>
               <FormControlLabel
                 control={
@@ -111,11 +113,13 @@ function AddSampah() {
                     onChange={(event) => setCheckedAll(event.target.checked)}
                     name="checkedAll"
                     color="primary"
+                    disabled={true}
                   />
                 }
                 label="Semua TPA"
               />
             </Grid>
+            )}
             <Grid item xs={12} sm={6}>
               {/* {JSON.stringify(kode)} */}
               <label>Bulan : {"  "}</label>
@@ -156,6 +160,9 @@ function AddSampah() {
               <Button onClick={onLihatData} variant="contained" color="primary">
                 LIHAT DATA
               </Button>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              {(dataBulanan.length === 0) ? "Data Belum Ada" : `${dataBulanan.length}  Data` }
             </Grid>
           </Grid>
         </Box>

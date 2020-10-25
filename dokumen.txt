@@ -53,3 +53,6 @@ firebase deploy --only hosting
 ------------------------------
 npm install xlsx
 
+npm i @material-ui/pickers
+https://material-ui-pickers.dev/getting-started/installation
+npm i @date-io/moment@1.x moment

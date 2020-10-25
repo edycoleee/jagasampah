@@ -19,6 +19,7 @@ import IndexSampahTPA from "./pages/sampahTPA";
 import IndexLapResidu from "./pages/lapResidu";
 import IndexLapResiduBulan from "./pages/lapResiduBulan";
 import IndexMap from "./pages/map";
+import IndexTPST from "./pages/tpst";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <PrivateRoute exact path="/sampahTPA" component={IndexSampahTPA} />
         <PrivateRoute exact path="/lapresidu" component={IndexLapResidu} />
         <PrivateRoute exact path="/tpabulan" component={IndexLapResiduBulan} />
+        <PrivateRoute exact path="/tpst" component={IndexTPST} />
         <Route component={ErrorPage} />
       </Switch>
     </Router>
