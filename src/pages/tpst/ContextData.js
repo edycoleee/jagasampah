@@ -13,33 +13,10 @@ if (LocalServer) {
   db.settings({ host: "localhost:8080", ssl: false });
 }
 
-const DEMAKLOC = [-6.8909, 110.6396];
 export const DataContext = createContext();
 
 function DataProvider({ children }) {
   const [semuaData, setSemuaData] = useState([]);
-  const [mapPoints, setMapPoints] = useState(DEMAKLOC);
-  const [progressUploud, setProgressUploud] = useState(false);
-
-  const [c_kecamatan, setKecamatan] = useState("");
-  const [c_desa, setDesa] = useState("");
-  const [kecamatan, setDtKecamatan] = useState([]);
-
-  const GetKecData = useCallback(async () => {
-    //console.log("GetKecData");
-    await db
-      .collection("CL_KECAMATAN")
-      .get()
-      .then((snapshot) => {
-        const data = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        //console.log("Render List Effect :", data);
-        setDtKecamatan(data);
-      })
-      .catch((error) => console.error("Error Get Data :", error));
-  }, []);
 
   const SaveData = async (newData) => {
     if (Develop) {
@@ -50,13 +27,10 @@ function DataProvider({ children }) {
     );
     let tglserver = moment(tglserver1).format("YYYY-MM-DD");
 
-    return await db
-      .collection("CL_TPST")
-      .add({
-        createdAt: tglserver,
-        ...newData,
-      })
-      .then(() => GetAllData());
+    return await db.collection("CL_TPST").add({
+      createdAt: tglserver,
+      ...newData,
+    });
   };
 
   const simpanFileImg1 = async (fileygdisimpan, id) => {
@@ -124,22 +98,35 @@ function DataProvider({ children }) {
       .delete()
       .then(() => GetAllData());
   };
+
+  const SaveEditData = async (newData) => {
+    if (Develop) {
+      console.log("STEP : SAVE EDIT DATA", newData);
+    }
+    const { id, c_alamat, c_kontak, c_noHP, c_keterangan } = newData;
+
+    await db
+      .collection("CL_TPST")
+      .doc(id)
+      .update({
+        c_alamat,
+        c_kontak,
+        c_noHP,
+        c_keterangan,
+      })
+      .then(() => GetAllData())
+      .catch((error) => console.error("Error Save Data :", error));
+  };
+
+
   const DataState = {
     semuaData,
-    kecamatan,
-    mapPoints,
-    setMapPoints,
-    c_kecamatan,
-    setKecamatan,
-    c_desa,
-    setDesa,
-    GetKecData,
     simpanFileImg1,
-    progressUploud,
     SaveData,
     CekNamaFile,
     GetAllData,
     DeleteData,
+    SaveEditData
   };
   return (
     <DataContext.Provider value={DataState}>{children}</DataContext.Provider>

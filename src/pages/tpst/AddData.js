@@ -13,38 +13,40 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import { AuthContext } from "../../context/AuthContext";
+//import { AuthContext } from "../../context/AuthContext";
 import { DataContext } from "./ContextData";
 import { Develop } from "../../util/firebase";
-import PilihKecamatan from "./PilihKecamatan";
+import PilihKecamatan from "../../components/PilihKecamatan";
 import Notification from "../../components/Notification";
-import Map from "./GetMap";
+import GetMapLocation from "../../components/GetMapLocation";
+
+const DEMAKLOC = [-6.8909, 110.6396];
 
 function AddData() {
-  const { users } = useContext(AuthContext);
+  //const { users } = useContext(AuthContext);
   const {
     SaveData,
-    mapPoints,
-    progressUploud,
-    c_kecamatan,
-    c_desa,
     simpanFileImg1,
     CekNamaFile,
+    GetAllData
   } = useContext(DataContext);
-
+//Notify state
   const [notify, setNotify] = useState({
     isOpen: false,
     message: "",
     type: "",
   });
 
+  //Get Location
+  const [mapPoints, setMapPoints] = useState(DEMAKLOC);
+  const [c_kecamatan, setKecamatan] = useState("");
+  const [c_desa, setDesa] = useState("");
   //State Sampah----------------------------
   const [c_kontak, setKontak] = useState("");
   const [c_noHP, setNoHP] = useState("");
   const [c_alamat, setAlamat] = useState("");
-  const [c_namaFile1, setNamaFile1] = useState("");
   const [c_keterangan, setKeterangan] = useState("");
-  const [loading, setLoading] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [fileImg1, setFileImg1] = useState(null);
 
@@ -128,7 +130,6 @@ function AddData() {
       c_alamat,
       c_kecamatan,
       c_desa,
-      c_keterangan,
       c_lat: mapPoints[0],
       c_lon: mapPoints[1],
       c_namafile1: fileImg1.name,
@@ -157,6 +158,7 @@ function AddData() {
     });
     await ClearState();
     await setLoading(false);
+    await GetAllData()
   };
 
   //Clear State----------------------------
@@ -177,14 +179,24 @@ function AddData() {
         <Box pt={2} pb={2} ml={2} mr={2}>
           <Grid container spacing={3}>
             <Box mt={2} />
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6}>
               <Button
                 onClick={onLihat}
                 variant="contained"
                 color="primary"
-                disabled={progressUploud}
+                disabled={loading}
               >
                 AMBIL LOKASI
+              </Button>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Button
+                onClick={onLihat}
+                variant="contained"
+                color="primary"
+                disabled={loading}
+              >
+                LIHAT DATA
               </Button>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -264,7 +276,7 @@ function AddData() {
                 onClick={onSimpan}
                 variant="contained"
                 color="primary"
-                disabled={progressUploud}
+                disabled={loading}
               >
                 SIMPAN DATA
               </Button>
@@ -278,8 +290,9 @@ function AddData() {
         <DialogContent>
           <DialogContentText id="alert-dialog-description"></DialogContentText>
 
-          <PilihKecamatan />
-          <Map />
+          <PilihKecamatan c_kecamatan={c_kecamatan} 
+          setKecamatan={setKecamatan} c_desa={c_desa} setDesa={setDesa} />
+          <GetMapLocation mapPoints={mapPoints} setMapPoints={setMapPoints}/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} variant="contained" color="primary">

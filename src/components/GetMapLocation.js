@@ -1,12 +1,12 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { DataContext } from "./ContextData";
-import { Develop } from "../../util/firebase";
+//import { DataContext } from "./ContextData";
+import { Develop } from "../util/firebase";
 
-const LeafletMap = () => {
-  const { mapPoints, setMapPoints } = useContext(DataContext);
+const GetMapLocation = ({ mapPoints, setMapPoints }) => {
+  //const { mapPoints, setMapPoints } = useContext(DataContext);
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -52,4 +52,4 @@ const LeafletMap = () => {
   );
 };
 
-export default LeafletMap;
+export default GetMapLocation;

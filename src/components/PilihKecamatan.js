@@ -1,20 +1,13 @@
 import { Box, Grid, Typography } from "@material-ui/core";
-import React, { useContext, useEffect, useState } from "react";
-import { Develop } from "../../util/firebase";
-import { DataContext } from "./ContextData";
+import React, { useEffect, useState } from "react";
+import { Develop } from "../util/firebase";
+import {DATAKECAMATAN} from "../util/dbkecamatan"
 
-function PilihKecamatan() {
-  const { kecamatan,c_kecamatan, setKecamatan, c_desa, setDesa, GetKecData } = useContext(
-    DataContext
-  );
+function PilihKecamatan({ c_kecamatan, setKecamatan, c_desa, setDesa }) {
 
   const [c_pildesa, setPilDesa] = useState([]);
 
-  useEffect(() => {
-    GetKecData();
-  }, [GetKecData]);
-
-  let pilihKec = kecamatan;
+  let pilihKec = DATAKECAMATAN;
   pilihKec = pilihKec.map((item, index) => {
     return (
       <option key={index} value={item.id}>
@@ -34,18 +27,20 @@ function PilihKecamatan() {
   useEffect(() => {
     //console.log("kecamatan :", c_kecamatan);
     if (c_kecamatan !== "") {
-      const L = kecamatan;
+      const L = DATAKECAMATAN;
       const aa = L.filter((kec) => kec.id === c_kecamatan);
       const bb = aa[0].DESA;
       setPilDesa(bb);
-      //console.log(aa, bb);
+      if(Develop) {
+        console.log("PILIHAN : ",aa, bb);
+      }
     }
-  }, [c_kecamatan, kecamatan]);
+  }, [c_kecamatan]);
 
   const onChangeKec = (e) => {
-    const kecamatan = e.currentTarget.value;
+    const pilih = e.currentTarget.value;
     //console.log(kecamatan.id);
-    setKecamatan(kecamatan);
+    setKecamatan(pilih);
   };
 
   return (

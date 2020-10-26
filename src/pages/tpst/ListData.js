@@ -5,12 +5,10 @@ import Notification from "../../components/Notification";
 import Popup from "../../components/Popup";
 import EditData from "./EditData";
 import { Develop } from "../../util/firebase";
-import { AuthContext } from "../../context/AuthContext";
 import { DataContext } from "./ContextData";
 import Pagination from "../../components/Pagination";
 import {
   Box,
-  Button,
   Grid,
   Paper,
   Table,
@@ -20,12 +18,14 @@ import {
   TableHead,
   TableRow,
   TextField,
+  Link,
 } from "@material-ui/core";
 
 //import { Button } from "@material-ui/core";
 function ListData() {
-  const { semuaData, GetAllData, DeleteData } = useContext(DataContext);
-  const { users } = useContext(AuthContext);
+  const { semuaData, GetAllData, DeleteData, SaveEditData } = useContext(
+    DataContext
+  );
 
   const [openPopup, setOpenPopup] = useState(false);
   const [recordForEdit, setRecordForEdit] = useState(null);
@@ -70,7 +70,7 @@ function ListData() {
       ...confirmDialog,
       isOpen: false,
     });
-    DeleteData(id)
+    DeleteData(id);
     setNotify({
       isOpen: true,
       message: "Deleted Successfully",
@@ -78,12 +78,15 @@ function ListData() {
     });
   };
 
-  const onSimpanEdit = (data) => {
-    console.log(data);
+  const onSimpanEdit = async (data) => {
+    if (Develop) {
+      console.log(data);
+    }
+    await SaveEditData(data);
     setOpenPopup(false);
     setNotify({
       isOpen: true,
-      message: "Submitted Successfully",
+      message: "Saved Edit Data",
       type: "success",
     });
   };
@@ -125,7 +128,8 @@ function ListData() {
                   <TableCell>Kontak</TableCell>
                   <TableCell>No HP</TableCell>
                   <TableCell>Gambar</TableCell>
-                  <TableCell>ACTION</TableCell>
+                  <TableCell>-</TableCell>
+                  <TableCell>-</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -138,7 +142,14 @@ function ListData() {
                     <TableCell>{row.c_keterangan}</TableCell>
                     <TableCell>{row.c_kontak}</TableCell>
                     <TableCell>{row.c_noHP}</TableCell>
-                    <TableCell>{row.c_namafile1}</TableCell>
+                    <TableCell>
+                      <Link
+                        href={row.c_fileImg1}
+                        onClick={(e) => e.preventDefault}
+                      >
+                        {row.c_namafile1}
+                      </Link>
+                    </TableCell>
                     <TableCell>
                       <Controls.Button
                         onClick={() => {
@@ -152,15 +163,15 @@ function ListData() {
                           });
                         }}
                         color="secondary"
-                        text="DELETE"
+                        text="DEL"
                       />
-
-                      <Box mt={1} />
+                    </TableCell>
+                    <TableCell>
                       <Controls.Button
                         onClick={() => {
                           openInPopup(row);
                         }}
-                        text="EDIT"
+                        text="EDT"
                       />
                     </TableCell>
                   </TableRow>
@@ -176,7 +187,7 @@ function ListData() {
         />
       </Paper>
 
-      <h3>Delete Dialog</h3>
+      {/* <h3>Delete Dialog</h3>
       <Controls.Button
         onClick={() => {
           setConfirmDialog({
@@ -196,7 +207,7 @@ function ListData() {
           openInPopup("item");
         }}
         text="EDIT"
-      />
+      /> */}
 
       <ConfirmDialog
         confirmDialog={confirmDialog}

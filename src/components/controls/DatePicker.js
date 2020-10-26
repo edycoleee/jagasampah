@@ -3,7 +3,6 @@ import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/picker
 //import DateFnsUtils from "@date-io/date-fns";
 // pick a date util library
 import MomentUtils from '@date-io/moment';
-import moment from "moment";
 
 export default function DatePicker(props) {
 
