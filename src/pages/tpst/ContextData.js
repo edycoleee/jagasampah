@@ -19,7 +19,7 @@ export const DataContext = createContext();
 function DataProvider({ children }) {
   const [semuaData, setSemuaData] = useState([]);
   const [mapPoints, setMapPoints] = useState(DEMAKLOC);
-  const [progressUploud, setProgressUploud] = useState(false);
+  //const [progressUploud, setProgressUploud] = useState(false);
 
   const [c_kecamatan, setKecamatan] = useState("");
   const [c_desa, setDesa] = useState("");
@@ -50,13 +50,11 @@ function DataProvider({ children }) {
     );
     let tglserver = moment(tglserver1).format("YYYY-MM-DD");
 
-    return await db
-      .collection("CL_TPST")
-      .add({
-        createdAt: tglserver,
-        ...newData,
-      })
-      .then(() => GetAllData());
+    return await db.collection("CL_TPST").add({
+      createdAt: tglserver,
+      ...newData,
+    });
+    //.then(() => GetAllData());
   };
 
   const simpanFileImg1 = async (fileygdisimpan, id) => {
@@ -124,6 +122,26 @@ function DataProvider({ children }) {
       .delete()
       .then(() => GetAllData());
   };
+
+  const SaveEditData = async (newData) => {
+    if (Develop) {
+      console.log("STEP : SAVE EDIT DATA", newData);
+    }
+    const { id, c_alamat, c_kontak, c_noHP, c_keterangan } = newData;
+
+    await db
+      .collection("CL_TPST")
+      .doc(id)
+      .update({
+        c_alamat,
+        c_kontak,
+        c_noHP,
+        c_keterangan,
+      })
+      .then(() => GetAllData())
+      .catch((error) => console.error("Error Save Data :", error));
+  };
+
   const DataState = {
     semuaData,
     kecamatan,
@@ -135,11 +153,11 @@ function DataProvider({ children }) {
     setDesa,
     GetKecData,
     simpanFileImg1,
-    progressUploud,
     SaveData,
     CekNamaFile,
     GetAllData,
     DeleteData,
+    SaveEditData,
   };
   return (
     <DataContext.Provider value={DataState}>{children}</DataContext.Provider>

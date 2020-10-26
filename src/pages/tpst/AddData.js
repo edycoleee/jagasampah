@@ -13,7 +13,7 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import { AuthContext } from "../../context/AuthContext";
+//import { AuthContext } from "../../context/AuthContext";
 import { DataContext } from "./ContextData";
 import { Develop } from "../../util/firebase";
 import PilihKecamatan from "./PilihKecamatan";
@@ -21,7 +21,6 @@ import Notification from "../../components/Notification";
 import Map from "./GetMap";
 
 function AddData() {
-  const { users } = useContext(AuthContext);
   const {
     SaveData,
     mapPoints,
@@ -30,6 +29,7 @@ function AddData() {
     c_desa,
     simpanFileImg1,
     CekNamaFile,
+    GetAllData,
   } = useContext(DataContext);
 
   const [notify, setNotify] = useState({
@@ -42,7 +42,7 @@ function AddData() {
   const [c_kontak, setKontak] = useState("");
   const [c_noHP, setNoHP] = useState("");
   const [c_alamat, setAlamat] = useState("");
-  const [c_namaFile1, setNamaFile1] = useState("");
+  //const [c_namaFile1, setNamaFile1] = useState("");
   const [c_keterangan, setKeterangan] = useState("");
   const [loading, setLoading] = useState("");
 
@@ -120,7 +120,6 @@ function AddData() {
       });
     }
 
-    let id = "";
     const newData = {
       c_kontak,
       c_noHP,
@@ -128,35 +127,37 @@ function AddData() {
       c_alamat,
       c_kecamatan,
       c_desa,
-      c_keterangan,
       c_lat: mapPoints[0],
       c_lon: mapPoints[1],
       c_namafile1: fileImg1.name,
       c_fileImg1: "",
       //c_user: users.c_username,
     };
-    await setNotify({
+    setNotify({
       isOpen: true,
       message: "Proses Simpan Data",
       type: "info",
     });
-    await setLoading(true);
-    await SaveData(newData).then((doc) => {
-      id = doc.id;
-      if (Develop) {
-        console.log("STEP : Save Data : ", doc.id);
-      }
-    });
-
+    setLoading(true);
+    let id = "";
+    await SaveData(newData)
+      .then((doc) => {
+        id = doc.id;
+        if (Develop) {
+          console.log("STEP : Save Data : ", doc.id);
+        }
+      })
+      .then(() => GetAllData());
+    console.log(id);
     await simpanFileImg1(fileImg1, id);
 
-    await setNotify({
+    setNotify({
       isOpen: true,
       message: "Data Telah Tersimpan",
       type: "success",
     });
-    await ClearState();
-    await setLoading(false);
+    ClearState();
+    setLoading(false);
   };
 
   //Clear State----------------------------

@@ -1,12 +1,17 @@
 import { Box, Grid, Typography } from "@material-ui/core";
 import React, { useContext, useEffect, useState } from "react";
-import { Develop } from "../../util/firebase";
+
 import { DataContext } from "./ContextData";
 
 function PilihKecamatan() {
-  const { kecamatan,c_kecamatan, setKecamatan, c_desa, setDesa, GetKecData } = useContext(
-    DataContext
-  );
+  const {
+    kecamatan,
+    c_kecamatan,
+    setKecamatan,
+    c_desa,
+    setDesa,
+    GetKecData,
+  } = useContext(DataContext);
 
   const [c_pildesa, setPilDesa] = useState([]);
 
