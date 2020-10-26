@@ -9,7 +9,6 @@ import {
   Grid,
   Paper,
   TextField,
-  
 } from "@material-ui/core";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
@@ -27,7 +26,6 @@ function AddData() {
     setIdBank,
     setNmBank,
     GetDataFTgl,
-    
   } = useContext(DataContext);
 
   //State Sampah----------------------------
@@ -57,41 +55,54 @@ function AddData() {
   };
   //Simpan Data------------------------------
   const onSimpan = () => {
-    if (n_organik === 0 || n_plastik === 0) {
+    const onValid = (code, message) => {
       setErrMessage({
-        code: "ERROR",
-        message: "Isilah Form yang lengkap",
+        code,
+        message,
       });
       setOpenErr(true);
-    } else {
-      let tgl = new Date(c_tanggal);
-      let tahun = String(tgl.getFullYear());
-      let bulan = String(tgl.getMonth() + 1);
-      const newData = {
-        n_plastik,
-        n_organik,
-        n_kertas,
-        n_kaca,
-        n_karet,
-        n_kayu,
-        n_lain,
-        c_tanggal,
-        c_bulan: bulan,
-        c_tahun: tahun,
-        c_user: users.c_username,
-        idBank,
-        nmBank,
-      };
-      console.log(newData);
-      SaveData(newData);
-      setErrMessage({
-        code: "SUCCESS",
-        message: "Data Sudah Tersimpan",
-      });
-      setOpenErr(true);
-      handleClose();
-      ClearState();
+    };
+
+    if (
+      n_organik + n_plastik + n_kertas + n_kaca + n_karet + n_kayu + n_lain ===
+      0
+    ) {
+      return onValid("ERROR", "Jumlah Semua 0");
     }
+
+    if (!idBank) {
+      return onValid("ERROR", "PILIH BANK SAMPAH");
+    }
+    if (idBank === "") {
+      return onValid("ERROR", "PILIH BANK SAMPAH");
+    }
+    let tgl = new Date(c_tanggal);
+    let tahun = String(tgl.getFullYear());
+    let bulan = String(tgl.getMonth() + 1);
+    const newData = {
+      n_plastik,
+      n_organik,
+      n_kertas,
+      n_kaca,
+      n_karet,
+      n_kayu,
+      n_lain,
+      c_tanggal,
+      c_bulan: bulan,
+      c_tahun: tahun,
+      c_user: users.c_username,
+      idBank,
+      nmBank,
+    };
+    console.log(newData);
+    SaveData(newData);
+    setErrMessage({
+      code: "SUCCESS",
+      message: "Data Sudah Tersimpan",
+    });
+    setOpenErr(true);
+    handleClose();
+    ClearState();
   };
 
   //Close SnackBar----------------------------
@@ -143,7 +154,7 @@ function AddData() {
               <Button
                 onClick={onOpenDialog}
                 variant="contained"
-                color="primary"
+                color="secondary"
               >
                 TAMBAH DATA
               </Button>
