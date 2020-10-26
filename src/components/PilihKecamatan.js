@@ -1,9 +1,25 @@
 import { Box, Grid, Typography } from "@material-ui/core";
+<<<<<<< HEAD:src/components/PilihKecamatan.js
 import React, { useEffect, useState } from "react";
 import { Develop } from "../util/firebase";
 import {DATAKECAMATAN} from "../util/dbkecamatan"
 
 function PilihKecamatan({ c_kecamatan, setKecamatan, c_desa, setDesa }) {
+=======
+import React, { useContext, useEffect, useState } from "react";
+
+import { DataContext } from "./ContextData";
+
+function PilihKecamatan() {
+  const {
+    kecamatan,
+    c_kecamatan,
+    setKecamatan,
+    c_desa,
+    setDesa,
+    GetKecData,
+  } = useContext(DataContext);
+>>>>>>> 3fefe25020948e70cc4a91a7b2e7fde7da64e22c:src/pages/tpst/PilihKecamatan.js
 
   const [c_pildesa, setPilDesa] = useState([]);
 

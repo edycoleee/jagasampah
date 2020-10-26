@@ -23,7 +23,7 @@ import GetMapLocation from "../../components/GetMapLocation";
 const DEMAKLOC = [-6.8909, 110.6396];
 
 function AddData() {
-  //const { users } = useContext(AuthContext);
+
   const {
     SaveData,
     simpanFileImg1,
@@ -122,7 +122,6 @@ function AddData() {
       });
     }
 
-    let id = "";
     const newData = {
       c_kontak,
       c_noHP,
@@ -136,22 +135,25 @@ function AddData() {
       c_fileImg1: "",
       //c_user: users.c_username,
     };
-    await setNotify({
+    setNotify({
       isOpen: true,
       message: "Proses Simpan Data",
       type: "info",
     });
-    await setLoading(true);
-    await SaveData(newData).then((doc) => {
-      id = doc.id;
-      if (Develop) {
-        console.log("STEP : Save Data : ", doc.id);
-      }
-    });
-
+    setLoading(true);
+    let id = "";
+    await SaveData(newData)
+      .then((doc) => {
+        id = doc.id;
+        if (Develop) {
+          console.log("STEP : Save Data : ", doc.id);
+        }
+      })
+      .then(() => GetAllData());
+    console.log(id);
     await simpanFileImg1(fileImg1, id);
 
-    await setNotify({
+    setNotify({
       isOpen: true,
       message: "Data Telah Tersimpan",
       type: "success",

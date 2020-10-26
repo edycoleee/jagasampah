@@ -28,7 +28,7 @@ function ListData() {
 
   useEffect(() => {
     GetDataFTgl(c_tanggal);
-  }, [GetDataFTgl,c_tanggal]);
+  }, [GetDataFTgl, c_tanggal]);
 
   const calcPlastik = (dataAwal) => {
     return dataAwal.reduce((total, item) => {
@@ -134,7 +134,8 @@ function ListData() {
                   <TableCell align="right">KARET</TableCell>
                   <TableCell align="right">KAYU</TableCell>
                   <TableCell align="right">LAINNYA</TableCell>
-                  <TableCell align="right">ACTION</TableCell>
+                  <TableCell align="right">DELETE</TableCell>
+                  <TableCell align="right">EDIT</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -154,15 +155,16 @@ function ListData() {
                       <Button
                         onClick={() => onDelete(row.id, row.c_tanggal)}
                         variant="contained"
-                        color="primary"
+                        color="secondary"
                       >
                         DEL
                       </Button>
-                      <Box mt={1} />
+                    </TableCell>
+                    <TableCell align="right">
                       <Button
                         onClick={() => openUpdateDialog(row)}
                         variant="contained"
-                        color="primary"
+                        color="default"
                       >
                         EDT
                       </Button>

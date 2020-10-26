@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 API endpoint: http://localhost:8080
 If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
 
@@ -1527,3 +1528,5 @@ Oct 26, 2020 9:59:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channe
 INFO: Detected non-HTTP/2 connection.
 Oct 26, 2020 10:00:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
+=======
+>>>>>>> 3fefe25020948e70cc4a91a7b2e7fde7da64e22c

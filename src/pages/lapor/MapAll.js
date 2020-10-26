@@ -29,34 +29,32 @@ const LeafletMapAll = () => {
   //   },
   // ];
 
-const centerPoin = [-6.8955818902249515, 110.63627243041994]
+  const centerPoin = [-6.8955818902249515, 110.63627243041994];
 
-let ArrNewMarker = [];
-semuaData.map((data, index) => {
-  const {c_lat,c_lon,c_tanggal,c_lokasi,c_ket } = data
-  const newMarker = {
-    mapPoints: [c_lat, c_lon],
-    info: `${c_tanggal} ${c_lokasi} ${c_ket}` ,
-  };
-  return ArrNewMarker.push(newMarker);
-});
-if (Develop) {
-  console.log("STEP GET LOC :",ArrNewMarker);
-}
-
-
+  let ArrNewMarker = [];
+  semuaData.map((data, index) => {
+    const { c_lat, c_lon, c_tanggal, c_lokasi, c_ket } = data;
+    const newMarker = {
+      mapPoints: [c_lat, c_lon],
+      info: `${c_tanggal} ${c_lokasi} ${c_ket}`,
+    };
+    return ArrNewMarker.push(newMarker);
+  });
+  if (Develop) {
+    console.log("STEP GET LOC :", ArrNewMarker);
+  }
 
   return (
-    <Map center={centerPoin} zoom={zoom} >
+    <Map center={centerPoin} zoom={zoom}>
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {ArrNewMarker.map((mark, index) => 
+      {ArrNewMarker.map((mark, index) => (
         <Marker position={mark.mapPoints} icon={icon} key={index}>
           <Popup>{mark.info}</Popup>
         </Marker>
-      )}
+      ))}
     </Map>
   );
 };

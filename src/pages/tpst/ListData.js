@@ -200,13 +200,13 @@ function ListData() {
           });
         }}
         color="secondary"
-        text="DELETE"
+        text="DEL"
       />
       <Controls.Button
         onClick={() => {
           openInPopup("item");
         }}
-        text="EDIT"
+        text="EDT"
       /> */}
 
       <ConfirmDialog

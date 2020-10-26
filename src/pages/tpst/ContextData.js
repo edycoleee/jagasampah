@@ -118,7 +118,6 @@ function DataProvider({ children }) {
       .catch((error) => console.error("Error Save Data :", error));
   };
 
-
   const DataState = {
     semuaData,
     simpanFileImg1,
@@ -126,7 +125,7 @@ function DataProvider({ children }) {
     CekNamaFile,
     GetAllData,
     DeleteData,
-    SaveEditData
+    SaveEditData,
   };
   return (
     <DataContext.Provider value={DataState}>{children}</DataContext.Provider>
