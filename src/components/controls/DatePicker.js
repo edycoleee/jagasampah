@@ -5,11 +5,8 @@ import {
 } from "@material-ui/pickers";
 //import DateFnsUtils from "@date-io/date-fns";
 // pick a date util library
-<<<<<<< HEAD
 import MomentUtils from '@date-io/moment';
-=======
-import MomentUtils from "@date-io/moment";
->>>>>>> 3fefe25020948e70cc4a91a7b2e7fde7da64e22c
+
 
 export default function DatePicker(props) {
   const { name, label, value, onChange } = props;

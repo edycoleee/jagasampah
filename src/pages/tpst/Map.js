@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import React, { useContext } from "react";
-=======
-import React from "react";
->>>>>>> 3fefe25020948e70cc4a91a7b2e7fde7da64e22c
+
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -34,8 +31,6 @@ const IndexMap = () => {
   //   ];
 
   const centerPoin = [-6.8955818902249515, 110.63627243041994];
-<<<<<<< HEAD
-
   // let ArrNewMarker = MarkerAll;
 
   //Get Data From database
@@ -52,23 +47,7 @@ const IndexMap = () => {
   if (Develop) {
     console.log("STEP GET LOC :", ArrNewMarker);
   }
-=======
 
-  let ArrNewMarker = MarkerAll;
-  //Get Data From database
-  // let ArrNewMarker = [];
-  // semuaData.map((data, index) => {
-  //   const {c_lat,c_lon,c_tanggal,c_lokasi,c_ket } = data
-  //   const newMarker = {
-  //     mapPoints: [c_lat, c_lon],
-  //     info: `${c_tanggal} ${c_lokasi} ${c_ket}` ,
-  //   };
-  //   return ArrNewMarker.push(newMarker);
-  // });
-  // if (Develop) {
-  //   console.log("STEP GET LOC :",ArrNewMarker);
-  // }
->>>>>>> 3fefe25020948e70cc4a91a7b2e7fde7da64e22c
 
   return (
     <Map center={centerPoin} zoom={zoom}>
