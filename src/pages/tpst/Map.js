@@ -48,7 +48,6 @@ const IndexMap = () => {
     console.log("STEP GET LOC :", ArrNewMarker);
   }
 
-
   return (
     <Map center={centerPoin} zoom={zoom}>
       <TileLayer

@@ -48,7 +48,7 @@ export const mainListItems = (
     <Link to="/sampah3r">
       <ListItem button>
         <ListItemIcon>
-        <AssessmentTwoToneIcon />
+          <AssessmentTwoToneIcon />
         </ListItemIcon>
         <ListItemText primary="Sampah 3R" />
       </ListItem>
@@ -58,7 +58,7 @@ export const mainListItems = (
         <ListItemIcon>
           <LayersIcon />
         </ListItemIcon>
-        <ListItemText primary="Data TPS" />
+        <ListItemText primary="Data TPS" className="rntcgreen rnthl" />
       </ListItem>
     </Link>
     <Link to="/bsampah">

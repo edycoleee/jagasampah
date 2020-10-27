@@ -14,6 +14,10 @@ const useStyles = makeStyles({
   fullList: {
     width: "auto",
   },
+  text: {
+    color: "red",
+    fontSize: 49,
+  },
 });
 
 export default function DashMenu() {

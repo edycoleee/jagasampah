@@ -2,9 +2,12 @@ import React, { useEffect } from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+//import { DataContext } from "./ContextData";
 import { Develop } from "../util/firebase";
 
 const GetMapLocation = ({ mapPoints, setMapPoints }) => {
+  //const { mapPoints, setMapPoints } = useContext(DataContext);
+
   useEffect(() => {
     if (!navigator.geolocation) {
       alert.show("Your browser does not support geolocation.");
