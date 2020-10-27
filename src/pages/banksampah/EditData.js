@@ -11,49 +11,16 @@ import {
   Grid,
   TextField,
 } from "@material-ui/core";
+import PilihKecEdit from "../../components/PilihKecEdit";
 
 const EditData = React.memo(({ open, handleClose, currentItem }) => {
-  const { SaveEditData, kecamatan } = useContext(DataContext);
+  const { SaveEditData } = useContext(DataContext);
   const [item, setItem] = useState(currentItem);
-  const [c_pildesa, setPilDesa] = useState([]);
 
   useEffect(() => {
     //console.log("RENDER effect",currentItem);
     setItem(currentItem);
   }, [currentItem]);
-
-  useEffect(() => {
-    //console.log("kecamatan :", item.c_kecamatan,kecamatan );
-    if (item.c_kecamatan) {
-      const L = kecamatan;
-      const aa = L.filter((kec) => kec.id === item.c_kecamatan);
-      //console.log(aa);
-      let bb = [];
-      if (aa.length > 0) {
-        bb = aa[0].DESA;
-      }
-      setPilDesa(bb);
-      //console.log("data: ",aa[0],kecamatan.lenght);
-    }
-  }, [item.c_kecamatan,kecamatan]);
-
-  //Option TPA-----------------------------------
-  let pilihKec = kecamatan;
-  pilihKec = pilihKec.map((item, index) => {
-    return (
-      <option key={index} value={item.id}>
-        {item.id}
-      </option>
-    );
-  });
-
-  let pilihDesa = c_pildesa.map((item, index) => {
-    return (
-      <option key={index} value={item}>
-        {item}
-      </option>
-    );
-  });
 
   let pilihPengelola = CL_KELOLABANK;
   pilihPengelola = pilihPengelola.map((item, index) => {
@@ -131,36 +98,7 @@ const EditData = React.memo(({ open, handleClose, currentItem }) => {
               value={item.c_tempat || ""}
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <label>Kecamatan : </label>
-            <select
-              id="c_kecamatan"
-              onChange={(e) =>
-                setItem({
-                  ...item,
-                  c_kecamatan: e.currentTarget.value,
-                })
-              }
-              value={item.c_kecamatan || ""}
-            >
-              {pilihKec}
-            </select>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <label>Desa : </label>
-            <select
-              id="c_desa"
-              onChange={(e) =>
-                setItem({
-                  ...item,
-                  c_desa: e.currentTarget.value,
-                })
-              }
-              value={item.c_desa || ""}
-            >
-              {pilihDesa}
-            </select>
-          </Grid>
+          <PilihKecEdit item={item} setItem={setItem}/>
           <Grid item xs={12} sm={6}>
             <TextField
               required

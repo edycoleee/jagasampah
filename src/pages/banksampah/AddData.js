@@ -9,6 +9,7 @@ import {
   Grid,
   Paper,
   TextField,
+  Typography,
 } from "@material-ui/core";
 import React, { useContext, useEffect, useState } from "react";
 import { CL_KELOLABANK } from "../../util/dbschema";
@@ -17,14 +18,14 @@ import AlertSnackbar from "../../components/AlertSnackbar";
 import { DataContext } from "./ContextData";
 import { Develop } from "../../util/firebase";
 import {DEMAKLOC} from "../../util/dbkecamatan"
+import PilihKecamatan from "../../components/PilihKecamatan";
+import GetMapLocation from "../../components/GetMapLocation";
 
 function AddData() {
   const { users } = useContext(AuthContext);
   const {
     SaveData,
     c_tanggal,
-    kecamatan,
-    GetKecData,
     UploudBankSampah,
   } = useContext(DataContext);
 
@@ -37,11 +38,8 @@ function AddData() {
   const [c_nama, setNama] = useState("");
   const [c_alamat, setAlamat] = useState("");
   const [c_tempat, setTempat] = useState("");
-  const [c_lang, setLang] = useState("");
-  const [c_long, setlong] = useState("");
   const [c_Sktetap, setSKTetap] = useState("");
   const [c_pengelola, setPengelola] = useState("SISWA");
-  const [c_pildesa, setPilDesa] = useState([]);
   const [c_ket, setKet] = useState("");
 
   //State SnackBar----------------------------
@@ -56,6 +54,16 @@ function AddData() {
   const handleClose = () => {
     setOpenPortal(false);
   };
+
+    //State PortalMap------------------------------
+    const [openPortalMap, setOpenPortalMap] = useState(false);
+    const onOpenDialogMap = () => {
+      setOpenPortalMap(true);
+    };
+  
+    const handleCloseMap = () => {
+      setOpenPortalMap(false);
+    };
 
   //Option Pengelola-----------------------------------
   let pilihPengelola = CL_KELOLABANK;
@@ -99,8 +107,8 @@ function AddData() {
       c_tempat,
       c_kecamatan,
       c_desa,
-      c_lang,
-      c_long,
+      c_lang: mapPoints[0],
+      c_long: mapPoints[1],
       c_Sktetap,
       c_pengelola,
       c_ket,
@@ -135,45 +143,8 @@ function AddData() {
   const ClearState = () => {
     setNama("");
     setAlamat("");
-  };
-
-  useEffect(() => {
-    GetKecData();
-  }, [GetKecData]);
-
-  let pilihKec = kecamatan;
-  //Option TPA-----------------------------------
-  pilihKec = pilihKec.map((item, index) => {
-    return (
-      <option key={index} value={item.id}>
-        {item.id}
-      </option>
-    );
-  });
-
-  let pilihDesa = c_pildesa.map((item, index) => {
-    return (
-      <option key={index} value={item}>
-        {item}
-      </option>
-    );
-  });
-
-  useEffect(() => {
-    //console.log("kecamatan :", c_kecamatan);
-    if (c_kecamatan !== "") {
-      const L = kecamatan;
-      const aa = L.filter((kec) => kec.id === c_kecamatan);
-      const bb = aa[0].DESA;
-      setPilDesa(bb);
-      //console.log(aa, bb);
-    }
-  }, [c_kecamatan, kecamatan]);
-
-  const onChangeKec = (e) => {
-    const kecamatan = e.currentTarget.value;
-    //console.log(kecamatan.id);
-    setKecamatan(kecamatan);
+    setKecamatan("");
+    setDesa("");
   };
 
   return (
@@ -184,7 +155,7 @@ function AddData() {
             <Box mt={2} />
             <Grid item xs={12} sm={6}>
               <Button
-                onClick={onOpenDialog}
+                onClick={onOpenDialogMap}
                 variant="contained"
                 color="primary"
                 disabled={users.c_tipeuser === "admin" ? false : true}
@@ -197,13 +168,13 @@ function AddData() {
                 onClick={onOpenDialog}
                 variant="contained"
                 color="secondary"
-                disabled={users.c_tipeuser === "admin" ? false : true}
+                disabled={users.c_tipeuser === "admin" && c_kecamatan!=="" ? false : true}
               >
                 TAMBAH DATA
               </Button>
             </Grid>
             {/* ----------------Uploud Dummy Data */}
-            {Develop ? (
+            {!Develop ? (
               <Grid item xs={12} sm={6}>
                 <Button
                   onClick={() => UploudBankSampah()}
@@ -217,6 +188,26 @@ function AddData() {
             ) : (
               ""
             )}
+          <Grid item xs={12} sm={6}>
+              <Typography variant="subtitle2">
+                Location Latitude : {mapPoints ? mapPoints[0] : ""}
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Typography variant="subtitle2">
+                Location Longitude : {mapPoints ? mapPoints[1] : ""}
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Typography variant="subtitle2">
+                Kecamatan : {c_kecamatan && c_kecamatan}
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Typography variant="subtitle2">
+                Desa/Kel : {c_desa && c_desa}
+              </Typography>
+            </Grid>
           </Grid>
         </Box>
       </Paper>
@@ -272,7 +263,7 @@ function AddData() {
                 value={c_tempat || ""}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            {/* <Grid item xs={12} sm={6}>
               <label>Kecamatan : </label>
               <select
                 id="c_kecamatan"
@@ -292,8 +283,8 @@ function AddData() {
               >
                 {pilihDesa}
               </select>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Grid> */}
+            {/* <Grid item xs={12} sm={6}>
               <TextField
                 required
                 id="c_lang"
@@ -316,7 +307,7 @@ function AddData() {
                 onChange={(e) => setlong(e.target.value)}
                 value={c_long || ""}
               />
-            </Grid>
+            </Grid> */}
             <Grid item xs={12} sm={6}>
               <TextField
                 required
@@ -352,6 +343,25 @@ function AddData() {
           </Button>
         </DialogActions>
       </Dialog>
+      {/* -------------------------------Dialog Map------------------- */}
+      <Dialog open={openPortalMap} onClose={handleCloseMap} fullWidth>
+        <DialogTitle id="alert-dialog-title">PILIH LOKASI </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description"></DialogContentText>
+
+          <PilihKecamatan c_kecamatan={c_kecamatan} 
+          setKecamatan={setKecamatan} c_desa={c_desa} setDesa={setDesa} />
+          <GetMapLocation mapPoints={mapPoints} setMapPoints={setMapPoints}/>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseMap} variant="contained" color="primary">
+            PILIH
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+
+
       <AlertSnackbar
         open={openErr}
         handleClose={handleCloseErr}

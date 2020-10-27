@@ -100,7 +100,8 @@ function ListData() {
                   <TableCell>Desa</TableCell>
                   <TableCell>SKPenetapan</TableCell>
                   <TableCell>Pengelola</TableCell>
-                  <TableCell>ACTION</TableCell>
+                  <TableCell>Delete</TableCell>
+                  <TableCell>Edit</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -120,12 +121,13 @@ function ListData() {
                       <Button
                         onClick={() => onDelete(row.id)}
                         variant="contained"
-                        color="primary"
+                        color="secondary"
                         disabled={users.c_tipeuser === "admin" ? false : true}
                       >
                         DEL
                       </Button>
-                      <Box mt={1} />
+                    </TableCell>
+                    <TableCell>
                       <Button
                         onClick={() => openUpdateDialog(row)}
                         variant="contained"
