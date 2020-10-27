@@ -61,12 +61,20 @@ export const mainListItems = (
         <ListItemText primary="Data TPS" className="rntcgreen rnthl" />
       </ListItem>
     </Link>
+    <Link to="/pengepul">
+      <ListItem button>
+        <ListItemIcon>
+          <LayersIcon />
+        </ListItemIcon>
+        <ListItemText primary="Data Pengepul" className="rntcred rnthl" />
+      </ListItem>
+    </Link>
     <Link to="/bsampah">
       <ListItem button>
         <ListItemIcon>
           <LayersIcon />
         </ListItemIcon>
-        <ListItemText primary="Data Bank Sampah" />
+        <ListItemText primary="Data Bank Sampah" className="rntcyellow rnthl"/>
       </ListItem>
     </Link>
     <Link to="/driver">

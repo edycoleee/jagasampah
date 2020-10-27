@@ -13,6 +13,7 @@
 }
 
 .rntcyellow {
+  color: black;
   background-color: #fc0;
 }
 
@@ -45,6 +46,6 @@
 }
 
 .leaflet-container {
-  height: 600px;
+  height: 400px;
   width: 100%;
 }
