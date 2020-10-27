@@ -16,6 +16,7 @@ import { AuthContext } from "../../context/AuthContext";
 import AlertSnackbar from "../../components/AlertSnackbar";
 import { DataContext } from "./ContextData";
 import { Develop } from "../../util/firebase";
+import {DEMAKLOC} from "../../util/dbkecamatan"
 
 function AddData() {
   const { users } = useContext(AuthContext);
@@ -27,12 +28,15 @@ function AddData() {
     UploudBankSampah,
   } = useContext(DataContext);
 
+  //Get Location
+  const [mapPoints, setMapPoints] = useState(DEMAKLOC);
+  const [c_kecamatan, setKecamatan] = useState("");
+  const [c_desa, setDesa] = useState("");
+
   //State Sampah----------------------------
   const [c_nama, setNama] = useState("");
   const [c_alamat, setAlamat] = useState("");
   const [c_tempat, setTempat] = useState("");
-  const [c_kecamatan, setKecamatan] = useState("");
-  const [c_desa, setDesa] = useState("");
   const [c_lang, setLang] = useState("");
   const [c_long, setlong] = useState("");
   const [c_Sktetap, setSKTetap] = useState("");
@@ -183,6 +187,16 @@ function AddData() {
                 onClick={onOpenDialog}
                 variant="contained"
                 color="primary"
+                disabled={users.c_tipeuser === "admin" ? false : true}
+              >
+                MAP LOKASI
+              </Button>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Button
+                onClick={onOpenDialog}
+                variant="contained"
+                color="secondary"
                 disabled={users.c_tipeuser === "admin" ? false : true}
               >
                 TAMBAH DATA

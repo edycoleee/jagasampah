@@ -19,8 +19,7 @@ import { Develop } from "../../util/firebase";
 import PilihKecamatan from "../../components/PilihKecamatan";
 import Notification from "../../components/Notification";
 import GetMapLocation from "../../components/GetMapLocation";
-
-const DEMAKLOC = [-6.8909, 110.6396];
+import {DEMAKLOC} from "../../util/dbkecamatan"
 
 function AddData() {
 

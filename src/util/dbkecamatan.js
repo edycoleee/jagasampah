@@ -1,3 +1,4 @@
+export const DEMAKLOC = [-6.8909, 110.6396];
 export const DATAKECAMATAN = [
   { id: " PILIH", DESA: ["PILIH"] },
   {
