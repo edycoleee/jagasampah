@@ -5,6 +5,7 @@ export const AuthContext = React.createContext();
 const db = app.firestore();
 //setting jika menggunakan emulator firestore
 if (LocalServer) {
+  auth.useEmulator("http://localhost:9099")
   db.settings({ host: "localhost:8080", ssl: false });
 }
 

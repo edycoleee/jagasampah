@@ -1,7 +1,7 @@
 {
   "firestore": {
     "rules": "firestore.rules",
-    "indexes": "y"
+    "indexes": "firestore.indexes.json"
   },
   "hosting": {
     "public": "build",
@@ -32,6 +32,9 @@
     },
     "ui": {
       "enabled": true
+    },
+    "auth": {
+      "port": 9099
     }
   }
 }
