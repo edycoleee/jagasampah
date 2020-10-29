@@ -21,6 +21,7 @@ import IndexLapResiduBulan from "./pages/lapResiduBulan";
 //import IndexMap from "./pages/map";
 import IndexTPST from "./pages/tpst";
 import LoginLink from "./pages/auth/LoginLink";
+import IndexResiduLanding from "./pages/landing/ResiduTPA";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/loginlink/:name?/:pass?" component={LoginLink} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/landingresidu" component={IndexResiduLanding} />
         <Route path="/forgot-password" component={ForgotPassword} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/user" component={IndexUser} />
