@@ -126,7 +126,7 @@ function ListData() {
             <Table aria-label="a dense table">
               <TableHead>
                 <TableRow>
-                  <TableCell>BANKSAMPAH</TableCell>
+                  <TableCell>PENGELOLA</TableCell>
                   <TableCell align="right">PLASTIK</TableCell>
                   <TableCell align="right">ORGANIK</TableCell>
                   <TableCell align="right">KERTAS</TableCell>

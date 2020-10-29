@@ -155,7 +155,7 @@ function AddData() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <Typography variant="subtitle2">
-            Default Lokasi 3R : {users.c_defBankName}
+            Default Lokasi 3R : {users.c_defBankAlamat}
             </Typography>
           </Grid>
             <Box mt={2} />

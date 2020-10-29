@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState } from "react";
-import app, { Firebase, LocalServer,Develop } from "../../util/firebase";
+import app, { Firebase, LocalServer, Develop } from "../../util/firebase";
 import moment from "moment";
 
 const db = app.firestore();
@@ -24,6 +24,7 @@ function DataProvider({ children }) {
   const [c_tanggal, setTanggal] = useState(today);
   const [idBank, setIdBank] = useState("");
   const [nmBank, setNmBank] = useState("");
+  const [alamatBank, setAlamatBank] = useState("");
 
   const GetDataFTgl = useCallback(async (tgl) => {
     await db
@@ -78,7 +79,7 @@ function DataProvider({ children }) {
       .then(() => GetDataFTgl(c_tanggal));
   };
 
-  const DeleteData = async (id,tgl) => {
+  const DeleteData = async (id, tgl) => {
     if (Develop) {
       console.log("STEP : DELETE DATA", id);
     }
@@ -158,6 +159,8 @@ function DataProvider({ children }) {
     setIdBank,
     nmBank,
     setNmBank,
+    alamatBank,
+    setAlamatBank,
   };
   return (
     <DataContext.Provider value={DataState}>{children}</DataContext.Provider>

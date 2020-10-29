@@ -12,6 +12,9 @@ export const CL_USER = [
     c_defTPA: "",
     c_defTPST: "",
     c_defAsal: "",
+    c_defBankID:"",
+    c_defBankName:"",
+    c_defBankAlamat:"",
   },
 ];
 

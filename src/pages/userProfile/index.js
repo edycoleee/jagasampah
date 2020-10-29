@@ -178,7 +178,7 @@ function IndexUser() {
     handleClose();
   };
 
-  const onPilihCari = (id, c_nama) => {
+  const onPilihCari = (id, c_nama,c_alamat) => {
     if (Develop) {
       console.log("STEP : ONPILIH", id, c_nama);
     }
@@ -186,6 +186,7 @@ function IndexUser() {
       ...ProfilUser,
       c_defBankID: id,
       c_defBankName: c_nama,
+      c_defBankAlamat:c_alamat,
     });
     handleClose();
   };
@@ -541,6 +542,7 @@ function IndexUser() {
                   <TableCell>Alamat</TableCell>
                   <TableCell>Tempat</TableCell>
                   <TableCell>Kecamatan</TableCell>
+                  <TableCell>Pengepul</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -548,7 +550,7 @@ function IndexUser() {
                   <TableRow key={row.id}>
                     <TableCell>
                       <Button
-                        onClick={() => onPilihCari(row.id, row.c_nama)}
+                        onClick={() => onPilihCari(row.id, row.c_nama,row.c_alamat)}
                         variant="contained"
                         color="primary"
                       >
@@ -559,6 +561,7 @@ function IndexUser() {
                     <TableCell>{row.c_alamat}</TableCell>
                     <TableCell>{row.c_tempat}</TableCell>
                     <TableCell>{row.c_kecamatan}</TableCell>
+                    <TableCell>{row.c_pengepul ? "pengepul": "-"}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

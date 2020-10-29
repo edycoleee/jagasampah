@@ -24,7 +24,7 @@ import Pagination from "../../components/Pagination";
 
 function PilihData() {
   const { users } = useContext(AuthContext);
-  const { getDataBank, idBank, setIdBank, nmBank, setNmBank } = useContext(
+  const { getDataBank, idBank, setIdBank, nmBank, setNmBank,alamatBank, setAlamatBank } = useContext(
     DataContext
   );
   const [c_cari, setCari] = useState("");
@@ -60,9 +60,10 @@ function PilihData() {
     setOpenPortal(false);
   };
 
-  const onPilihCari = (id, nama) => {
+  const onPilihCari = (id, nama, alamat) => {
     //console.log(id, c_nama);
     setNmBank(nama);
+    setAlamatBank(alamat)
     setIdBank(id);
     setCari("");
     setCurrentPage(1);
@@ -73,6 +74,7 @@ function PilihData() {
   const onBatal = () => {
     setNmBank(users.c_defBankName);
     setIdBank(users.c_defBankID);
+    setAlamatBank(users.c_defBankAlamat)
     setCari("");
     setCurrentPage(1);
     handleClose();
@@ -93,13 +95,13 @@ function PilihData() {
             <Box mt={2} />
             <Grid item xs={12}>
               <Typography variant="subtitle1">
-                BankSampah :{users.c_defBankName}
+                BankSampah :{users.c_defBankName} {users.c_defBankAlamat}
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
               <label>
-                Ganti Lokasi : {idBank}
-                <p></p> {nmBank}
+                Ganti Lokasi : {nmBank}
+                <p></p> {alamatBank}
               </label>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -145,6 +147,7 @@ function PilihData() {
                   <TableCell align="left">Alamat</TableCell>
                   <TableCell align="left">Tempat</TableCell>
                   <TableCell align="left">Kecamatan</TableCell>
+                  <TableCell align="left">Pengepul</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -152,7 +155,9 @@ function PilihData() {
                   <TableRow key={row.id}>
                     <TableCell align="center">
                       <Button
-                        onClick={() => onPilihCari(row.id, row.c_nama)}
+                        onClick={() =>
+                          onPilihCari(row.id, row.c_nama, row.c_alamat)
+                        }
                         variant="contained"
                         color="primary"
                       >
@@ -163,6 +168,7 @@ function PilihData() {
                     <TableCell align="left">{row.c_alamat}</TableCell>
                     <TableCell align="left">{row.c_tempat}</TableCell>
                     <TableCell align="left">{row.c_kecamatan}</TableCell>
+                    <TableCell>{row.c_pengepul ? "pengepul": "-"}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
