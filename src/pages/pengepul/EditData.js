@@ -70,6 +70,7 @@ const EditData = React.memo(({ open, handleClose, currentItem }) => {
                 })
               }
               value={item.c_pengelola || ""}
+              disabled={true}
             >
               {pilihPengelola}
             </select>
@@ -109,6 +110,7 @@ const EditData = React.memo(({ open, handleClose, currentItem }) => {
               autoComplete="c_lang"
               onChange={handleOnChange}
               value={item.c_lang || ""}
+              disabled={true}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -121,18 +123,7 @@ const EditData = React.memo(({ open, handleClose, currentItem }) => {
               autoComplete="c_long"
               onChange={handleOnChange}
               value={item.c_long || ""}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="c_Sktetap"
-              name="c_Sktetap"
-              label="SK Penetapan"
-              fullWidth
-              autoComplete="c_Sktetap"
-              onChange={handleOnChange}
-              value={item.c_Sktetap || ""}
+              disabled={true}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -145,6 +136,19 @@ const EditData = React.memo(({ open, handleClose, currentItem }) => {
               autoComplete="c_ket"
               onChange={handleOnChange}
               value={item.c_ket || ""}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              id="c_Sktetap"
+              name="c_Sktetap"
+              label=" "
+              fullWidth
+              autoComplete="c_Sktetap"
+              onChange={handleOnChange}
+              value={item.c_Sktetap || ""}
+              disabled={true}
             />
           </Grid>
         </Grid>

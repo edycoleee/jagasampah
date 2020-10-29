@@ -30,7 +30,7 @@ import ScrollButton from "../../components/ScrollButton";
 import { AuthContext } from "../../context/AuthContext";
 import AlertSnackbar from "../../components/AlertSnackbar";
 import { CL_TPA, CL_TPST } from "../../util/dbschema";
-import app, { LocalServer,Develop } from "../../util/firebase";
+import app, { LocalServer, Develop } from "../../util/firebase";
 import Pagination from "../../components/Pagination";
 
 const db = app.firestore();
@@ -373,7 +373,7 @@ function IndexUser() {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1">
-                  default TPST :{ProfilUser.c_defTPST}
+                  Default TPST :{ProfilUser.c_defTPST}
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -394,11 +394,11 @@ function IndexUser() {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1">
-                  default BankSampah :{ProfilUser.c_defBankName}
+                  Default Pengelola 3R :{ProfilUser.c_defBankName}
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <label>Lokasi BankSampah : </label>
+                <label>Lokasi 3R : </label>
                 <Button
                   onClick={onOpenDialog}
                   variant="contained"

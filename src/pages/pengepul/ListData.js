@@ -81,7 +81,7 @@ function ListData() {
             <TextField
               id="c_cari"
               name="c_cari"
-              label="CARI NAMA BANK SAMPAH"
+              label="CARI NAMA PENGEPUL"
               fullWidth
               autoComplete="c_cari"
               onChange={(e) => setCari(e.target.value)}
@@ -98,8 +98,6 @@ function ListData() {
                   <TableCell>Tempat</TableCell>
                   <TableCell>Kecamatan</TableCell>
                   <TableCell>Desa</TableCell>
-                  <TableCell>SKPenetapan</TableCell>
-                  <TableCell>Pengelola</TableCell>
                   <TableCell>Delete</TableCell>
                   <TableCell>Edit</TableCell>
                 </TableRow>
@@ -115,8 +113,6 @@ function ListData() {
                     <TableCell>{row.c_tempat}</TableCell>
                     <TableCell>{row.c_kecamatan}</TableCell>
                     <TableCell>{row.c_desa}</TableCell>
-                    <TableCell>{row.c_Sktetap}</TableCell>
-                    <TableCell>{row.c_pengelola}</TableCell>
                     <TableCell>
                       <Button
                         onClick={() => onDelete(row.id)}

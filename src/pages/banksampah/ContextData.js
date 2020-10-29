@@ -32,6 +32,7 @@ function DataProvider({ children }) {
     //console.log("GetAllData");
     await db
       .collection("CL_BANKSAMPAH")
+      .where("c_pengepul","==",false)
       .get()
       .then((snapshot) => {
         const data = snapshot.docs.map((doc) => ({
@@ -57,6 +58,7 @@ function DataProvider({ children }) {
       .collection("CL_BANKSAMPAH")
       .add({
         createdAt: tglserver,
+        c_pengepul:false,
         ...newData,
       })
       .then(() => GetAllData());

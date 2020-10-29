@@ -17,17 +17,13 @@ import { AuthContext } from "../../context/AuthContext";
 import AlertSnackbar from "../../components/AlertSnackbar";
 import { DataContext } from "./ContextData";
 import { Develop } from "../../util/firebase";
-import {DEMAKLOC} from "../../util/dbkecamatan"
+import { DEMAKLOC } from "../../util/dbkecamatan";
 import PilihKecamatan from "../../components/PilihKecamatan";
 import GetMapLocation from "../../components/GetMapLocation";
 
 function AddData() {
   const { users } = useContext(AuthContext);
-  const {
-    SaveData,
-    c_tanggal,
-    UploudBankSampah,
-  } = useContext(DataContext);
+  const { SaveData, c_tanggal, UploudBankSampah } = useContext(DataContext);
 
   //Get Location
   const [mapPoints, setMapPoints] = useState(DEMAKLOC);
@@ -39,7 +35,7 @@ function AddData() {
   const [c_alamat, setAlamat] = useState("");
   const [c_tempat, setTempat] = useState("");
   const [c_Sktetap, setSKTetap] = useState("");
-  const [c_pengelola, setPengelola] = useState("SISWA");
+  const [c_pengelola, setPengelola] = useState("SWASTA");
   const [c_ket, setKet] = useState("");
 
   //State SnackBar----------------------------
@@ -55,15 +51,15 @@ function AddData() {
     setOpenPortal(false);
   };
 
-    //State PortalMap------------------------------
-    const [openPortalMap, setOpenPortalMap] = useState(false);
-    const onOpenDialogMap = () => {
-      setOpenPortalMap(true);
-    };
-  
-    const handleCloseMap = () => {
-      setOpenPortalMap(false);
-    };
+  //State PortalMap------------------------------
+  const [openPortalMap, setOpenPortalMap] = useState(false);
+  const onOpenDialogMap = () => {
+    setOpenPortalMap(true);
+  };
+
+  const handleCloseMap = () => {
+    setOpenPortalMap(false);
+  };
 
   //Option Pengelola-----------------------------------
   let pilihPengelola = CL_KELOLABANK;
@@ -86,13 +82,13 @@ function AddData() {
   //Simpan Data------------------------------
   const onSimpan = async () => {
     if (c_nama === "") {
-      return onMessage("ERROR", "Nama Bank Sampah Kosong");
+      return onMessage("ERROR", "Nama Pengelola Kosong");
     }
     if (c_alamat === "") {
-      return onMessage("ERROR", "Alamat Bank Sampah Kosong");
+      return onMessage("ERROR", "Alamat Pengelola Kosong");
     }
     if (c_kecamatan === "") {
-      return onMessage("ERROR", "Alamat Kecamatan Sampah Kosong");
+      return onMessage("ERROR", "Alamat Kecamatan  Kosong");
     }
     if (c_desa === "") {
       return onMessage("ERROR", "Alamat Desa/Kel Kosong");
@@ -152,6 +148,16 @@ function AddData() {
       <Paper elevation={2}>
         <Box pt={2} pb={2} ml={2} mr={2}>
           <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <Typography variant="subtitle2">
+              Default Pengelola 3R : {users.c_defBankName}
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Typography variant="subtitle2">
+            Default Lokasi 3R : {users.c_defBankName}
+            </Typography>
+          </Grid>
             <Box mt={2} />
             <Grid item xs={12} sm={6}>
               <Button
@@ -168,7 +174,11 @@ function AddData() {
                 onClick={onOpenDialog}
                 variant="contained"
                 color="secondary"
-                disabled={users.c_tipeuser === "admin" && c_kecamatan!=="" ? false : true}
+                disabled={
+                  users.c_tipeuser === "admin" && c_kecamatan !== ""
+                    ? false
+                    : true
+                }
               >
                 TAMBAH DATA
               </Button>
@@ -188,7 +198,7 @@ function AddData() {
             ) : (
               ""
             )}
-          <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6}>
               <Typography variant="subtitle2">
                 Location Latitude : {mapPoints ? mapPoints[0] : ""}
               </Typography>
@@ -222,7 +232,7 @@ function AddData() {
                 required
                 id="c_nama"
                 name="c_nama"
-                label="Nama Bank Sampah"
+                label="Nama Pengelola"
                 fullWidth
                 autoComplete="c_nama"
                 onChange={(e) => setNama(e.target.value)}
@@ -235,6 +245,7 @@ function AddData() {
                 id="c_pengelola"
                 onChange={(e) => setPengelola(e.currentTarget.value)}
                 value={c_pengelola || ""}
+                disabled={true}
               >
                 {pilihPengelola}
               </select>
@@ -263,63 +274,6 @@ function AddData() {
                 value={c_tempat || ""}
               />
             </Grid>
-            {/* <Grid item xs={12} sm={6}>
-              <label>Kecamatan : </label>
-              <select
-                id="c_kecamatan"
-                onChange={onChangeKec}
-                value={c_kecamatan || ""}
-              >
-                {pilihKec}
-              </select>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <label>Desa/Kel : </label>
-              <select
-                id="c_desa"
-                onChange={(e) => setDesa(e.currentTarget.value)}
-                value={c_desa || ""}
-                //disabled={!editing}
-              >
-                {pilihDesa}
-              </select>
-            </Grid> */}
-            {/* <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                id="c_lang"
-                name="c_lang"
-                label="Langitude"
-                fullWidth
-                autoComplete="c_lang"
-                onChange={(e) => setLang(e.target.value)}
-                value={c_lang || ""}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                id="c_long"
-                name="c_long"
-                label="Longitude"
-                fullWidth
-                autoComplete="c_long"
-                onChange={(e) => setlong(e.target.value)}
-                value={c_long || ""}
-              />
-            </Grid> */}
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                id="c_Sktetap"
-                name="c_Sktetap"
-                label="SK Penetapan"
-                fullWidth
-                autoComplete="c_Sktetap"
-                onChange={(e) => setSKTetap(e.target.value)}
-                value={c_Sktetap || ""}
-              />
-            </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
                 required
@@ -330,6 +284,19 @@ function AddData() {
                 autoComplete="c_ket"
                 onChange={(e) => setKet(e.target.value)}
                 value={c_ket || ""}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                id="c_Sktetap"
+                name="c_Sktetap"
+                label=" "
+                fullWidth
+                autoComplete="c_Sktetap"
+                onChange={(e) => setSKTetap(e.target.value)}
+                value={c_Sktetap || ""}
+                disabled={true}
               />
             </Grid>
           </Grid>
@@ -349,9 +316,13 @@ function AddData() {
         <DialogContent>
           <DialogContentText id="alert-dialog-description"></DialogContentText>
 
-          <PilihKecamatan c_kecamatan={c_kecamatan} 
-          setKecamatan={setKecamatan} c_desa={c_desa} setDesa={setDesa} />
-          <GetMapLocation mapPoints={mapPoints} setMapPoints={setMapPoints}/>
+          <PilihKecamatan
+            c_kecamatan={c_kecamatan}
+            setKecamatan={setKecamatan}
+            c_desa={c_desa}
+            setDesa={setDesa}
+          />
+          <GetMapLocation mapPoints={mapPoints} setMapPoints={setMapPoints} />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseMap} variant="contained" color="primary">
@@ -359,8 +330,6 @@ function AddData() {
           </Button>
         </DialogActions>
       </Dialog>
-
-
 
       <AlertSnackbar
         open={openErr}

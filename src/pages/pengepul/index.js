@@ -24,9 +24,11 @@ function IndexDataPengepul() {
         <AddData />
       </Container>
       <Box mt={2} />
+      {users.c_tipeuser === "admin" && (
       <Container maxWidth="lg">
         <ListData />
       </Container>
+      )}
       <ScrollButton />
     </DataProvider>
   );

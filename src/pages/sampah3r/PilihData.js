@@ -107,6 +107,7 @@ function PilihData() {
                 onClick={onOpenDialog}
                 variant="contained"
                 color="primary"
+                disabled={users.c_tipeuser === "admin" ? false : true}
               >
                 CARI
               </Button>
