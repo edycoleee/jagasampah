@@ -8,6 +8,8 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
+import {Develop} from "../../util/firebase"
+
 
 function LandingPage({ classes }) {
   const ResiduInit = {
@@ -29,7 +31,9 @@ function LandingPage({ classes }) {
       try {
         const response = await fetch(`${endpointResidu}`);
         const result = await response.json();
-        console.log(result);
+        if (Develop){
+          console.log(result);
+        }
         setResidu((current) => {
           return {
             ...result,
@@ -47,8 +51,11 @@ function LandingPage({ classes }) {
       }
       setLoading(false);
     };
+    if(isError){
+      console.log("Terjadi Error");
+    }
     fetchData();
-  }, []);
+  }, [isError]);
 
   return (
     <main>

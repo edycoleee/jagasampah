@@ -8,7 +8,7 @@ exports.getTotalResiduTPA = (request, response) => {
       let sampahharian = [];
       data.forEach((doc) => {
         sampahharian.push({
-          todoId: doc.id,
+          id: doc.id,
           n_volton: doc.data().n_volton,
         });
       });
@@ -38,8 +38,8 @@ exports.getAllResiduTPA = (request, response) => {
         let sampahharian = [];
         data.forEach((doc) => {
           sampahharian.push({
-            todoId: doc.id,
-            n_volton: doc.data().n_volton,
+            id: doc.id,
+            ...doc.data(),
           });
         });
         const calcTon = (dataSampah) => {

@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express().use(cors());
 const { getAllTodos } = require("./APIs/todos");
-const { getTotalResiduTPA } = require("./APIs/jagasampah");
+const { getTotalResiduTPA,getAllResiduTPA } = require("./APIs/jagasampah");
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -21,5 +21,6 @@ app.get("/hello1", (req, res) => {
 app.get("/todos", getAllTodos);
 
 app.get("/residutotal", getTotalResiduTPA);
+app.get("/residuall", getAllResiduTPA);
 
 exports.api = functions.https.onRequest(app);

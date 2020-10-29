@@ -3674,3 +3674,60 @@ INFO: Detected non-HTTP/2 connection.
 [info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
 [debug] [2020-10-29T03:52:56.641Z] [worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: IDLE"}}
 [debug] [2020-10-29T03:52:56.642Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-10-29T03:53:13.878Z] [work-queue] {"queueLength":1,"workRunningCount":2}
+[debug] [2020-10-29T03:53:13.879Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-10-29T03:53:13.879Z] Accepted request GET /jagasampah/us-central1/api/residutotal --> api
+[debug] [2020-10-29T03:53:13.879Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-10-29T03:53:13.879Z] [worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: Assigning socketPath: \\?\pipe\C:\Edy\REACT\jagasampah\functions\3896 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: Assigning socketPath: \\\\?\\pipe\\C:\\Edy\\REACT\\jagasampah\\functions\\3896"}}
+[debug] [2020-10-29T03:53:13.879Z] [worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: BUSY"}}
+[debug] [2020-10-29T03:53:13.879Z] [runtime-status] [3896] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-10-29T03:53:13.880Z] [runtime-status] [3896] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-10-29T03:53:13.880Z] [runtime-status] [3896] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Running api in mode HTTPS"}}
+[debug] [2020-10-29T03:53:13.880Z] [runtime-status] [3896] Attempting to listen to socketPath: \\?\pipe\C:\Edy\REACT\jagasampah\functions\3896 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Edy\\REACT\\jagasampah\\functions\\3896"}}
+[debug] [2020-10-29T03:53:13.881Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-10-29T03:53:13.883Z] [runtime-status] [3896] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Ephemeral server handling GET request"}}
+[debug] [2020-10-29T03:53:13.883Z] [runtime-status] [3896] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-10-29T03:53:13.893Z] [worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: IDLE"}}
+[debug] [2020-10-29T03:53:13.893Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-10-29T03:53:18.741Z] [work-queue] {"queueLength":1,"workRunningCount":2}
+[debug] [2020-10-29T03:53:18.742Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-10-29T03:53:18.742Z] Accepted request GET /jagasampah/us-central1/api/residutotal --> api
+[debug] [2020-10-29T03:53:18.742Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-10-29T03:53:18.742Z] [worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: Assigning socketPath: \\?\pipe\C:\Edy\REACT\jagasampah\functions\3896 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: Assigning socketPath: \\\\?\\pipe\\C:\\Edy\\REACT\\jagasampah\\functions\\3896"}}
+[debug] [2020-10-29T03:53:18.742Z] [worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: BUSY"}}
+[debug] [2020-10-29T03:53:18.742Z] [runtime-status] [3896] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-10-29T03:53:18.743Z] [runtime-status] [3896] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-10-29T03:53:18.743Z] [runtime-status] [3896] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Running api in mode HTTPS"}}
+[debug] [2020-10-29T03:53:18.744Z] [runtime-status] [3896] Attempting to listen to socketPath: \\?\pipe\C:\Edy\REACT\jagasampah\functions\3896 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Edy\\REACT\\jagasampah\\functions\\3896"}}
+[debug] [2020-10-29T03:53:18.744Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-10-29T03:53:18.746Z] [runtime-status] [3896] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Ephemeral server handling GET request"}}
+[debug] [2020-10-29T03:53:18.747Z] [runtime-status] [3896] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-10-29T03:53:18.756Z] [worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: IDLE"}}
+[debug] [2020-10-29T03:53:18.756Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-10-29T03:53:20.452Z] Oct 29, 2020 10:53:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2020 10:53:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\r\nINFO: Detected non-HTTP/2 connection.\r\n"}}
+[debug] [2020-10-29T03:53:21.972Z] [work-queue] {"queueLength":1,"workRunningCount":2}
+[debug] [2020-10-29T03:53:21.972Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-10-29T03:53:21.972Z] Accepted request GET /jagasampah/us-central1/api/residutotal --> api
+[debug] [2020-10-29T03:53:21.973Z] [worker-pool] submitWork(triggerId=api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=api)"}}
+[debug] [2020-10-29T03:53:21.973Z] [worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: Assigning socketPath: \\?\pipe\C:\Edy\REACT\jagasampah\functions\3896 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: Assigning socketPath: \\\\?\\pipe\\C:\\Edy\\REACT\\jagasampah\\functions\\3896"}}
+[debug] [2020-10-29T03:53:21.973Z] [worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: BUSY"}}
+[debug] [2020-10-29T03:53:21.973Z] [runtime-status] [3896] Trigger "api" has been found, beginning invocation! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Trigger \"api\" has been found, beginning invocation!"}}
+[info] i  functions: Beginning execution of "api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Beginning execution of \"api\""}}
+[debug] [2020-10-29T03:53:21.974Z] [runtime-status] [3896] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] triggerDefinition {\"httpsTrigger\":{},\"name\":\"api\",\"entryPoint\":\"api\"}"}}
+[debug] [2020-10-29T03:53:21.974Z] [runtime-status] [3896] Running api in mode HTTPS {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Running api in mode HTTPS"}}
+[debug] [2020-10-29T03:53:21.975Z] [runtime-status] [3896] Attempting to listen to socketPath: \\?\pipe\C:\Edy\REACT\jagasampah\functions\3896 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Edy\\REACT\\jagasampah\\functions\\3896"}}
+[debug] [2020-10-29T03:53:21.976Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2020-10-29T03:53:21.978Z] [runtime-status] [3896] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Ephemeral server handling GET request"}}
+[debug] [2020-10-29T03:53:21.979Z] [runtime-status] [3896] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"[runtime-status] [3896] Ephemeral server survived."}}
+[info] i  functions: Finished "api" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"api"},"message":"Finished \"api\" in ~1s"}}
+[debug] [2020-10-29T03:53:21.989Z] [worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-api-4560deea-63fe-41e2-b7b7-14f45b54e929]: IDLE"}}
+[debug] [2020-10-29T03:53:21.989Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-10-29T03:54:06.134Z] Oct 29, 2020 10:54:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 29, 2020 10:54:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\r\nINFO: Detected non-HTTP/2 connection.\r\n"}}
