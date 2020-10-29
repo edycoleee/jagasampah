@@ -30,6 +30,7 @@ export const CL_BANKSAMPAH = [
     c_keterangan: "",
     c_createdAt: "",
     c_user: "",
+    c_pengepul:false,
   },
 ];
 

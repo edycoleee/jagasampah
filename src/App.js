@@ -22,6 +22,7 @@ import IndexLapResiduBulan from "./pages/lapResiduBulan";
 import IndexTPST from "./pages/tpst";
 import LoginLink from "./pages/auth/LoginLink";
 import IndexResiduLanding from "./pages/landing/ResiduTPA";
+import IndexDataPengepul from "./pages/pengepul";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <PrivateRoute exact path="/lapresidu" component={IndexLapResidu} />
         <PrivateRoute exact path="/tpabulan" component={IndexLapResiduBulan} />
         <PrivateRoute exact path="/tpst" component={IndexTPST} />
+        <PrivateRoute exact path="/pengepul" component={IndexDataPengepul} />
         <Route component={ErrorPage} />
       </Switch>
     </Router>
