@@ -77,7 +77,7 @@ function LandingPage({ classes }) {
             color="textPrimary"
             gutterBottom
           >
-            JAGA SAMPAH
+            JARI SATU
           </Typography>
           <Typography
             variant="h5"
@@ -85,7 +85,7 @@ function LandingPage({ classes }) {
             color="textSecondary"
             paragraph
           >
-            Aplikasi Dinas Lingkungan Hidup tentang Persampahan
+            Jaringan Informasi Pengelolaan Sampah Terpadu
           </Typography>
           <div className={classes.heroButtons}>
             <Grid container spacing={2} justify="center">

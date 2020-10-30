@@ -12,11 +12,17 @@ import {
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import { DataContext } from "./ContextData";
 import EditData from "./EditData";
+import { AuthContext } from "../../context/AuthContext";
 
 function ListData() {
-  const { dataAwal, DeleteData, GetDataFTgl, c_tanggal } = useContext(
-    DataContext
-  );
+  const { users } = useContext(AuthContext);
+  const {
+    dataAwal,
+    DeleteData,
+    GetDataFTgl,
+    c_tanggal,
+    GetDataFTglAdmin,
+  } = useContext(DataContext);
 
   //edit item
   const [currentItem, setCurrentItem] = useState([]);
@@ -27,8 +33,15 @@ function ListData() {
   };
 
   useEffect(() => {
-    GetDataFTgl(c_tanggal);
-  }, [GetDataFTgl, c_tanggal]);
+    //GetDataFTgl(c_tanggal,users.c_defBankID);
+    if (users.c_tipeuser === "admin") {
+      console.log("ADMIN", users.c_tipeuser);
+      GetDataFTglAdmin(c_tanggal);
+    } else {
+      console.log("NO ADMIN", users.c_tipeuser);
+      GetDataFTgl(c_tanggal, users.c_defBankID);
+    }
+  }, [GetDataFTgl, c_tanggal, users.c_defBankID]);
 
   const calcPlastik = (dataAwal) => {
     return dataAwal.reduce((total, item) => {
@@ -103,9 +116,8 @@ function ListData() {
     setCurrentItem({ ...data });
   };
 
-  const onDelete = (id, tgl) => {
-    console.log(id, tgl);
-    DeleteData(id, tgl);
+  const onDelete = (id, tgl, idBank) => {
+    DeleteData(id, tgl, idBank);
   };
 
   return (
@@ -153,7 +165,9 @@ function ListData() {
                     <TableCell align="right">{row.n_lain}</TableCell>
                     <TableCell align="right">
                       <Button
-                        onClick={() => onDelete(row.id, row.c_tanggal)}
+                        onClick={() =>
+                          onDelete(row.id, row.c_tanggal, row.idBank)
+                        }
                         variant="contained"
                         color="secondary"
                       >

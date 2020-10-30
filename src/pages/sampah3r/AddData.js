@@ -26,6 +26,7 @@ function AddData() {
     setIdBank,
     setNmBank,
     GetDataFTgl,
+    GetDataFTglAdmin,
   } = useContext(DataContext);
 
   //State Sampah----------------------------
@@ -127,6 +128,14 @@ function AddData() {
     setLain(0);
   };
 
+  const onCariData = () =>{
+    if (users.c_tipeuser === "admin") {
+      GetDataFTglAdmin(c_tanggal);
+    } else {
+      GetDataFTgl(c_tanggal, users.c_defBankID);
+    }
+  }
+
   return (
     <div>
       <Paper elevation={2}>
@@ -145,7 +154,7 @@ function AddData() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <Button
-                onClick={() => GetDataFTgl(c_tanggal)}
+                onClick={onCariData}
                 variant="contained"
                 color="primary"
               >

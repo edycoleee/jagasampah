@@ -24,7 +24,7 @@ import Pagination from "../../components/Pagination";
 
 function PilihData() {
   const { users } = useContext(AuthContext);
-  const { getDataBank, idBank, setIdBank, nmBank, setNmBank,alamatBank, setAlamatBank } = useContext(
+  const { getDataBank, setIdBank, nmBank, setNmBank,alamatBank, setAlamatBank } = useContext(
     DataContext
   );
   const [c_cari, setCari] = useState("");

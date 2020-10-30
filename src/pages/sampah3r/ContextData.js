@@ -1,6 +1,7 @@
-import React, { createContext, useCallback, useState } from "react";
+import React, { createContext, useCallback, useContext, useState } from "react";
 import app, { Firebase, LocalServer, Develop } from "../../util/firebase";
 import moment from "moment";
+
 
 const db = app.firestore();
 //setting jika menggunakan emulator firestore
@@ -11,6 +12,7 @@ if (LocalServer) {
 export const DataContext = createContext();
 
 function DataProvider({ children }) {
+
   //Init Today----------------------------
   let date = new Date();
   let day = date.getDate();
@@ -26,7 +28,28 @@ function DataProvider({ children }) {
   const [nmBank, setNmBank] = useState("");
   const [alamatBank, setAlamatBank] = useState("");
 
-  const GetDataFTgl = useCallback(async (tgl) => {
+  const GetDataFTgl = useCallback(async (tgl,id) => {
+    if (id){
+      await db
+        .collection("CL_SAMPAH3R")
+        .where("c_tanggal", "==", tgl)
+        .where("idBank", "==", id)
+        .get()
+        .then((snapshot) => {
+          const data = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          if (Develop) {
+            console.log("STEP : GET DATA 3R TGL",id);
+          }
+          setDataAwal(data);
+        })
+        .catch((error) => console.error("Error Get Data :", error));
+    }
+  }, []);
+
+  const GetDataFTglAdmin = useCallback(async (tgl) => {
     await db
       .collection("CL_SAMPAH3R")
       .where("c_tanggal", "==", tgl)
@@ -76,18 +99,18 @@ function DataProvider({ children }) {
         createdAt: tglserver,
         ...newData,
       })
-      .then(() => GetDataFTgl(c_tanggal));
+      .then(() => GetDataFTgl(c_tanggal,newData.idBank));
   };
 
-  const DeleteData = async (id, tgl) => {
+  const DeleteData = async (id,tgl,idBank) => {
     if (Develop) {
-      console.log("STEP : DELETE DATA", id);
+      console.log("STEP : DELETE DATA", id,idBank);
     }
     await db
       .collection("CL_SAMPAH3R")
       .doc(id)
       .delete()
-      .then(() => GetDataFTgl(c_tanggal));
+      .then(() => GetDataFTgl(c_tanggal,idBank));
   };
 
   const SaveEditData = async (newData) => {
@@ -104,6 +127,7 @@ function DataProvider({ children }) {
       n_karet,
       n_kayu,
       n_lain,
+      idBank
     } = newData;
 
     let tgl = new Date(c_tanggal);
@@ -125,7 +149,8 @@ function DataProvider({ children }) {
         c_bulan: bulan,
         c_tahun: tahun,
       })
-      .then(() => GetAllData());
+      //.then(() => GetAllData());
+      .then(() => GetDataFTgl(c_tanggal,idBank));
   };
 
   const getDataBank = async () => {
@@ -161,6 +186,7 @@ function DataProvider({ children }) {
     setNmBank,
     alamatBank,
     setAlamatBank,
+    GetDataFTglAdmin,
   };
   return (
     <DataContext.Provider value={DataState}>{children}</DataContext.Provider>

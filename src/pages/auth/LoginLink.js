@@ -60,7 +60,7 @@ const LoginLink = ({ history }) => {
       try {
         setLoading(false);
         await login(email.value, password.value);
-        history.push("/dashboard");
+        history.push("/sampah3r");
       } catch (error) {
         setErrMessage(error);
         setOpen(true);
@@ -71,7 +71,7 @@ const LoginLink = ({ history }) => {
   );
 
   if (currentUser) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/sampah3r" />;
   }
 
   const handleClose = () => {
