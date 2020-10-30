@@ -11,7 +11,7 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { CL_KELOLABANK } from "../../util/dbschema";
 import { AuthContext } from "../../context/AuthContext";
 import AlertSnackbar from "../../components/AlertSnackbar";
@@ -141,6 +141,8 @@ function AddData() {
     setAlamat("");
     setKecamatan("");
     setDesa("");
+    setKet("")
+    setTempat("")
   };
 
   return (
