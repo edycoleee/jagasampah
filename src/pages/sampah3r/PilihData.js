@@ -24,7 +24,7 @@ import Pagination from "../../components/Pagination";
 
 function PilihData() {
   const { users } = useContext(AuthContext);
-  const { getDataBank, setIdBank, nmBank, setNmBank,alamatBank, setAlamatBank } = useContext(
+  const { getDataBank, setIdBank, nmBank, setNmBank,alamatBank, setAlamatBank,setPengepul } = useContext(
     DataContext
   );
   const [c_cari, setCari] = useState("");
@@ -60,7 +60,7 @@ function PilihData() {
     setOpenPortal(false);
   };
 
-  const onPilihCari = (id, nama, alamat) => {
+  const onPilihCari = (id, nama, alamat,pengepul) => {
     //console.log(id, c_nama);
     setNmBank(nama);
     setAlamatBank(alamat)
@@ -68,6 +68,7 @@ function PilihData() {
     setCari("");
     setCurrentPage(1);
     handleClose();
+    setPengepul(pengepul)
   };
 
   //Batal Simpan----------------------------
@@ -77,7 +78,7 @@ function PilihData() {
     setAlamatBank(users.c_defBankAlamat)
     setCari("");
     setCurrentPage(1);
-    handleClose();
+    handleClose()
   };
 
   // Get current page
@@ -156,7 +157,7 @@ function PilihData() {
                     <TableCell align="center">
                       <Button
                         onClick={() =>
-                          onPilihCari(row.id, row.c_nama, row.c_alamat)
+                          onPilihCari(row.id, row.c_nama, row.c_alamat,row.c_pengepul)
                         }
                         variant="contained"
                         color="primary"

@@ -26,6 +26,7 @@ function AddData() {
     setIdBank,
     setNmBank,
     GetDataFTgl,
+    pengepul,
     GetDataFTglAdmin,
   } = useContext(DataContext);
 
@@ -92,6 +93,7 @@ function AddData() {
       c_bulan: bulan,
       c_tahun: tahun,
       c_user: users.c_username,
+      pengepul,
       idBank,
       nmBank,
     };

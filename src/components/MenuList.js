@@ -123,15 +123,15 @@ export const secondaryListItems = (
         <ListItemText primary="TPA BULANAN" />
       </ListItem>
     </Link>
-    <Link to="/tpatahun">
+    {/* <Link to="/tpatahun">
       <ListItem button>
         <ListItemIcon>
           <AssignmentIcon />
         </ListItemIcon>
         <ListItemText primary="TPA TAHUNAN" />
       </ListItem>
-    </Link>
-    <Link to="/tpahari">
+    </Link> */}
+    <Link to="/lap3r">
       <ListItem button>
         <ListItemIcon>
           <AssignmentTurnedInTwoToneIcon />
@@ -139,20 +139,12 @@ export const secondaryListItems = (
         <ListItemText primary="3R HARIAN" />
       </ListItem>
     </Link>
-    <Link to="/tpabulan">
+    <Link to="/lap3rbulan">
       <ListItem button>
         <ListItemIcon>
           <AssignmentTurnedInTwoToneIcon />
         </ListItemIcon>
         <ListItemText primary="3R  BULANAN" />
-      </ListItem>
-    </Link>
-    <Link to="/tpatahun">
-      <ListItem button>
-        <ListItemIcon>
-          <AssignmentTurnedInTwoToneIcon />
-        </ListItemIcon>
-        <ListItemText primary="3R  TAHUNAN" />
       </ListItem>
     </Link>
   </div>

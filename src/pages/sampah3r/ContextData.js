@@ -26,6 +26,7 @@ function DataProvider({ children }) {
   const [c_tanggal, setTanggal] = useState(today);
   const [idBank, setIdBank] = useState("");
   const [nmBank, setNmBank] = useState("");
+  const [pengepul, setPengepul] = useState(false);
   const [alamatBank, setAlamatBank] = useState("");
 
   const GetDataFTgl = useCallback(async (tgl,id) => {
@@ -186,6 +187,8 @@ function DataProvider({ children }) {
     setNmBank,
     alamatBank,
     setAlamatBank,
+    setPengepul,
+    pengepul,
     GetDataFTglAdmin,
   };
   return (

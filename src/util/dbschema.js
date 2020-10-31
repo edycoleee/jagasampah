@@ -71,6 +71,7 @@ export const CL_SAMPAH3R = [
     c_idbank: "",
     nmBank: "",
     c_createdAt: "",
+    c_pengepul:false,
   },
 ];
 
