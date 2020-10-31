@@ -139,13 +139,13 @@ function DataProvider({ children }) {
       .doc(id)
       .update({
         c_tanggal,
-        n_plastik,
-        n_organik,
-        n_kertas,
-        n_kaca,
-        n_karet,
-        n_kayu,
-        n_lain,
+        n_plastik : parseInt(n_plastik),
+        n_organik : parseInt(n_organik),
+        n_kertas : parseInt(n_kertas),
+        n_kaca : parseInt(n_kaca),
+        n_karet : parseInt(n_karet),
+        n_kayu : parseInt(n_kayu),
+        n_lain : parseInt(n_lain),
         c_bulan: bulan,
         c_tahun: tahun,
       })

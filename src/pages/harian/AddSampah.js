@@ -17,6 +17,7 @@ import AlertSnackbar from "../../components/AlertSnackbar";
 import { SampahContext } from "./ContextSampah";
 import { Autocomplete } from "@material-ui/lab";
 
+
 function AddSampah() {
   const { users } = useContext(AuthContext);
   const {
@@ -84,7 +85,7 @@ function AddSampah() {
     let tahun = String(tgl.getFullYear());
     let bulan = String(tgl.getMonth() + 1);
     if (bulan < 10) bulan = "0" + bulan;
-    
+
     const newData = {
       c_tpa,
       c_tanggal,
@@ -306,7 +307,7 @@ function AddSampah() {
                 fullWidth
                 autoComplete="n_jmlrit"
                 onChange={(e) => {
-                  setJmlRit(e.target.value);
+                  setJmlRit(parseFloat(e.target.value));
                   setVolM3(e.target.value * c_fkali);
                   setVolTon(e.target.value * c_fkali * 0.33);
                 }}
@@ -322,7 +323,7 @@ function AddSampah() {
                 type="number"
                 fullWidth
                 autoComplete="c_fkali"
-                onChange={(e) => setFKali(e.target.value)}
+                onChange={(e) => setFKali(parseFloat(e.target.value))}
                 value={c_fkali || ""}
               />
             </Grid>
@@ -335,7 +336,7 @@ function AddSampah() {
                 type="number"
                 fullWidth
                 autoComplete="n_volm3"
-                onChange={(e) => setVolM3(e.target.value)}
+                onChange={(e) => setVolM3(parseFloat(e.target.value))}
                 value={n_volm3 || ""}
               />
             </Grid>
@@ -348,7 +349,7 @@ function AddSampah() {
                 type="number"
                 fullWidth
                 autoComplete="n_volton"
-                onChange={(e) => setVolTon(e.target.value)}
+                onChange={(e) => setVolTon(parseFloat(e.target.value))}
                 value={n_volton || ""}
               />
             </Grid>
@@ -381,5 +382,7 @@ function AddSampah() {
     </div>
   );
 }
+
+
 
 export default AddSampah;

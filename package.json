@@ -16,6 +16,7 @@
     "firebase": "^7.24.0",
     "leaflet": "^1.7.1",
     "moment": "^2.29.1",
+    "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-chartjs-2": "^2.10.0",
     "react-dom": "^16.14.0",

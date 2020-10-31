@@ -81,13 +81,13 @@ function AddData() {
     let tahun = String(tgl.getFullYear());
     let bulan = String(tgl.getMonth() + 1);
     const newData = {
-      n_plastik,
-      n_organik,
-      n_kertas,
-      n_kaca,
-      n_karet,
-      n_kayu,
-      n_lain,
+      n_plastik : parseInt(n_plastik),
+      n_organik : parseInt(n_organik),
+      n_kertas : parseInt(n_kertas),
+      n_kaca : parseInt(n_kaca),
+      n_karet : parseInt(n_karet),
+      n_kayu : parseInt(n_kayu),
+      n_lain : parseInt(n_lain),
       c_tanggal,
       c_bulan: bulan,
       c_tahun: tahun,
@@ -128,13 +128,13 @@ function AddData() {
     setLain(0);
   };
 
-  const onCariData = () =>{
+  const onCariData = () => {
     if (users.c_tipeuser === "admin") {
       GetDataFTglAdmin(c_tanggal);
     } else {
       GetDataFTgl(c_tanggal, users.c_defBankID);
     }
-  }
+  };
 
   return (
     <div>
@@ -153,11 +153,7 @@ function AddData() {
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Button
-                onClick={onCariData}
-                variant="contained"
-                color="primary"
-              >
+              <Button onClick={onCariData} variant="contained" color="primary">
                 CARI
               </Button>{" "}
               <Button

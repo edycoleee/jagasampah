@@ -1,4 +1,13 @@
-const functions = require('firebase-functions');
+const functions = require("firebase-functions");
+const express = require("express");
+const cors = require("cors");
+const app = express().use(cors());
+const { getAllTodos } = require("./APIs/todos");
+const {
+  getTotalResiduTPA,
+  getAllResiduTPA,
+  getAll3R,
+} = require("./APIs/jagasampah");
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -7,3 +16,16 @@ const functions = require('firebase-functions');
 //   functions.logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
 // });
+
+//Route
+app.get("/hello1", (req, res) => {
+  return res.status(200).send("Hello dari sini saja");
+});
+
+app.get("/todos", getAllTodos);
+
+app.get("/residutotal", getTotalResiduTPA);
+app.get("/residuall", getAllResiduTPA);
+app.get("/sampah3r", getAll3R);
+
+exports.api = functions.https.onRequest(app);
