@@ -17,7 +17,6 @@ import { SampahContext } from "./ContextSampah";
 function ListSampah() {
   const { dataBulanan } = useContext(SampahContext);
 
-
   const calcTon = (dataSampah) => {
     return dataSampah.reduce((total, item) => {
       const volton = parseFloat(item.n_volton);
@@ -26,25 +25,6 @@ function ListSampah() {
   };
 
   const TotTon = useMemo(() => calcTon(dataBulanan), [dataBulanan]);
-
-  const calcRit = (dataSampah) => {
-    return dataSampah.reduce((total, item) => {
-      const volrit = parseFloat(item.n_jmlrit);
-      return total + volrit;
-    }, 0);
-  };
-
-  const RitRit = useMemo(() => calcRit(dataBulanan), [dataBulanan]);
-
-  const calcM3 = (dataSampah) => {
-    return dataSampah.reduce((total, item) => {
-      const volm3 = parseFloat(item.n_volm3);
-      //console.log(volm3);
-      return total + volm3;
-    }, 0);
-  };
-
-  const M3M3 = useMemo(() => calcM3(dataBulanan), [dataBulanan]);
 
   return (
     <div>
@@ -57,12 +37,11 @@ function ListSampah() {
       <Paper elevation={2}>
         <Box pt={2} pb={2} ml={2} mr={2}>
           <Typography variant="h5" gutterBottom>
-            Data Sampah : {dataBulanan.length} data, TOTAL => Rit : {RitRit}, M3
-            : {M3M3}
+            Data Sampah : {dataBulanan.length} data,
           </Typography>
           { Develop && JSON.stringify(dataBulanan) }
           <Typography variant="h1" component="h2" gutterBottom>
-            TOTAL : {TotTon.toFixed(2)} TON
+            TOTAL : {TotTon.toFixed(2)} KG
           </Typography>
           <p></p>
           <TableContainer component={Paper}>
@@ -70,10 +49,14 @@ function ListSampah() {
               <TableHead>
                 <TableRow>
                   <TableCell>Tanggal</TableCell>
-                  <TableCell align="right">Rit</TableCell>
-                  <TableCell align="right">M3</TableCell>
-                  <TableCell align="right">TON</TableCell>
-                  <TableCell>TPA</TableCell>
+                  <TableCell align="right">Plastik</TableCell>
+                  <TableCell align="right">Organik</TableCell>
+                  <TableCell align="right">Kertas</TableCell>
+                  <TableCell align="right">Kaca</TableCell>
+                  <TableCell align="right">Karet</TableCell>
+                  <TableCell align="right">Kayu</TableCell>
+                  <TableCell align="right">Lainnya</TableCell>
+                  <TableCell align="right">TOTAL</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -92,8 +75,13 @@ function ListSampah() {
                           <TableCell component="th" scope="row">
                             {row.c_tanggal}
                           </TableCell>
-                          <TableCell align="right">{row.n_jmlrit}</TableCell>
-                          <TableCell align="right">{row.n_volm3}</TableCell>
+                          <TableCell align="right">{row.n_plastik}</TableCell>
+                          <TableCell align="right">{row.n_organik}</TableCell>
+                          <TableCell align="right">{row.n_kertas}</TableCell>
+                          <TableCell align="right">{row.n_kaca}</TableCell>
+                          <TableCell align="right">{row.n_karet}</TableCell>
+                          <TableCell align="right">{row.n_kayu}</TableCell>
+                          <TableCell align="right">{row.n_lain}</TableCell>
                           <TableCell align="right">
                             {parseFloat(n_volton).toFixed(2)}
                           </TableCell>

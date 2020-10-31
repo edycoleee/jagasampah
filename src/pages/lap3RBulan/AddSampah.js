@@ -7,18 +7,32 @@ import {
   Paper,
   TextField,
 } from "@material-ui/core";
-import React, { useContext, useEffect, useState } from "react";
-import { CL_TPA } from "../../util/dbschema";
+import React, { useContext, useState } from "react";
 import { CL_BULAN } from "../../util/dbschema";
-import { AuthContext } from "../../context/AuthContext";
+//import { AuthContext } from "../../context/AuthContext";
 import { SampahContext } from "./ContextSampah";
 import { Autocomplete } from "@material-ui/lab";
 import { Develop } from "../../util/firebase";
+import PilihBankSampah from "../../components/PilihBankSampah";
+import Notification from "../../components/Notification";
 
 function AddSampah() {
-  const { users } = useContext(AuthContext);
-  const { GetDataBln, LihatDataTpa,dataBulanan } = useContext(SampahContext);
-  const [checkedAll, setCheckedAll] = useState(false);
+  //const { users } = useContext(AuthContext);
+  const {
+    GetDataBln,
+    LihatDataTpa,
+    dataBulanan,
+    getDataBank,
+    setIdBank,
+    idBank,
+    nmBank,
+    setNmBank,
+    alamatBank,
+    setAlamatBank,
+    GetAllDataBln,
+    LihatDataTpaFilter,notify, setNotify
+  } = useContext(SampahContext);
+  const [checkedAll, setCheckedAll] = useState(true);
 
   const thn = new Date().getFullYear();
   const tahunPilih = [
@@ -30,26 +44,10 @@ function AddSampah() {
   ];
 
   //State Sampah----------------------------
-  const [c_tpa, setTPA] = useState(users.c_defTPA);
   const [kode, setKode] = useState("01");
   const [bulan, setBulan] = useState("Januari");
   const [tahun, setTahun] = useState("");
   const [loading, setLoading] = useState(false);
-
-  //Default TPA--------------------------------
-  useEffect(() => {
-    setTPA(users.c_defTPA);
-  }, [users.c_defTPA]);
-
-  //Option TPA-----------------------------------
-  let pilihTPA = CL_TPA;
-  pilihTPA = pilihTPA.map((item, index) => {
-    return (
-      <option key={index} value={item}>
-        {item}
-      </option>
-    );
-  });
 
   let pilihBulan = CL_BULAN;
   pilihBulan = pilihBulan.map((item, index) => {
@@ -62,12 +60,26 @@ function AddSampah() {
 
   const onCariData = async () => {
     setLoading(true);
-    // if (checkedAll) {
-    //   return await GetAllDataBln(tahun, kode, c_tpa)
-    // }
-    return await GetDataBln(tahun, kode, c_tpa).then(() => {
-      setLoading(false);
-    });
+    if (Develop) {
+      console.log(tahun, kode);
+    }
+    if (checkedAll) {
+      return await GetAllDataBln(tahun, kode).then(() => {
+        setLoading(false);
+      });
+    } else {
+      if (idBank === "") {
+        setLoading(false);
+        return setNotify({
+          isOpen: true,
+          message: "Pilih Pengelola 3R",
+          type: "error",
+        });
+      }
+      return await GetDataBln(tahun, kode, idBank).then(() => {
+        setLoading(false);
+      });
+    }
   };
 
   const onChangeBulan = (event) => {
@@ -84,27 +96,35 @@ function AddSampah() {
     }
   };
 
-  const onLihatData =async () => {
-    await LihatDataTpa(tahun, kode, c_tpa)
+  const onLihatData = async () => {
+    if (checkedAll) {
+      await LihatDataTpa(tahun, kode);
+    } else {
+      if (idBank === "") {
+        return setNotify({
+          isOpen: true,
+          message: "Pilih Pengelola 3R",
+          type: "error",
+        });
+      }
+      await LihatDataTpaFilter(tahun, kode, idBank);
+    }
   };
 
   return (
     <div>
+      <PilihBankSampah
+        getDataBank={getDataBank}
+        setIdBank={setIdBank}
+        nmBank={nmBank}
+        setNmBank={setNmBank}
+        alamatBank={alamatBank}
+        setAlamatBank={setAlamatBank}
+      />{" "}
+      <Box mt={2} />
       <Paper elevation={2}>
         <Box pt={2} pb={2} ml={2} mr={2}>
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
-              <label>Lokasi TPA : {"  "}</label>
-              <select
-                id="c_defTPA"
-                onChange={(e) => setTPA(e.currentTarget.value)}
-                value={c_tpa || ""}
-                //disabled={!editing}
-              >
-                {pilihTPA}
-              </select>
-            </Grid>
-            {Develop && (
             <Grid item xs={12} sm={6}>
               <FormControlLabel
                 control={
@@ -113,13 +133,11 @@ function AddSampah() {
                     onChange={(event) => setCheckedAll(event.target.checked)}
                     name="checkedAll"
                     color="primary"
-                    disabled={true}
                   />
                 }
-                label="Semua TPA"
+                label="Semua Pengelola 3R"
               />
             </Grid>
-            )}
             <Grid item xs={12} sm={6}>
               {/* {JSON.stringify(kode)} */}
               <label>Bulan : {"  "}</label>
@@ -162,11 +180,15 @@ function AddSampah() {
               </Button>
             </Grid>
             <Grid item xs={12} sm={6}>
-              {(dataBulanan.length === 0) ? "Data Belum Ada" : `${dataBulanan.length}  Data` }
+              {dataBulanan.length === 0
+                ? "Data Belum Ada"
+                : `${dataBulanan.length}  Data`}
             </Grid>
           </Grid>
         </Box>
       </Paper>
+      {/* -----------------------------SnackBar--------------------- */}
+      <Notification notify={notify} setNotify={setNotify} />
     </div>
   );
 }

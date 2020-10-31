@@ -25,60 +25,120 @@ function SampahProvider({ children }) {
   const [sampahChart, setSampahChart] = useState([]);
   const [c_tanggal, setTanggal] = useState(today);
 
-  const GetDataBln = async (tahun, bulan, c_tpa) => {
+  const [idBank, setIdBank] = useState("");
+  const [nmBank, setNmBank] = useState("");
+  const [alamatBank, setAlamatBank] = useState("");
+  //Notify state
+const [notify, setNotify] = useState({
+  isOpen: false,
+  message: "",
+  type: "",
+});
 
-    console.log(tahun, bulan, c_tpa);
+  const GetDataBln = async (tahun, bulan, idBank) => {
+    console.log(tahun, bulan, idBank);
     await db
-      .collection("CL_SAMPAHHARI")
+      .collection("CL_SAMPAH3R")
       .where("c_bulan", "==", bulan)
-      .where("c_tpa", "==", c_tpa)
+      .where("idBank", "==", idBank)
       .where("c_tahun", "==", tahun)
       .get()
       .then((snapshot) => {
-        //ketemu data tanggal
         const data = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
+        ///console.log("Render List Effect :", data);
         const AllTgl = [...new Set(data.map((item) => item.c_tanggal))];
-        //console.log("Render Tanggal :", AllTgl);
 
         const uploudData = async (tgl) => {
           const dataFilter = data.filter((item) => item.c_tanggal === tgl);
           //console.log(dataFilter);
-          const calcTon = (data) => {
-            return data.reduce((total, item) => {
-              const volton = parseFloat(item.n_volton);
-              return total + volton;
-            }, 0);
-          };
-          const TotTon = calcTon(dataFilter);
 
-          const calcRit = (data) => {
-            return data.reduce((total, item) => {
-              const volrit = parseFloat(item.n_jmlrit);
+          const calcPlastic = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volrit = parseFloat(item.n_plastik);
               return total + volrit;
             }, 0);
           };
-          const RitRit = calcRit(dataFilter);
+          const jmlPlastik = calcPlastic(dataFilter);
 
-          const calcM3 = (data) => {
-            return data.reduce((total, item) => {
-              const volm3 = parseFloat(item.n_volm3);
+          const calcOrganik = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_organik);
               //console.log(volm3);
               return total + volm3;
             }, 0);
           };
-          const M3M3 = calcM3(dataFilter);
+          const jmlOrganik = calcOrganik(dataFilter);
+
+          const calcKertas = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_kertas);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlKertas = calcKertas(dataFilter);
+
+          const calcKaca = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_kaca);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlKaca = calcKaca(dataFilter);
+
+          const calcKaret = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_karet);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlKaret = calcKaret(dataFilter);
+
+          const calcKayu = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_kayu);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlKayu = calcKayu(dataFilter);
+
+          const calcLain = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_lain);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlLain = calcLain(dataFilter);
+
+          const TotTon =
+            jmlPlastik +
+            jmlOrganik +
+            jmlKertas +
+            jmlKaca +
+            jmlKaret +
+            jmlKayu +
+            jmlLain;
+
           if (Develop) {
-            console.log("STEP item : ", tgl, M3M3, RitRit, TotTon);
+            console.log("STEP item : ", tgl, jmlPlastik, jmlOrganik, TotTon);
           }
           const newData = {
             c_tanggal: tgl,
             n_volton: TotTon,
-            n_jmlrit: RitRit,
-            n_volm3: M3M3,
-            c_tpa,
+            n_plastik: jmlPlastik,
+            n_organik: jmlOrganik,
+            n_kertas: jmlKertas,
+            n_kaca: jmlKaca,
+            n_karet: jmlKaret,
+            n_kayu: jmlKayu,
+            n_lain: jmlLain,
             c_bulan: bulan,
             c_tahun: tahun,
           };
@@ -110,25 +170,165 @@ function SampahProvider({ children }) {
           if (Develop) {
             console.log("STEP DATA DISIMPAN");
           }
-          db.collection("CL_REKAPTPA")
-            .doc(`${tahun}${bulan}${c_tpa}`)
-            .set({ REKAP });
+          db.collection("CL_REKAP3R").doc(`${tahun}${bulan}${idBank}`).set({ REKAP });
         }
       })
-      .then(() => LihatDataTpa(tahun, bulan, c_tpa))
+      .then(() => LihatDataTpaFilter(tahun, bulan,idBank))
       .catch((error) => console.error("Error Get Data :", error));
   };
 
-  const GetAllDataBln = () => {};
-
-  const LihatDataTpa = async (tahun, bulan, c_tpa) => {
-    setDataBulanan([])
+  const GetAllDataBln = async (tahun, bulan) => {
     await db
-      .collection("CL_REKAPTPA")
-      .doc(`${tahun}${bulan}${c_tpa}`)
+      .collection("CL_SAMPAH3R")
+      .where("c_bulan", "==", bulan)
+      .where("c_tahun", "==", tahun)
+      .get()
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        ///console.log("Render List Effect :", data);
+        const AllTgl = [...new Set(data.map((item) => item.c_tanggal))];
+
+        const uploudData = async (tgl) => {
+          const dataFilter = data.filter((item) => item.c_tanggal === tgl);
+          //console.log(dataFilter);
+
+          const calcPlastic = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volrit = parseFloat(item.n_plastik);
+              return total + volrit;
+            }, 0);
+          };
+          const jmlPlastik = calcPlastic(dataFilter);
+
+          const calcOrganik = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_organik);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlOrganik = calcOrganik(dataFilter);
+
+          const calcKertas = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_kertas);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlKertas = calcKertas(dataFilter);
+
+          const calcKaca = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_kaca);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlKaca = calcKaca(dataFilter);
+
+          const calcKaret = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_karet);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlKaret = calcKaret(dataFilter);
+
+          const calcKayu = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_kayu);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlKayu = calcKayu(dataFilter);
+
+          const calcLain = (dataSampah) => {
+            return dataSampah.reduce((total, item) => {
+              const volm3 = parseFloat(item.n_lain);
+              //console.log(volm3);
+              return total + volm3;
+            }, 0);
+          };
+          const jmlLain = calcLain(dataFilter);
+
+          const TotTon =
+            jmlPlastik +
+            jmlOrganik +
+            jmlKertas +
+            jmlKaca +
+            jmlKaret +
+            jmlKayu +
+            jmlLain;
+
+          if (Develop) {
+            console.log("STEP item : ", tgl, jmlPlastik, jmlOrganik, TotTon);
+          }
+          const newData = {
+            c_tanggal: tgl,
+            n_volton: TotTon,
+            n_plastik: jmlPlastik,
+            n_organik: jmlOrganik,
+            n_kertas: jmlKertas,
+            n_kaca: jmlKaca,
+            n_karet: jmlKaret,
+            n_kayu: jmlKayu,
+            n_lain: jmlLain,
+            c_bulan: bulan,
+            c_tahun: tahun,
+          };
+          arr.push(newData);
+          xlabel.push(tgl);
+          ylabel.push(TotTon.toFixed(2));
+        };
+        let arr = [];
+        let xlabel = [];
+        let ylabel = [];
+        AllTgl.sort(function (a, b) {
+          return parseInt(a.substr(8, 2)) - parseInt(b.substr(8, 2));
+        }).map((tgl, index) => uploudData(tgl));
+        if (Develop) {
+          console.log("DATA", arr);
+        }
+        //setDataBulanan(arr);
+        setLabelChart(xlabel);
+        setSampahChart(ylabel);
+        setDataSampah(data);
+        return arr;
+      })
+      .then((REKAP) => {
+        if (REKAP.length === 0) {
+          if (Develop) {
+            console.log("STEP DATA KOSONG");
+          }
+        } else {
+          if (Develop) {
+            console.log("STEP DATA DISIMPAN");
+          }
+          db.collection("CL_REKAP3R").doc(`${tahun}${bulan}`).set({ REKAP });
+        }
+      })
+      .then(() => LihatDataTpa(tahun, bulan))
+      .catch((error) => console.error("Error Get Data :", error));
+  };
+
+  const LihatDataTpa = async (tahun, bulan) => {
+    setDataBulanan([]);
+    await db
+      .collection("CL_REKAP3R")
+      .doc(`${tahun}${bulan}`)
       .get()
       .then((doc) => {
-        if (!doc.exists) return console.log("Document Not Found : ");
+        if (!doc.exists) return setNotify({
+          isOpen: true,
+          message: "Data Belum Ada",
+          type: "error",
+        });
         console.log("get Document : ", doc.data());
         const data = {
           id: doc.id,
@@ -144,6 +344,32 @@ function SampahProvider({ children }) {
       .catch((error) => console.error("Error Get Data :", error));
   };
 
+  const LihatDataTpaFilter = async (tahun, bulan,idBank) => {
+    setDataBulanan([]);
+    await db
+      .collection("CL_REKAP3R")
+      .doc(`${tahun}${bulan}${idBank}`)
+      .get()
+      .then((doc) => {
+        if (!doc.exists) return setNotify({
+          isOpen: true,
+          message: "Data Belum Ada",
+          type: "error",
+        });
+        console.log("get Document : ", doc.data());
+        const data = {
+          id: doc.id,
+          ...doc.data(),
+        };
+        const { REKAP } = doc.data();
+        setDataBulanan(REKAP);
+        if (Develop) {
+          console.log("STEP GET DATA", data, REKAP);
+        }
+        console.log("STEP FINAL DATA", dataBulanan, REKAP);
+      })
+      .catch((error) => console.error("Error Get Data :", error));
+  };
   const GetData = useCallback(async () => {
     await db
       .collection("CL_SAMPAHHARI")
@@ -160,6 +386,24 @@ function SampahProvider({ children }) {
       .catch((error) => console.error("Error Get Data :", error));
   }, [c_tanggal]);
 
+  const getDataBank = async () => {
+    if (Develop) {
+      console.log("STEP : GET DATA BANKSAMPAH");
+    }
+    let data = [];
+    await db
+      .collection("CL_BANKSAMPAH")
+      .get()
+      .then((snapshot) => {
+        data = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+      });
+    return data;
+  };
+
+
   const SampahState = {
     dataSampah,
     GetData,
@@ -171,6 +415,15 @@ function SampahProvider({ children }) {
     labelChart,
     sampahChart,
     LihatDataTpa,
+    LihatDataTpaFilter,
+    idBank,
+    setIdBank,
+    nmBank,
+    setNmBank,
+    alamatBank,
+    setAlamatBank,
+    getDataBank,
+    notify, setNotify
   };
   return (
     <SampahContext.Provider value={SampahState}>

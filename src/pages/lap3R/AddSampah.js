@@ -6,14 +6,14 @@ import {
   Grid,
   Paper,
 } from "@material-ui/core";
-import React, { useContext, useEffect, useState } from "react";
-import { CL_TPA } from "../../util/dbschema";
-import { AuthContext } from "../../context/AuthContext";
+import React, { useContext, useState } from "react";
+// import { CL_TPA } from "../../util/dbschema";
+//import { AuthContext } from "../../context/AuthContext";
 import { SampahContext } from "./ContextSampah";
 import PilihBankSampah from "../../components/PilihBankSampah";
 
 function AddSampah() {
-  const { users } = useContext(AuthContext);
+  //const { users } = useContext(AuthContext);
   const {
     GetDataTgl,
     c_tanggal,
@@ -29,22 +29,22 @@ function AddSampah() {
   const [checkedAll, setCheckedAll] = useState(false);
 
   //State Sampah----------------------------
-  const [c_tpa, setTPA] = useState(users.c_defTPA);
+  // const [c_tpa, setTPA] = useState(users.c_defTPA);
 
   //Default TPA--------------------------------
-  useEffect(() => {
-    setTPA(users.c_defTPA);
-  }, [users.c_defTPA]);
+  // useEffect(() => {
+  //   setTPA(users.c_defTPA);
+  // }, [users.c_defTPA]);
 
   //Option TPA-----------------------------------
-  let pilihTPA = CL_TPA;
-  pilihTPA = pilihTPA.map((item, index) => {
-    return (
-      <option key={index} value={item}>
-        {item}
-      </option>
-    );
-  });
+  // let pilihTPA = CL_TPA;
+  // pilihTPA = pilihTPA.map((item, index) => {
+  //   return (
+  //     <option key={index} value={item}>
+  //       {item}
+  //     </option>
+  //   );
+  // });
 
   const onCariData = () => {
     if (checkedAll) {

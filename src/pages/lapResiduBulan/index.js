@@ -8,7 +8,7 @@ import SampahProvider from "./ContextSampah";
 import ListSampah from "./ListSampah";
 
 
-function IndexLap3RBulan() {
+function IndexLapResiduBulan() {
   const { users } = useContext(AuthContext);
 
   return (
@@ -17,7 +17,7 @@ function IndexLap3RBulan() {
       <Container maxWidth="sm">
         <Box mt={2} />
         <Typography component="h1" variant="h4" align="center">
-          Laporan Sampah 3R Bulanan
+          Laporan Sampah Residu Bulanan
         </Typography>
         <Typography variant="h6" align="center">
           {users.c_username}
@@ -33,4 +33,4 @@ function IndexLap3RBulan() {
   );
 }
 
-export default IndexLap3RBulan;
+export default IndexLapResiduBulan;

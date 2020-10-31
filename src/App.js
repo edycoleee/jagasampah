@@ -24,7 +24,7 @@ import LoginLink from "./pages/auth/LoginLink";
 import IndexResiduLanding from "./pages/landing/ResiduTPA";
 import IndexDataPengepul from "./pages/pengepul";
 import IndexLap3R from "./pages/lap3R";
-import IndexLap3RBulan from "./pages/lapResiduBulan";
+import IndexLap3RBulan from "./pages/lap3RBulan";
 
 function App() {
   return (
